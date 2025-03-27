@@ -1,26 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--minty-fresh);
+    --foreground: var(--graphite-ink);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .dark {
+    --background: var(--graphite-ink);
+    --foreground: var(--light-cream);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-open-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+  }
+
+  button,
+  .btn {
+    border-radius: 0.5rem;
+    background-color: var(--lavender-mist);
+    transition: background-color 200ms;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .card {
+    border-radius: 0.75rem;
+    background-color: var(--light-cream);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-elevated);
+  }
 }
