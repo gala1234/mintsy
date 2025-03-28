@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Poppins, Open_Sans } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  display: "swap",
+  variable: "--font-sans",
 });
 
-const openSans = Open_Sans({
+const dmSerifDisplay = DM_Serif_Display({
+  weight: ["400"],
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-open-sans",
+  display: "swap",
+  variable: "--font-serif-accent",
 });
 
 export const metadata: Metadata = {
@@ -28,8 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${dmSerifDisplay.variable}`}
+    >
+      <body className="font-sans">
         <Header />
         <main>{children}</main>
         <Footer />

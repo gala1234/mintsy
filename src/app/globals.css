@@ -1,45 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
+/* Add this line to import the font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: var(--minty-fresh);
-    --foreground: var(--graphite-ink);
-  }
+@theme {
+  --color-background: #fefaf6;
+  --color-primary: #7a6ff0;
+  --color-primary-hover: #695de0;
+  --color-text: #111827;
+  --color-text-accent: #ffb8b1;
+  --color-text-lavander: #e4d7f5;
+  --color-text-mint: #a8e6cf;
 
-  .dark {
-    --background: var(--graphite-ink);
-    --foreground: var(--light-cream);
-  }
+  --font-size-heading: 3rem;
+  --font-size-paragraph: 1.125rem;
 
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-open-sans);
-  }
+  --font-sans: "Inter", sans-serif;
+  --font-serif-accent: "Roboto Condensed", serif;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-poppins);
-    font-weight: 600;
-  }
-
-  button,
-  .btn {
-    border-radius: 0.5rem;
-    background-color: var(--lavender-mist);
-    transition: background-color 200ms;
-    box-shadow: var(--shadow-subtle);
-  }
-
-  .card {
-    border-radius: 0.75rem;
-    background-color: var(--light-cream);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-elevated);
-  }
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
 }
