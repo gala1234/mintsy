@@ -17,7 +17,8 @@ const Desktopdiv = () => {
   };
 
   return (
-    <div className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm py-4 px-6 md:px-10 shadow-subtle">
+    <div className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm py-4 px-6 md:px-10 shadow-subtle" 
+    onMouseLeave={handleMouseLeave}>
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
@@ -41,11 +42,10 @@ const Desktopdiv = () => {
               key={index} 
               className="relative"
               onMouseEnter={() => handleMouseEnter(item.link)}
-              onMouseLeave={handleMouseLeave}
             >
               <Link
                 href={item.link}
-                className="text-graphite-ink hover:text-mint transition-colors capitalize"
+                className="text-text hover:text-mint transition-colors capitalize"
               >
                 {item.text}
                 {item.submenu && (
@@ -68,12 +68,12 @@ const Desktopdiv = () => {
               </Link>
               
               {item.submenu && activeSubmenu === item.link && (
-                <div className="absolute top-full left-0 w-48 bg-background/95 backdrop-blur-sm rounded-md shadow-md overflow-hidden z-50">
+                <div className="absolute top-full -left-11 w-screen mt-6  bg-background/80 backdrop-blur-sm overflow-hidden z-50 py-4 px-6 md:px-10 shadow-subtle">
                   {item.submenu.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
                       href={subItem.link}
-                      className="block px-4 py-2 text-graphite-ink hover:bg-mint/10 hover:text-mint transition-colors capitalize"
+                      className="block px-4 py-2 text-text hover:bg-mint/10 hover:text-mint transition-colors capitalize"
                     >
                       {subItem.text}
                     </Link>
