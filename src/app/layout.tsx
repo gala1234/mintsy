@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
+import DesktopHeader from "@/components/layout/DesktopHeader";
+import MobileHeader from "@/components/layout/MobileHeader";
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
@@ -34,8 +35,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${dmSerifDisplay.variable}`}
     >
+      <DesktopHeader />
+      <MobileHeader />
       <body className="font-sans">
-        <Header />
+        
         <main>{children}</main>
         <Footer />
       </body>
