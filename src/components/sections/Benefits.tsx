@@ -5,7 +5,7 @@ const Benefits = () => {
   return (
     <section
       id="benefits"
-      className="py-24 bg-[#0E0B1F] text-white overflow-hidden relative"
+      className="py-24 bg-background text-text overflow-hidden relative"
     >
       <div className="container mx-auto px-6 md:px-10">
         {/* Section Header */}
@@ -24,15 +24,13 @@ const Benefits = () => {
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="bg-[#1A1630] p-8 rounded-lg flex flex-col items-center text-center"
+              className="bg-transparent p-8 rounded-lg flex flex-col items-center text-center"
             >
-              <div className="bg-[#2A2445] p-4 rounded-lg mb-6 inline-block">
                 <div className="w-16 h-16 relative flex items-center justify-center">
                   {benefit.icon}
-                </div>
               </div>
               <h3 className="text-2xl font-bold mb-3">{benefit.title}</h3>
-              <p className="text-lg text-gray-300">{benefit.description}</p>
+              <p className="text-lg">{benefit.description}</p>
             </div>
           ))}
         </div>

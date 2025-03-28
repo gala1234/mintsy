@@ -9,10 +9,10 @@ interface Benefit {
 
 const getIcon = (name: string) => (
   <Image
-    src={`/icons/${name}.svg`}
+    src={`/icons/${name}.png`}
     alt="Personalized Creativity"
-    width={40}
-    height={40}
+    width={80}
+    height={80}
     className="text-lavender-mist"
   />
 );
@@ -23,19 +23,19 @@ export const benefits: Benefit[] = [
     title: "Personalized Creativity",
     description:
       "No artistic skills? No problem. Create art that's uniquely yours.",
-    icon: getIcon("personalized-creativity"),
+    icon: getIcon("star"),
   },
   {
     id: "2",
     title: "Tangible & Digital Ownership",
     description: "Own your art in the digital realm and the physical world.",
-    icon: getIcon("tangible-digital-ownership"),
+    icon: getIcon("sheld"),
   },
   {
     id: "3",
     title: "Seamless Experience",
     description:
       "User-friendly platform guiding you from creation to ownership.",
-    icon: getIcon("seamless-experience"),
+    icon: getIcon("draw"),
   },
 ];
