@@ -13,7 +13,7 @@ interface ColorHeadProps {
 const ColorHead: React.FC<ColorHeadProps> = ({
   text,
   className = "",
-  colors = ["#7a6ff0", "#ffb8b1", "#e4d7f5", "#a8e6cf"],
+  colors = ["#7a6ff0", "#ff7466", "#34d399", "#111827"],
   duration = 30,
 }) => {
   // Split text into words
