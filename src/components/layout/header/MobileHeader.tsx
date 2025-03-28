@@ -79,9 +79,11 @@ const Mobilediv = () => {
             {header.map((item, index) => (
               <div key={index} className="w-full">
                 {item.type === "button" ? (
-                  <LinkButton href={item.link} variant="secondary" size="sm">
-                    {item.text}
-                  </LinkButton>
+                  <div onClick={() => setIsMenuOpen(false)}>
+                    <LinkButton href={item.link} variant="secondary" size="sm">
+                      {item.text}
+                    </LinkButton>
+                  </div>
                 ) : item.submenu ? (
                   <div className="w-full">
                     <button
