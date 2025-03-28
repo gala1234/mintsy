@@ -8,12 +8,18 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/mintsy_logo.png"
+            src="/icon.svg"
             alt="Mintsy.ai Logo"
-            width={120}
-            height={20}
+            width={40}
+            height={40}
             priority
           />
+          <div className="flex flex-col ml-4">
+            <span className="font-poppins font-bold">Mintsy.ai</span>
+            <span className="font-poppins text-[10px]">
+              AI-DRIVEN ART CREATION
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
