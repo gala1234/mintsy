@@ -1,6 +1,6 @@
 {
-  "name": "Mintsy",
-  "short_name": "Mintsy",
+  "name": "mintsy",
+  "short_name": "mintsy",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
