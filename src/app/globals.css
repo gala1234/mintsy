@@ -4,7 +4,7 @@
 
 @theme {
   --color-background: #fefaf6;
-  --color-background-secondary: #fcf1ed;
+  --color-background-secondary: var(--color-background/10);
 
   --color-dark: #111827;
 

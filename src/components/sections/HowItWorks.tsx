@@ -5,7 +5,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="py-24 bg-text-lavander text-text overflow-hidden"
+      className="py-24 bg-primary/5 text-text overflow-hidden"
     >
       <div className="container mx-auto px-6 md:px-10">
         {/* Section Header */}
