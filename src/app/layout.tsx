@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
-import DesktopHeader from "@/components/layout/DesktopHeader";
-import MobileHeader from "@/components/layout/MobileHeader";
+import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
@@ -36,8 +35,7 @@ export default function RootLayout({
       className={`${inter.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="font-sans">
-        <DesktopHeader />
-        <MobileHeader />
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>

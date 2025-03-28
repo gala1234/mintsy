@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const MobileHeader = () => {
+const Mobilediv = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,7 +12,7 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-screen bg-background/80 backdrop-blur-sm py-4 px-6 shadow-subtle md:hidden">
+    <div className="fixed top-0 left-0 right-0 z-50 w-screen bg-background/80 backdrop-blur-sm py-4 px-6 shadow-subtle md:hidden">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
@@ -78,8 +78,8 @@ const MobileHeader = () => {
         </nav>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 
-export default MobileHeader;
+export default Mobilediv;

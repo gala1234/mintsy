@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const DesktopHeader = () => {
+const Desktopdiv = () => {
   return (
-    <header className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm py-4 px-6 md:px-10 shadow-subtle">
+    <div className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm py-4 px-6 md:px-10 shadow-subtle">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
@@ -47,8 +47,8 @@ const DesktopHeader = () => {
           Join the Waitlist
         </Button> */}
       </div>
-    </header>
+    </div>
   );
 };
 
-export default DesktopHeader;
+export default Desktopdiv;
