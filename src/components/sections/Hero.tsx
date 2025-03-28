@@ -21,7 +21,7 @@ const Hero = () => {
               unique NFTs on the blockchain.
             </p>
             <div>
-              <LinkButton>Get Started</LinkButton>
+              <LinkButton href="#mint">Mint Now</LinkButton>
             </div>
           </div>
 

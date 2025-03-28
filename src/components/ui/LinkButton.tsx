@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const linkButtonVariants = cva(
-  "inline-block font-medium rounded-lg transition-colors duration-300 ",
+  "inline-block font-medium rounded-lg transition-colors duration-300",
   {
     variants: {
       variant: {
@@ -22,23 +22,24 @@ const linkButtonVariants = cva(
 );
 
 export interface LinkButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>, // Changed from ButtonHTMLAttributes
     VariantProps<typeof linkButtonVariants> {
-  asChild?: boolean;
+  href: string; // Made href required
 }
 
-const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>(
-  ({ className, variant, size, ...props }) => {
+const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>( // Changed ref type
+  ({ className, variant, size, href, ...props }, ref) => {
     return (
       <Link
         className={cn(linkButtonVariants({ variant, size, className }))}
-        href="#get-started"
+        href={href}
+        ref={ref}
         {...props}
       />
     );
   }
 );
 
-LinkButton.displayName = "Button";
+LinkButton.displayName = "LinkButton"; // Fixed display name
 
 export { LinkButton, linkButtonVariants };
