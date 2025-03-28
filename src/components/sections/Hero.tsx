@@ -12,9 +12,9 @@ const Hero = () => {
           {/* Left Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-bold  font-serif-accent">
-              <ColorHead text="Generate AI Art" className="block" />
-              <ColorHead text="Mint as NFT" className="block" />
-              <ColorHead text="Receive a Canvas" className="block" />
+              <ColorHead text="Create AI Art," className="block" />
+              <ColorHead text="mint as NFT" className="block" />
+              <ColorHead text="or receive it printed" className="block" />
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-lg">
               Effortlessly create stunning AI-generated artwork.

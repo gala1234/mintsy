@@ -7,51 +7,48 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
-            <Link
-              href="/"
-              className="font-poppins font-bold text-xl text-graphite-ink"
-            >
+            <Link href="/" className="font-poppins font-bold text-xl text-dark">
               Mintsy.ai
             </Link>
           </div>
 
           <nav className="flex flex-wrap justify-center gap-6 md:gap-8">
             <Link
-              href="#about"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              href="/about"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               About
             </Link>
             <Link
-              href="#contact"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              href="/contact"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               Contact
             </Link>
             <Link
-              href="#privacy"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              href="/privacy"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#terms"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              href="/terms"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               Terms of Service
             </Link>
           </nav>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-graphite-ink/10">
-          <p className="text-sm text-graphite-ink/80 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-dark/10">
+          <p className="text-sm text-dark/80 mb-4 md:mb-0">
             © 2025 Mintsy.ai. All rights reserved.
           </p>
 
           <div className="flex items-center space-x-4">
             <a
               href="#"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +66,7 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +84,7 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-graphite-ink hover:text-dark-hover transition-colors"
+              className="text-dark hover:text-dark-hover transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
