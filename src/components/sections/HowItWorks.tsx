@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import StepCard from "@/components/ui/StepCard";
 
 const HowItWorks = () => {
   return (
@@ -20,62 +20,26 @@ const HowItWorks = () => {
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Step 1 */}
-          <div className="bg-white p-8 rounded-lg text-center flex flex-col items-center">
-              <div className="w-24 h-24 relative">
-                <Image
-                  src="/screen.png"
-                  alt="Generate Your Art"
-                  width={96}
-                  height={96}
-                  className="object-contain"
-                />
-            </div>
-            <div className="text-3xl font-bold mb-2 flex items-center">
-              <span className="bg-[#7a6ff0] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
-                1
-              </span>
-              Generate Your Art
-            </div>
-          </div>
-
-          {/* Step 2 */}
-          <div className="bg-white p-8 rounded-lg text-center flex flex-col items-center">
-              <div className="w-24 h-24 relative">
-                <Image
-                  src="/nft.png"
-                  alt="Mint as NFT"
-                  width={96}
-                  height={96}
-                  className="object-contain"
-                />
-            </div>
-            <div className="text-3xl font-bold mb-2 flex items-center">
-              <span className="bg-[#7a6ff0] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
-                2
-              </span>
-              Mint as NFT
-            </div>
-          </div>
-
-          {/* Step 3 */}
-          <div className="bg-white p-8 rounded-lg text-center flex flex-col items-center">
-              <div className="w-24 h-24 relative">
-                <Image
-                  src="/received_canvas.png"
-                  alt="Receive Your Canvas"
-                  width={96}
-                  height={96}
-                  className="object-contain"
-                />
-            </div>
-            <div className="text-3xl font-bold mb-2 flex items-center">
-              <span className="bg-[#7a6ff0] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
-                3
-              </span>
-              Receive Your Canvas
-            </div>
-          </div>
+          <StepCard 
+            stepNumber={1}
+            title="Generate Your Art"
+            imageSrc="/screen.png"
+            imageAlt="Generate Your Art"
+          />
+          
+          <StepCard 
+            stepNumber={2}
+            title="Mint as NFT"
+            imageSrc="/nft.png"
+            imageAlt="Mint as NFT"
+          />
+          
+          <StepCard 
+            stepNumber={3}
+            title="Receive Your Canvas"
+            imageSrc="/received_canvas.png"
+            imageAlt="Receive Your Canvas"
+          />
         </div>
       </div>
 
