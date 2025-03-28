@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { LinkButton } from "@/components/ui/LinkButton";
+
 const Hero = () => {
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-background">
@@ -15,17 +16,12 @@ const Hero = () => {
               <br />
               NFTs
             </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-lg font-serif-accent text-primary">
+            <p className="text-xl md:text-2xl mb-8 max-w-lg font-serif-accent">
               Effortlessly create stunning AI-generated artwork and mint it as
               unique NFTs on the blockchain.
             </p>
             <div>
-              <Link
-                href="#get-started"
-                className="inline-block bg-[#8975FF] hover:bg-[#7865EF] text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-sm"
-              >
-                Get Started
-              </Link>
+              <LinkButton>Get Started</LinkButton>
             </div>
           </div>
 
