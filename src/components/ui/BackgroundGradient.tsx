@@ -1,4 +1,4 @@
-const BackgroundGradient: React.FC<> = (
+const BackgroundGradient: React.FC = (
  ) => (
     <div>
       <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#7a6ff0]/5 rounded-full blur-3xl"></div>
