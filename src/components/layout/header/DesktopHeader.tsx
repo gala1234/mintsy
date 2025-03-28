@@ -1,8 +1,21 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { header } from "@/data/header";
 
 const Desktopdiv = () => {
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+
+  const handleMouseEnter = (link: string) => {
+    setActiveSubmenu(link);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveSubmenu(null);
+  };
+
   return (
     <div className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm py-4 px-6 md:px-10 shadow-subtle">
       <div className="container mx-auto flex items-center justify-between">
@@ -23,29 +36,53 @@ const Desktopdiv = () => {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link
-            href="#how-it-works"
-            className="text-graphite-ink hover:text-mint transition-colors"
-          >
-            How It Works
-          </Link>
-          <Link
-            href="#benefits"
-            className="text-graphite-ink hover:text-mint transition-colors"
-          >
-            Benefits
-          </Link>
-          <Link
-            href="#testimonials"
-            className="text-graphite-ink hover:text-mint transition-colors"
-          >
-            Testimonials
-          </Link>
+          {header.map((item, index) => (
+            <div 
+              key={index} 
+              className="relative"
+              onMouseEnter={() => handleMouseEnter(item.link)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href={item.link}
+                className="text-graphite-ink hover:text-mint transition-colors capitalize"
+              >
+                {item.text}
+                {item.submenu && (
+                  <span className="ml-1 inline-block">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="12" 
+                      height="12" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                )}
+              </Link>
+              
+              {item.submenu && activeSubmenu === item.link && (
+                <div className="absolute top-full left-0 w-48 bg-background/95 backdrop-blur-sm rounded-md shadow-md overflow-hidden z-50">
+                  {item.submenu.map((subItem, subIndex) => (
+                    <Link
+                      key={subIndex}
+                      href={subItem.link}
+                      className="block px-4 py-2 text-graphite-ink hover:bg-mint/10 hover:text-mint transition-colors capitalize"
+                    >
+                      {subItem.text}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </nav>
-
-        {/* <Button variant="accent" size="md">
-          Join the Waitlist
-        </Button> */}
       </div>
     </div>
   );

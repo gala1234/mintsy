@@ -3,12 +3,21 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { header } from "@/data/header";
 
 const Mobilediv = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expandedSubmenu, setExpandedSubmenu] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      setExpandedSubmenu(null);
+    }
+  };
+  
+  const toggleSubmenu = (link: string) => {
+    setExpandedSubmenu(expandedSubmenu === link ? null : link);
   };
 
   return (
@@ -50,32 +59,64 @@ const Mobilediv = () => {
 
       {/* Mobile Navigation Menu */}
       <div 
-        className={`absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm shadow-subtle transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-64 py-4' : 'max-h-0'}`}
+        className={`absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm shadow-subtle transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-screen py-4' : 'max-h-0'}`}
       >
         <div className="container mx-auto w-full">
-        <nav className="flex flex-col items-center space-y-6 px-6">
-          <Link
-            href="#how-it-works"
-            className="text-text hover:text-mint transition-colors w-full text-center py-2"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            How It Works
-          </Link>
-          <Link
-            href="#benefits"
-            className="text-text hover:text-mint transition-colors w-full text-center py-2"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Benefits
-          </Link>
-          <Link
-            href="#testimonials"
-            className="text-text hover:text-mint transition-colors w-full text-center py-2"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Testimonials
-          </Link>
-        </nav>
+          <nav className="flex flex-col items-center space-y-4 px-6">
+            {header.map((item, index) => (
+              <div key={index} className="w-full">
+                {item.submenu ? (
+                  <div className="w-full">
+                    <button 
+                      className="flex items-center justify-center w-full text-text hover:text-mint transition-colors py-2 capitalize"
+                      onClick={() => toggleSubmenu(item.link)}
+                    >
+                      {item.text}
+                      <span className="ml-2">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="12" 
+                          height="12" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                          className={`transition-transform duration-300 ${expandedSubmenu === item.link ? 'rotate-180' : ''}`}
+                        >
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </button>
+                    
+                    <div 
+                      className={`overflow-hidden transition-all duration-300 ${expandedSubmenu === item.link ? 'max-h-64 mt-2' : 'max-h-0'}`}
+                    >
+                      {item.submenu.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={subItem.link}
+                          className="block w-full text-text hover:text-mint transition-colors py-2 pl-4 text-center capitalize"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {subItem.text}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.link}
+                    className="block text-text hover:text-mint transition-colors w-full text-center py-2 capitalize"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.text}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
         </div>
       </div>
     </div>
