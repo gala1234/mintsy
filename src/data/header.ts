@@ -13,7 +13,7 @@ type Header = {
 export const header: Header[] = 
 [
     {
-        text : 'home',
+        text : 'Home',
         link: '/',
         submenu:
         [
@@ -26,21 +26,21 @@ export const header: Header[] =
             link: '#benefits',
             },
             {
-            text: 'testimonials',
+            text: 'Testimonials',
             link: '#testimonials',
             }
         ]
     },
     {
-            text: 'pricing',
+            text: 'Pricing',
             link: '/pricing',
     },
     {
-        text: 'create',
+        text: 'Create',
         link: '/create'
     },
     {
-            text: 'login',
+            text: 'Login',
             link: '/login',
             type: 'button'
     }

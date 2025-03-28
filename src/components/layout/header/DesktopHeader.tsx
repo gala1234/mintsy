@@ -47,7 +47,7 @@ const Desktopdiv = () => {
               {
                 item.type === "button" ? (
                   <LinkButton
-                    href={item.link}>{item.text}</LinkButton>
+                    href={item.link} variant="secondary" size="sm">{item.text}</LinkButton>
                 ) :
                 (
 <Link
