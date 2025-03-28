@@ -68,7 +68,7 @@ const Mobilediv = () => {
                 {item.submenu ? (
                   <div className="w-full">
                     <button 
-                      className="flex items-center justify-center w-full text-text hover:text-mint transition-colors py-2 capitalize"
+                      className="flex items-center justify-center w-full text-text hover:text-dark-hover transition-colors py-2 capitalize"
                       onClick={() => toggleSubmenu(item.link)}
                     >
                       {item.text}
@@ -97,7 +97,7 @@ const Mobilediv = () => {
                         <Link
                           key={subIndex}
                           href={subItem.link}
-                          className="block w-full text-text hover:text-mint transition-colors py-2 pl-4 text-center capitalize"
+                          className="block w-full text-text hover:text-dark-hover transition-colors py-2 pl-4 text-center capitalize"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {subItem.text}
@@ -108,7 +108,7 @@ const Mobilediv = () => {
                 ) : (
                   <Link
                     href={item.link}
-                    className="block text-text hover:text-mint transition-colors w-full text-center py-2 capitalize"
+                    className="block text-text hover:text-dark-hover transition-colors w-full text-center py-2 capitalize"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.text}

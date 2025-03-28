@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { header } from "@/data/header";
+import { LinkButton } from "@/components/ui/LinkButton";
 
 const Desktopdiv = () => {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
@@ -43,9 +44,15 @@ const Desktopdiv = () => {
               className="relative"
               onMouseEnter={() => handleMouseEnter(item.link)}
             >
-              <Link
+              {
+                item.type === "button" ? (
+                  <LinkButton
+                    href={item.link}>{item.text}</LinkButton>
+                ) :
+                (
+<Link
                 href={item.link}
-                className="text-text hover:text-mint transition-colors capitalize"
+                className="text-text hover:text-dark-hover transition-colors capitalize"
               >
                 {item.text}
                 {item.submenu && (
@@ -66,6 +73,9 @@ const Desktopdiv = () => {
                   </span>
                 )}
               </Link>
+                )
+              }
+              
               
               {item.submenu && activeSubmenu === item.link && (
                 <div className="absolute top-full -left-11 w-screen mt-6  bg-background/80 backdrop-blur-sm overflow-hidden z-50 py-4 px-6 md:px-10 shadow-subtle">
@@ -73,7 +83,7 @@ const Desktopdiv = () => {
                     <Link
                       key={subIndex}
                       href={subItem.link}
-                      className="block px-4 py-2 text-text hover:bg-mint/10 hover:text-mint transition-colors capitalize"
+                      className="block px-4 py-2 text-text hover:bg-mint/10 hover:text-dark-hover transition-colors capitalize"
                     >
                       {subItem.text}
                     </Link>

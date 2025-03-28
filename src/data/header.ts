@@ -6,7 +6,8 @@ type Submenu = {
 type Header = {
     text: string,
     link: string,
-    submenu?: Submenu[]
+    submenu?: Submenu[],
+    type?: 'button'
 }
 
 export const header: Header[] = 
@@ -35,11 +36,12 @@ export const header: Header[] =
             link: '/pricing',
     },
     {
-            text: 'login',
-            link: '/login',     
-    },
-    {
         text: 'create',
         link: '/create'
+    },
+    {
+            text: 'login',
+            link: '/login',
+            type: 'button'
     }
 ]

@@ -18,25 +18,25 @@ const Footer = () => {
           <nav className="flex flex-wrap justify-center gap-6 md:gap-8">
             <Link
               href="#about"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               About
             </Link>
             <Link
               href="#contact"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               Contact
             </Link>
             <Link
               href="#privacy"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="#terms"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               Terms of Service
             </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
           <div className="flex items-center space-x-4">
             <a
               href="#"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="text-graphite-ink hover:text-deep-mint transition-colors"
+              className="text-graphite-ink hover:text-dark-hover transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
