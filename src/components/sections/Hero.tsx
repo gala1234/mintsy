@@ -11,14 +11,16 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
           {/* Left Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-              <ColorHead text="Generate AI" className="block" />
-              <ColorHead text="Art, Mint as" className="block" />
-              <ColorHead text="NFTs" className="block" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-bold">
+              <ColorHead text="Generate AI Art" className="block" />
+              <ColorHead text="Mint as NFT" className="block" />
+              <ColorHead text="Receive a Canvas" className="block" />
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-lg font-serif-accent">
-              Effortlessly create stunning AI-generated artwork and mint it as
-              unique NFTs on the blockchain.
+              Effortlessly create stunning AI-generated artwork.
+            </p>
+            <p className="text-xl md:text-2xl mb-8 max-w-lg font-serif-accent">
+              Then mint it as unique NFTs on the blockchain and/or receive your artwork at home.
             </p>
             <div>
               <LinkButton href="#mint">Mint Now</LinkButton>
