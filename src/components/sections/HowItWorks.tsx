@@ -22,16 +22,14 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Step 1 */}
           <div className="bg-white p-8 rounded-lg text-center flex flex-col items-center">
-            <div className="bg-[#2A2445] p-4 rounded-lg mb-6 inline-block">
               <div className="w-24 h-24 relative">
                 <Image
-                  src="/window.svg"
+                  src="/screen.png"
                   alt="Generate Your Art"
                   width={96}
                   height={96}
                   className="object-contain"
                 />
-              </div>
             </div>
             <div className="text-3xl font-bold mb-2 flex items-center">
               <span className="bg-[#7a6ff0] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
@@ -43,16 +41,14 @@ const HowItWorks = () => {
 
           {/* Step 2 */}
           <div className="bg-white p-8 rounded-lg text-center flex flex-col items-center">
-            <div className="bg-[#2A2445] p-4 rounded-lg mb-6 inline-block">
               <div className="w-24 h-24 relative">
                 <Image
-                  src="/file.svg"
+                  src="/nft.png"
                   alt="Mint as NFT"
                   width={96}
                   height={96}
                   className="object-contain"
                 />
-              </div>
             </div>
             <div className="text-3xl font-bold mb-2 flex items-center">
               <span className="bg-[#7a6ff0] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
@@ -64,16 +60,14 @@ const HowItWorks = () => {
 
           {/* Step 3 */}
           <div className="bg-white p-8 rounded-lg text-center flex flex-col items-center">
-            <div className="bg-[#2A2445] p-4 rounded-lg mb-6 inline-block">
               <div className="w-24 h-24 relative">
                 <Image
-                  src="/canvas.png"
+                  src="/received_canvas.png"
                   alt="Receive Your Canvas"
                   width={96}
                   height={96}
                   className="object-contain"
                 />
-              </div>
             </div>
             <div className="text-3xl font-bold mb-2 flex items-center">
               <span className="bg-[#7a6ff0] w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
