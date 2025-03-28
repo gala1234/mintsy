@@ -12,7 +12,7 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-screen bg-text-mint/80 backdrop-blur-sm py-4 px-6 shadow-subtle md:hidden">
+    <header className="fixed top-0 left-0 right-0 z-50 w-screen bg-background/80 backdrop-blur-sm py-4 px-6 shadow-subtle md:hidden">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
@@ -50,27 +50,27 @@ const MobileHeader = () => {
 
       {/* Mobile Navigation Menu */}
       <div 
-        className={`absolute top-full left-0 right-0 bg-text-mint/95 backdrop-blur-sm shadow-subtle transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-64 py-4' : 'max-h-0'}`}
+        className={`absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm shadow-subtle transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-64 py-4' : 'max-h-0'}`}
       >
         <div className="container mx-auto w-full">
         <nav className="flex flex-col items-center space-y-6 px-6">
           <Link
             href="#how-it-works"
-            className="text-text hover:text-deep-mint transition-colors w-full text-center py-2"
+            className="text-text hover:text-mint transition-colors w-full text-center py-2"
             onClick={() => setIsMenuOpen(false)}
           >
             How It Works
           </Link>
           <Link
             href="#benefits"
-            className="text-text hover:text-deep-mint transition-colors w-full text-center py-2"
+            className="text-text hover:text-mint transition-colors w-full text-center py-2"
             onClick={() => setIsMenuOpen(false)}
           >
             Benefits
           </Link>
           <Link
             href="#testimonials"
-            className="text-text hover:text-deep-mint transition-colors w-full text-center py-2"
+            className="text-text hover:text-mint transition-colors w-full text-center py-2"
             onClick={() => setIsMenuOpen(false)}
           >
             Testimonials

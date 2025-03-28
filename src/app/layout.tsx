@@ -35,10 +35,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${dmSerifDisplay.variable}`}
     >
-      <DesktopHeader />
-      <MobileHeader />
       <body className="font-sans">
-        
+        <DesktopHeader />
+        <MobileHeader />
         <main>{children}</main>
         <Footer />
       </body>
