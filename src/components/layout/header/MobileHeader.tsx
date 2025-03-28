@@ -24,7 +24,11 @@ const Mobilediv = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 w-screen bg-background/80 backdrop-blur-sm py-4 px-6 shadow-subtle md:hidden">
       <div className="container mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          className="flex items-center"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <Image
             src="/icon.svg"
             alt="Mintsy.ai Logo"
