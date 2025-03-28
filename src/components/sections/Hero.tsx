@@ -20,7 +20,8 @@ const Hero = () => {
               Effortlessly create stunning AI-generated artwork.
             </p>
             <p className="text-xl md:text-2xl mb-8 max-w-lg">
-              Then mint it as unique NFTs on the blockchain and/or receive your artwork at home.
+              Then mint it as unique NFTs on the blockchain and/or receive your
+              artwork at home.
             </p>
             <div>
               <LinkButton href="#mint">Mint Now</LinkButton>
@@ -44,7 +45,7 @@ const Hero = () => {
         </div>
       </div>
       {/* Background Elements */}
-      <BackgroundGradient/>
+      <BackgroundGradient />
     </section>
   );
 };
