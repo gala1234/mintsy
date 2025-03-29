@@ -24,7 +24,7 @@ const Hero = () => {
               artwork at home.
             </p>
             <div>
-              <LinkButton href="#mint">Mint Now</LinkButton>
+              <LinkButton href="/create">Mint Now</LinkButton>
             </div>
           </div>
 
