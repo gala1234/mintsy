@@ -3,10 +3,7 @@ import type { NextConfig } from "next";
 //TODO: Remove images.unsplash.com from domains
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ['images.unsplash.com'],
-  },
-  /* config options here */
+  // Local images don't need domains configuration
   async redirects() {
     return [
       {

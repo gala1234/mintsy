@@ -6,32 +6,32 @@ const sampleArtworks = [
   {
     id: 1,
     title: "Dreamy Mountain Sunset",
-    imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg",
   },
   {
     id: 2,
     title: "Neon City Nights",
-    imageUrl: "https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg", // Using the same placeholder for now
   },
   {
     id: 3,
     title: "Cosmic Whale",
-    imageUrl: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg", // Using the same placeholder for now
   },
   {
     id: 4,
     title: "Ethereal Forest",
-    imageUrl: "https://images.unsplash.com/photo-1607457561901-e6ec3a6d16cf?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg", // Using the same placeholder for now
   },
   {
     id: 5,
     title: "Abstract Dream",
-    imageUrl: "https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg", // Using the same placeholder for now
   },
   {
     id: 6,
     title: "Digital Landscape",
-    imageUrl: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg", // Using the same placeholder for now
   },
 ];
 
