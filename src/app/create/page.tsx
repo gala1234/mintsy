@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import CreateArt from "@/components/sections/CreateArt";
-import PreviewResult from "@/components/sections/PreviewResult";
 import EditArtwork from "@/components/sections/EditArtwork";
 
 export default function Create() {
@@ -19,6 +18,7 @@ export default function Create() {
   };
 
   const handleGeneratePreview = async () => {
+    // Validate prompt
     if (!prompt.trim()) return;
 
     setIsLoading(true);
@@ -30,15 +30,9 @@ export default function Create() {
       setGeneratedImageSrc("/canvas.png");
       setIsLoading(false);
       setShowPreview(true);
+      // Reset remaining generations for the demo
+      setRemainingGenerations(remainingGenerations - 1);
     }, 1500);
-  };
-
-  const handleGenerateAnother = () => {
-    if (remainingGenerations > 0) {
-      setRemainingGenerations((prev) => prev - 1);
-      setShowPreview(false);
-      setPrompt("");
-    }
   };
 
   return (
@@ -52,26 +46,21 @@ export default function Create() {
             isLoading={isLoading}
           />
         ) : (
-          <PreviewResult
+          <EditArtwork
             imageSrc={generatedImageSrc}
+            originalPrompt={prompt}
+            onPromptChange={handlePromptChange}
+            prompt={prompt}
+            onRegenerate={handleGeneratePreview}
+            isLoading={isLoading}
             remainingGenerations={remainingGenerations}
-            onGenerateAnother={handleGenerateAnother}
+            artStyle={artStyle}
+            onArtStyleChange={setArtStyle}
+            keepOriginalSeed={keepOriginalSeed}
+            onKeepOriginalSeedChange={setKeepOriginalSeed}
           />
         )}
       </div>
-      <EditArtwork
-        imageSrc={generatedImageSrc}
-        originalPrompt={prompt}
-        onPromptChange={handlePromptChange}
-        prompt={prompt}
-        onRegenerate={handleGeneratePreview}
-        isLoading={isLoading}
-        remainingGenerations={remainingGenerations}
-        artStyle={artStyle}
-        onArtStyleChange={setArtStyle}
-        keepOriginalSeed={keepOriginalSeed}
-        onKeepOriginalSeedChange={setKeepOriginalSeed}
-      />
     </section>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import ImageWithWatermark from "@/components/ui/ImageWithWatermark";
 import { TextArea } from "@/components/ui/TextArea";
 import { Select } from "@/components/ui/Select";
 import { Toggle } from "@/components/ui/Toggle";
@@ -30,7 +30,7 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
   onPromptChange,
   onRegenerate,
   isLoading,
-  remainingGenerations,
+  remainingGenerations = 2,
   artStyle,
   onArtStyleChange,
   keepOriginalSeed,
@@ -51,74 +51,112 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-2xl mx-auto py-8 px-4 bg-[#FDFBF7]">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 font-serif-accent">
+    <div className="w-full max-w-6xl mx-auto py-10 px-6 bg-[#FDFBF7] rounded-xl">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-serif-accent">
         Edit Your Artwork
       </h2>
 
-      {/* Original Image Thumbnail */}
-      <div className="flex flex-col items-center mb-8">
-        <div className="relative w-40 h-40 rounded-lg overflow-hidden shadow-md mb-3">
-          <Image
+      {/* Two-column layout for desktop, single column for mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Left Column - Image Preview */}
+        <div>
+          <ImageWithWatermark
             src={imageSrc}
-            alt="Original AI Generated Artwork"
-            fill
-            className="object-cover"
+            alt="Original Artwork"
+            width={500}
+            height={500}
+            className="w-full h-auto object-cover sticky top-4"
             priority
           />
         </div>
-        <p className="text-center text-sm text-text-muted">{originalPrompt}</p>
-      </div>
 
-      {/* Prompt Input */}
-      <TextArea
-        label="Your prompt"
-        value={prompt}
-        onChange={(e) => onPromptChange(e.target.value)}
-        placeholder="Type your prompt here"
-        rows={3}
-      />
-      {/* Art Style Dropdown */}
-      <Select
-        label="Art Style"
-        value={artStyle}
-        onChange={(e) => onArtStyleChange(e.target.value)}
-        options={artStyles}
-      />
+        {/* Right Column - Controls */}
+        <div>
+          {/* Prompt Input */}
+          <TextArea
+            label="Your prompt"
+            value={prompt || originalPrompt}
+            onChange={(e) => onPromptChange(e.target.value)}
+            placeholder="Type your prompt here"
+            rows={3}
+          />
+          {/* Art Style Dropdown */}
+          <Select
+            label="Art Style"
+            value={artStyle}
+            onChange={(e) => onArtStyleChange(e.target.value)}
+            options={artStyles}
+          />
 
-      {/* Keep Original Seed Toggle */}
-      <Toggle
-        label="Keep Original Seed"
-        checked={keepOriginalSeed}
-        onChange={(e) => onKeepOriginalSeedChange(e.target.checked)}
-      />
+          {/* Keep Original Seed Toggle */}
+          <Toggle
+            label="Keep Original Seed"
+            checked={keepOriginalSeed}
+            onChange={(e) => onKeepOriginalSeedChange(e.target.checked)}
+          />
 
-      {/* Regenerate Button */}
-      <div className="mt-8">
-        <Button
-          onClick={onRegenerate}
-          disabled={isLoading}
-          className="w-full"
-          isLoading={isLoading}
-        >
-          Regenerate
-        </Button>
+          {/* Action Section */}
+          <div className="mt-10 space-y-6">
+            {/* Primary Action */}
+            <div className="space-y-4">
+              <Button
+                onClick={onRegenerate}
+                disabled={isLoading}
+                className="w-full text-lg"
+                isLoading={isLoading}
+              >
+                Regenerate
+              </Button>
+
+              {/* Remaining Generations */}
+              <div className="text-center py-2">
+                <p className="text-text-muted mb-2">
+                  You have {remainingGenerations} free generations left.
+                </p>
+                <Link
+                  href="/pricing"
+                  className="text-primary hover:text-primary-hover font-medium transition-colors"
+                >
+                  Upgrade to Pro for unlimited creations
+                </Link>
+              </div>
+            </div>
+
+            {/* Secondary Actions */}
+            <div className="pt-2 border-t border-mint/30 space-y-3">
+              <Button
+                onClick={onRegenerate}
+                disabled={isLoading}
+                className="w-full"
+                isLoading={isLoading}
+                variant="secondary"
+              >
+                Save to Gallery (Login)
+              </Button>
+              <Button
+                onClick={onRegenerate}
+                disabled={isLoading}
+                className="w-full"
+                isLoading={isLoading}
+                variant="secondary"
+              >
+                Mint as NFT (Login)
+              </Button>
+              <Button
+                onClick={onRegenerate}
+                disabled={isLoading}
+                className="w-full"
+                isLoading={isLoading}
+                variant="secondary"
+              >
+                Receive Printed Artwork
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
       {/* Loading Spinner */}
       <Backdrop isOpen={isLoading} />
-
-      {/* Remaining Generations */}
-      <div className="text-center">
-        <p className="text-text-muted mb-2">
-          You have {remainingGenerations} free generations left.
-        </p>
-        <Link
-          href="/pricing"
-          className="text-primary hover:text-primary-hover font-medium transition-colors"
-        >
-          Upgrade to Pro for unlimited creations
-        </Link>
-      </div>
     </div>
   );
 };
