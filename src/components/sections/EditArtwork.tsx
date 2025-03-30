@@ -3,6 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { TextArea } from "@/components/ui/TextArea";
+import { Select } from "@/components/ui/Select";
+import { Toggle } from "@/components/ui/Toggle";
+import { Button } from "@/components/ui/Button";
 
 interface EditArtworkProps {
   imageSrc: string;
@@ -66,104 +70,54 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
       </div>
 
       {/* Prompt Input */}
-      <div className="mb-6">
-        <label
-          htmlFor="prompt"
-          className="block text-sm font-medium text-text mb-2"
-        >
-          Edit your prompt
-        </label>
-        <div className="relative">
-          <textarea
-            id="prompt"
-            value={prompt}
-            onChange={(e) => onPromptChange(e.target.value)}
-            placeholder="Describe what you want to see..."
-            className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors min-h-[120px]"
-          />
-        </div>
-      </div>
-
+      <TextArea
+        label="Your prompt"
+        value={prompt}
+        onChange={(e) => onPromptChange(e.target.value)}
+        placeholder="Type your prompt here"
+        rows={3}
+      />
       {/* Art Style Dropdown */}
-      <div className="mb-6">
-        <label
-          htmlFor="artStyle"
-          className="block text-sm font-medium text-text mb-2"
-        >
-          Art style
-        </label>
-        <div className="relative">
-          <select
-            id="artStyle"
-            value={artStyle}
-            onChange={(e) => onArtStyleChange(e.target.value)}
-            className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors appearance-none bg-white"
-          >
-            {artStyles.map((style) => (
-              <option key={style} value={style}>
-                {style}
-              </option>
-            ))}
-          </select>
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
+      <Select
+        label="Art Style"
+        value={artStyle}
+        onChange={(e) => onArtStyleChange(e.target.value)}
+        options={artStyles}
+      />
 
       {/* Keep Original Seed Toggle */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="keepOriginal"
-            className="text-sm font-medium text-text"
-          >
-            Keep original
-          </label>
-          <div className="relative inline-block w-12 h-6 transition duration-200 ease-in-out rounded-full cursor-pointer">
-            <input
-              id="keepOriginal"
-              type="checkbox"
-              className="absolute w-6 h-6 opacity-0 cursor-pointer z-10"
-              checked={keepOriginalSeed}
-              onChange={(e) => onKeepOriginalSeedChange(e.target.checked)}
-            />
-            <div
-              className={`w-12 h-6 rounded-full transition-colors duration-200 ease-in-out ${
-                keepOriginalSeed ? "bg-mint" : "bg-gray-200"
-              }`}
-            ></div>
-            <div
-              className={`absolute top-0.5 left-0.5 bg-white w-5 h-5 rounded-full shadow transform transition-transform duration-200 ease-in-out ${
-                keepOriginalSeed ? "translate-x-6" : "translate-x-0"
-              }`}
-            ></div>
-          </div>
-        </div>
-      </div>
+      <Toggle
+        label="Keep Original Seed"
+        checked={keepOriginalSeed}
+        onChange={(e) => onKeepOriginalSeedChange(e.target.checked)}
+      />
 
       {/* Regenerate Button */}
-      <div className="mb-4">
-        <button
+      <div className="mt-8">
+        <Button
           onClick={onRegenerate}
-          disabled={isLoading || !prompt.trim()}
-          className="w-full bg-dark hover:bg-primary text-white font-medium py-4 px-8 rounded-lg transition-colors duration-300 shadow-sm"
+          disabled={isLoading}
+          className="w-full"
+          //   loading={() => isLoading}x
         >
-          {isLoading ? "Regenerating..." : "Regenerate Artwork"}
-        </button>
+          Regenerate
+        </Button>
       </div>
+      {/* Loading Spinner */}
+      {isLoading && (
+        <div className="flex flex-col items-center justify-center mt-8">
+          {/* Custom spinner with mint color */}
+          <div className="relative w-20 h-20 mb-6">
+            <div className="absolute top-0 left-0 w-full h-full border-4 border-mint-light rounded-full opacity-25"></div>
+            <div className="absolute top-0 left-0 w-full h-full border-4 border-t-mint border-r-mint border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+          </div>
+          {/* Loading message */}
+          <p className="text-lg">Creating Magic</p>
+          <p className="text-sm text-text-muted mt-2">
+            This may take a few seconds
+          </p>
+        </div>
+      )}
 
       {/* Remaining Generations */}
       <div className="text-center">

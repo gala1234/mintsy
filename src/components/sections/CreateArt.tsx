@@ -17,13 +17,6 @@ const CreateArt: React.FC<CreateArtProps> = ({
   onGenerate,
   isLoading,
 }) => {
-  console.log(
-    "Rendering CreateArt component",
-    prompt,
-    onPromptChange,
-    onGenerate,
-    isLoading
-  );
   return (
     <div className="w-full max-w-md mx-auto py-8 px-4 flex flex-col items-center min-h-[80vh]">
       <h1 className="text-center  text-4xl md:text-5xl lg:text-6xl mb-6 font-bold font-serif-accent">
