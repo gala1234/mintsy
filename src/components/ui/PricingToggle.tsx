@@ -40,8 +40,10 @@ const PricingToggle: React.FC<PricingToggleProps> = ({
         >
           Yearly
         </span>
-        {isYearly && (
+        {isYearly ? (
           <span className="text-xs text-mint-dark font-medium">Save 34%</span>
+        ) : (
+          <span className="text-xs text-text-muted font-medium">Save 34%</span>
         )}
       </div>
     </div>
