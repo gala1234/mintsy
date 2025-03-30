@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import { TextArea } from "@/components/ui/TextArea";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import Backdrop from "@/components/ui/Backdrop";
 
@@ -29,25 +29,13 @@ const CreateArt: React.FC<CreateArtProps> = ({
         Type your idea and get your first artwork instantly – no sign-up needed.
       </p>
       {/* Input Field */}
-      <div className="w-full mb-8">
-        <div className="relative">
-          <input
-            type="text"
-            value={prompt}
-            onChange={(e) => onPromptChange(e.target.value)}
-            placeholder='e.g. "A cyberpunk cat riding a bike through Tokyo"'
-            className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors"
-          />
-          <div className="absolute right-4 top-1/2 -translate-y-1/2">
-            <Image
-              src="/icons/star.png"
-              alt="Inspiration"
-              width={24}
-              height={24}
-            />
-          </div>
-        </div>
-      </div>
+      <TextArea
+        id="prompt"
+        label="Your Prompt"
+        value={prompt}
+        onChange={(e) => onPromptChange(e.target.value)}
+        placeholder="Enter your prompt here"
+      />
 
       {/* Generate Button */}
       <div className="mb-4">

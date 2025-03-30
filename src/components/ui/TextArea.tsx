@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export interface TextAreaProps
@@ -9,7 +10,7 @@ export interface TextAreaProps
 const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ({ className, label, id, ...props }, ref) => {
     return (
-      <div className="mb-6">
+      <div className="mb-6 relative w-full">
         {label && (
           <label
             htmlFor={id}
@@ -27,6 +28,15 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
             )}
             ref={ref}
             {...props}
+          />
+        </div>
+
+        <div className="absolute right-4 top-1/3 -translate-y-1/2">
+          <Image
+            src="/icons/star.png"
+            alt="Inspiration"
+            width={24}
+            height={24}
           />
         </div>
       </div>
