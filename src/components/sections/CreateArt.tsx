@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
+import Backdrop from "@/components/ui/Backdrop";
 
 interface CreateArtProps {
   prompt: string;
@@ -57,6 +58,9 @@ const CreateArt: React.FC<CreateArtProps> = ({
         >
           {isLoading ? "Generating..." : "Generate Free Preview"}
         </button>
+
+        {/* Loading Backdrop */}
+        <Backdrop isOpen={isLoading} />
       </div>
 
       {/* Helper Text */}

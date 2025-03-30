@@ -7,6 +7,7 @@ import { TextArea } from "@/components/ui/TextArea";
 import { Select } from "@/components/ui/Select";
 import { Toggle } from "@/components/ui/Toggle";
 import { Button } from "@/components/ui/Button";
+import Backdrop from "@/components/ui/Backdrop";
 
 interface EditArtworkProps {
   imageSrc: string;
@@ -98,26 +99,13 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
           onClick={onRegenerate}
           disabled={isLoading}
           className="w-full"
-          //   loading={() => isLoading}x
+          isLoading={isLoading}
         >
           Regenerate
         </Button>
       </div>
       {/* Loading Spinner */}
-      {isLoading && (
-        <div className="flex flex-col items-center justify-center mt-8">
-          {/* Custom spinner with mint color */}
-          <div className="relative w-20 h-20 mb-6">
-            <div className="absolute top-0 left-0 w-full h-full border-4 border-mint-light rounded-full opacity-25"></div>
-            <div className="absolute top-0 left-0 w-full h-full border-4 border-t-mint border-r-mint border-b-transparent border-l-transparent rounded-full animate-spin"></div>
-          </div>
-          {/* Loading message */}
-          <p className="text-lg">Creating Magic</p>
-          <p className="text-sm text-text-muted mt-2">
-            This may take a few seconds
-          </p>
-        </div>
-      )}
+      <Backdrop isOpen={isLoading} />
 
       {/* Remaining Generations */}
       <div className="text-center">
