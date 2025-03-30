@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { faqData, FAQCategory, FAQItem } from "@/data/faq";
+import { faqData } from "@/data/faq";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import { LinkButton } from "@/components/ui/LinkButton";
