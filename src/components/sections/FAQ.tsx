@@ -111,7 +111,7 @@ const FAQ: React.FC = () => {
               Our support team is here to help you with any questions or
               concerns you may have.
             </p>
-            <LinkButton href="/contact" variant="primary">
+            <LinkButton href="/support" variant="primary">
               Contact Support
             </LinkButton>
           </div>

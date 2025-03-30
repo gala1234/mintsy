@@ -89,7 +89,7 @@ const LegalPage: React.FC<LegalPageProps> = ({
                 Refund Policy
               </Link>
               <Link
-                href="/contact"
+                href="/support"
                 className="text-primary hover:text-primary-hover transition-colors"
               >
                 Contact Support
