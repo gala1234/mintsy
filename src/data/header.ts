@@ -30,12 +30,12 @@ export const header: Header[] = [
     ],
   },
   {
-    text: "Pricing",
-    link: "/pricing",
-  },
-  {
     text: "Create",
     link: "/create",
+  },
+  {
+    text: "Pricing",
+    link: "/pricing",
   },
   {
     text: "Login",
