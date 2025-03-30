@@ -1,10 +1,13 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { TextArea } from "@/components/ui/TextArea";
+import SearchBar from "@/components/ui/SearchBar";
 
 export default function Support() {
+  const [searchQuery, setSearchQuery] = React.useState("");
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-background">
       <div className="container mx-auto px-6 md:px-10">
@@ -18,15 +21,6 @@ export default function Support() {
               We&apos;re here to make your Mintsy experience magical — reach out
               anytime.
             </p>
-            <div className="mt-6 flex justify-center">
-              <Image
-                src="/icons/star.png"
-                alt="Sparkle"
-                width={32}
-                height={32}
-                className="animate-pulse"
-              />
-            </div>
           </header>
 
           {/* Search FAQ First */}
@@ -34,22 +28,14 @@ export default function Support() {
             <h2 className="text-2xl font-medium text-pink-dark mb-4 font-serif-accent">
               Search FAQ First
             </h2>
+
             <div className="flex flex-col md:flex-row gap-4">
-              <div className="relative flex-grow">
-                <input
-                  type="text"
-                  placeholder="Search help topics..."
-                  className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors"
-                />
-                <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                  <Image
-                    src="/icons/star.png"
-                    alt="Search"
-                    width={24}
-                    height={24}
-                  />
-                </div>
-              </div>
+              {/* Search Bar */}
+              <SearchBar
+                placeholder="Search help topics..."
+                value={searchQuery}
+                handleSearch={(query: string) => setSearchQuery(query)}
+              />
               <Link href="/faq">
                 <Button variant="primary" size="default">
                   Go to FAQ
