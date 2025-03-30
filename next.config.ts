@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
+//TODO: Remove images.unsplash.com from domains
+
 const nextConfig: NextConfig = {
+  images: {
+    domains: ['images.unsplash.com'],
+  },
   /* config options here */
   async redirects() {
     return [
