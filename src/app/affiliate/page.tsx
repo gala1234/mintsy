@@ -24,13 +24,13 @@ export default function Affiliate() {
           <div className="max-w-2xl mx-auto p-8 rounded-xl">
             <div className="flex flex-col md:flex-row justify-center gap-6 text-text-secondary">
               <a
-                href="#"
+                href="/affiliate/how-it-works"
                 className="text-primary hover:text-primary-hover transition-colors"
               >
                 How does it work?
               </a>
               <a
-                href="#"
+                href="/affiliate/terms"
                 className="text-primary hover:text-primary-hover transition-colors"
               >
                 Terms for Affiliates
