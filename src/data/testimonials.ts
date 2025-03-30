@@ -13,7 +13,7 @@ export const testimonials: Testimonial[] = [
     role: "Digital Artist",
     quote:
       "Mintsy transformed my creative process. The AI generation tools are intuitive, and having my art both as an NFT and on my wall is incredible.",
-    imageSrc: "/testimonials/avatar1.svg",
+    imageSrc: "/testimonials/avatar1.jpeg",
   },
   {
     id: "2",

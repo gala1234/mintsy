@@ -3,7 +3,7 @@
 import React from "react";
 import { TextArea } from "@/components/ui/TextArea";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
-import Backdrop from "@/components/ui/Backdrop";
+import Backdrop from "@/components/ui/loading/Backdrop";
 
 interface CreateArtProps {
   prompt: string;
@@ -48,7 +48,7 @@ const CreateArt: React.FC<CreateArtProps> = ({
         </button>
 
         {/* Loading Backdrop */}
-        <Backdrop isOpen={isLoading} />
+        <Backdrop isOpen={isLoading} isLoading={isLoading} />
       </div>
 
       {/* Helper Text */}

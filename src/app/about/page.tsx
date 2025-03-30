@@ -171,7 +171,7 @@ export default function About() {
             </h2>
             <div className="mb-6 mx-auto w-32 h-32 relative rounded-full overflow-hidden">
               <Image
-                src="/testimonials/avatar1.svg"
+                src="/testimonials/avatar1.jpeg"
                 alt="Gala Calero"
                 fill
                 className="object-cover"

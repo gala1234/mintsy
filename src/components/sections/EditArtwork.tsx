@@ -7,7 +7,7 @@ import { TextArea } from "@/components/ui/TextArea";
 import { Select } from "@/components/ui/Select";
 import { Toggle } from "@/components/ui/Toggle";
 import { Button } from "@/components/ui/Button";
-import Backdrop from "@/components/ui/Backdrop";
+import Backdrop from "@/components/ui/loading/Backdrop";
 
 interface EditArtworkProps {
   imageSrc: string;
@@ -156,7 +156,7 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
         </div>
       </div>
       {/* Loading Spinner */}
-      <Backdrop isOpen={isLoading} />
+      <Backdrop isOpen={isLoading} isLoading={isLoading} />
     </div>
   );
 };

@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import PricingCard from "@/components/ui/PricingCard";
-import MicrotransactionCard from "@/components/ui/MicrotransactionCard";
-import BundleOfferCard from "@/components/ui/BundleOfferCard";
+import PricingCard from "@/components/ui/cards/PricingCard";
+import MicrotransactionCard from "@/components/ui/cards/MicrotransactionCard";
+import BundleOfferCard from "@/components/ui/cards/BundleOfferCard";
 import PricingToggle from "@/components/ui/PricingToggle";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import { pricingPlans, microtransactions, bundleOffers } from "@/data/pricing";

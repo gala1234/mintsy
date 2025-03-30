@@ -59,7 +59,7 @@ const AffiliateEarnings: React.FC = () => {
           <div className="md:w-1/3 bg-mint-light/30 p-8 flex flex-col justify-center">
             <div className="mb-4">
               <Image
-                src="/testimonials/avatar1.svg"
+                src="/testimonials/avatar1.jpeg"
                 alt="Affiliate"
                 width={60}
                 height={60}

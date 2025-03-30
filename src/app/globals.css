@@ -27,8 +27,7 @@
   --color-pink: #ffb8b1;
   --color-pink-light: #fef2f2;
 
-
-
+  --color-gradient: "bg-gradient-to-r from-[#4EF6A3] via-[#52E4F5] to-[#B973F1] text-white hover:brightness-110",
 
   --color-text: var(--color-dark);
   --color-text-hover: #6b7280;
@@ -48,4 +47,34 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-sans);
+}
+
+/* Custom utilities for gradient button */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+.bg-pos-0 {
+  background-position: 0% 0%;
+}
+
+.bg-pos-100 {
+  background-position: 100% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 5s ease-in-out infinite;
 }

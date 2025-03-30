@@ -3,6 +3,8 @@ import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
+import { ModalProvider } from "@/context/ModalContext";
+import ModalContainer from "@/components/ui/modals/ModalContainer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,9 +37,12 @@ export default function RootLayout({
       className={`${inter.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="font-sans">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ModalProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ModalContainer />
+        </ModalProvider>
       </body>
     </html>
   );

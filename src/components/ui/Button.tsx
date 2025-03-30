@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "font-medium rounded-lg transition-colors duration-300",
+  "font-medium rounded-lg transition-all duration-300 relative",
   {
     variants: {
       variant: {
@@ -11,6 +11,7 @@ const buttonVariants = cva(
         secondary:
           "bg-mint-light/15 hover:bg-white border-2 border-dark hover:border-mint-dark text-dark hover:text-mint-dark",
         dark: "bg-dark hover:bg-primary text-white",
+        gradient: "bg-gradient-to-r from-primary via-[#e4d7f5] to-[#9471EC] hover:from-[#9471EC] hover:via-primary hover:to-[#e4d7f5] text-white shadow-md hover:shadow-[0_0_15px_rgba(122,111,240,0.5)] relative overflow-hidden animate-shimmer",
       },
       size: {
         default: "py-3 px-8",
@@ -57,7 +58,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             {children}
           </div>
         ) : (
-          children
+          <>{children}</>
         )}
       </button>
     );
