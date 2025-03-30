@@ -110,7 +110,10 @@ const Pricing: React.FC = () => {
             >
               Refund Policy
             </a>
-            <a href="#" className="hover:text-primary-hover transition-colors">
+            <a
+              href="/affiliate"
+              className="hover:text-primary-hover transition-colors"
+            >
               Become an Affiliate
             </a>
           </div>
