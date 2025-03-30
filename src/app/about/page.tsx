@@ -1,12 +1,21 @@
 import React from "react";
 import Image from "next/image";
+import { Metadata } from "next";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import ColorHead from "@/components/ui/ColorHead";
 import { LinkButton } from "@/components/ui/LinkButton";
+import SchemaMarkup from '@/components/ui/SchemaMarkup';
+
+export const metadata: Metadata = {
+  title: "About Mintsy.ai | AI Art Platform for NFTs & Canvas Prints",
+  description: "Discover how Mintsy.ai bridges cutting-edge AI technology with emotional, tangible art. Our mission is making AI art creation accessible to everyone.",
+  keywords: "AI art platform, NFT minting, canvas prints, text-to-image AI, digital art marketplace, generative AI",
+};
 
 export default function About() {
   return (
     <>
+      <SchemaMarkup pageName="about" />
       {/* 1. Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-background">
         <div className="container mx-auto px-6 md:px-10 text-center">

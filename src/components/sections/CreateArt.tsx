@@ -2,6 +2,7 @@
 
 import React from "react";
 import { TextArea } from "@/components/ui/TextArea";
+import { Button } from "@/components/ui/Button";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import Backdrop from "@/components/ui/loading/Backdrop";
 
@@ -20,41 +21,64 @@ const CreateArt: React.FC<CreateArtProps> = ({
 }) => {
   return (
     <div className="w-full max-w-md mx-auto py-8 px-4 flex flex-col items-center min-h-[80vh]">
-      <h1 className="text-center  text-4xl md:text-5xl lg:text-6xl mb-6 font-bold font-serif-accent">
-        Create AI Art <br />
-        with One Prompt
+      <h1 className="text-center text-4xl md:text-5xl lg:text-6xl mb-6 font-bold font-serif-accent">
+        AI Art Generator <br />
+        Text to Image
       </h1>
       {/* Subtitle */}
       <p className="text-center text-xl md:text-2xl mb-12 max-w-2xl mx-auto">
-        Type your idea and get your first artwork instantly – no sign-up needed.
+        Transform your text prompts into stunning AI-generated artwork – your
+        first creation is free.
       </p>
       {/* Input Field */}
       <TextArea
         id="prompt"
-        label="Your Prompt"
+        label="Enter Your Text-to-Image Prompt"
         value={prompt}
         onChange={(e) => onPromptChange(e.target.value)}
-        placeholder="Enter your prompt here"
+        placeholder="Describe the artwork you want to create..."
+        aria-label="AI art prompt text area"
       />
 
       {/* Generate Button */}
-      <div className="mb-4">
-        <button
+        <Button
           onClick={onGenerate}
           disabled={isLoading || !prompt.trim()}
-          className="bg-dark hover:bg-primary text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300 w-full md:w-auto"
+          variant="dark"
+          aria-label="Generate AI artwork from text prompt"
+          fullWidth
+          className="mb-4"
         >
-          {isLoading ? "Generating..." : "Generate Free Preview"}
-        </button>
+          {isLoading ? "Generating AI Art..." : "Create Your AI Artwork"}
+        </Button>
 
         {/* Loading Backdrop */}
         <Backdrop isOpen={isLoading} isLoading={isLoading} />
-      </div>
+
 
       {/* Helper Text */}
       <p className="text-text-muted text-sm">
-        First image is free. No sign-up required.
+        First AI-generated image is free. Mint as NFT or order canvas prints
+        after creation.
       </p>
+
+      {/* SEO Enhancement - Hidden content with keywords */}
+      <div className="sr-only">
+        <h2>Create Custom AI Art with Text Prompts</h2>
+        <p>
+          Our advanced text-to-image AI technology transforms your descriptions
+          into stunning digital artwork. Generate unique AI art for personal
+          projects, NFT collections, or premium canvas prints.
+        </p>
+        <ul>
+          <li>Text-to-image AI generation</li>
+          <li>Custom digital artwork creation</li>
+          <li>NFT minting platform</li>
+          <li>High-quality canvas printing</li>
+          <li>No artistic skills required</li>
+        </ul>
+      </div>
+
       {/* Background Elements */}
       <BackgroundGradient />
     </div>

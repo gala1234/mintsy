@@ -11,20 +11,19 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
           {/* Left Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-bold  font-serif-accent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-bold font-serif-accent">
               <ColorHead text="Create AI Art," className="block" />
               <ColorHead text="mint as NFT" className="block" />
               <ColorHead text="or receive it printed" className="block" />
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-lg">
-              Effortlessly create stunning AI-generated artwork.
+            <p className="text-xl md:text-2xl mb-4 max-w-lg">
+              Transform your text prompts into stunning AI-generated digital artwork with our advanced AI art generator.
             </p>
             <p className="text-xl md:text-2xl mb-8 max-w-lg">
-              Then mint it as unique NFTs on the blockchain and/or receive your
-              artwork at home.
+              Mint your creations as unique NFTs on the blockchain and order premium canvas prints delivered to your door.
             </p>
             <div>
-              <LinkButton href="/create">Create Now</LinkButton>
+              <LinkButton href="/create">Create Your AI Art Now</LinkButton>
             </div>
           </div>
 
@@ -33,10 +32,10 @@ const Hero = () => {
             <div className="relative mx-auto max-w-md">
               <Image
                 src="/canvas.png"
-                alt="AI Generated Artwork"
+                alt="AI-generated digital painting created from text prompts on Mintsy.ai"
                 width={500}
                 height={500}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-lg shadow-md"
                 priority
                 style={{ aspectRatio: "4/5" }}
               />

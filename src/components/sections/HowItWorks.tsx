@@ -11,10 +11,10 @@ const HowItWorks = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            How It Works
+            How Our AI Art Generator Works
           </h2>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto font-serif-accent">
-            Create AI-generated artwork and mint it as an NFT in just a steps:
+            Create AI-generated artwork and mint it as an NFT in just a few simple steps:
           </p>
         </div>
 
@@ -22,23 +22,23 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <StepCard 
             stepNumber={1}
-            title="Generate Your Art"
+            title="Generate Your AI Art"
             imageSrc="/screen.png"
-            imageAlt="Generate Your Art"
+            imageAlt="AI art generation interface showing text-to-image creation process"
           />
           
           <StepCard 
             stepNumber={2}
-            title="Mint as NFT"
+            title="Mint as NFT on Blockchain"
             imageSrc="/nft.png"
-            imageAlt="Mint as NFT"
+            imageAlt="NFT minting process for AI-generated artwork on blockchain"
           />
           
           <StepCard 
             stepNumber={3}
-            title="Receive Your Canvas"
+            title="Receive Premium Canvas Print"
             imageSrc="/received_canvas.png"
-            imageAlt="Receive Your Canvas"
+            imageAlt="High-quality canvas print of AI-generated artwork ready to hang"
           />
         </div>
       </div>

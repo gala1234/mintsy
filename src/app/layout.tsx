@@ -20,9 +20,10 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Mintsy - Modern Digital Art Platform",
+  title: "Mintsy.ai | AI Art Generator, NFT Minting & Canvas Prints",
   description:
-    "A creative platform for art enthusiasts, NFT collectors, and digital creators",
+    "Create stunning AI-generated artwork from text prompts, mint as unique NFTs, or order high-quality canvas prints. Try our free AI art generator today!",
+  keywords: "AI art generator, NFT minting, canvas prints, text-to-image AI, digital art platform",
 };
 
 export default function RootLayout({
