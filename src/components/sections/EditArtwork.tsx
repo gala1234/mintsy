@@ -92,7 +92,7 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
           <Toggle
             label="Keep Original Seed"
             checked={keepOriginalSeed}
-            onChange={(e) => onKeepOriginalSeedChange(e.target.checked)}
+            onChange={() => onKeepOriginalSeedChange(!keepOriginalSeed)}
           />
 
           {/* Action Section */}
