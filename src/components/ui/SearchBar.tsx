@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     // Handle search logic here
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="w-full" onSubmit={handleSubmit}>
       <div className="max-w-2xl mx-auto mb-16">
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">

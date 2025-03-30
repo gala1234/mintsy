@@ -104,7 +104,10 @@ const Pricing: React.FC = () => {
             >
               Frequently Asked Questions
             </Link>
-            <a href="#" className="hover:text-primary-hover transition-colors">
+            <a
+              href="/refund-policy"
+              className="hover:text-primary-hover transition-colors"
+            >
               Refund Policy
             </a>
             <a href="#" className="hover:text-primary-hover transition-colors">
