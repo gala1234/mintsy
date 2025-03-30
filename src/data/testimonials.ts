@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
     role: "NFT Collector",
     quote:
       "As a collector, I appreciate how Mintsy bridges digital ownership with physical art. The quality of the canvas prints exceeds my expectations.",
-    imageSrc: "/testimonials/avatar2.svg",
+    imageSrc: "/testimonials/avatar2.jpeg",
   },
   {
     id: "3",
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
     role: "Tech Enthusiast",
     quote:
       "The seamless process from AI generation to NFT minting is unmatched. Mintsy has made digital art creation accessible to everyone.",
-    imageSrc: "/testimonials/avatar3.svg",
+    imageSrc: "/testimonials/avatar3.jpeg",
   },
   {
     id: "4",
@@ -37,6 +37,6 @@ export const testimonials: Testimonial[] = [
     role: "Interior Designer",
     quote:
       "My clients love the personalized AI art I create with Mintsy. The canvas prints add a unique touch to every space I design.",
-    imageSrc: "/testimonials/avatar4.svg",
+    imageSrc: "/testimonials/avatar4.jpeg",
   },
 ];

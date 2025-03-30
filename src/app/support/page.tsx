@@ -117,8 +117,9 @@ export default function Support() {
                     id="category"
                     className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors appearance-none"
                     required
+                    defaultValue=""
                   >
-                    <option value="" disabled selected>
+                    <option value="" disabled>
                       Select a category
                     </option>
                     <option value="technical">Technical Issue</option>
