@@ -5,11 +5,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const routes = [
     '',
-    '/create',
+    '/create-ai-art',
     '/how-it-works',
-    '/pricing',
+    '/ai-art-pricing',
     '/about',
-    '/faq',
+    '/ai-art-faqs',
+    '/terms-of-service',
+    '/privacy-policy',
+    '/refund-policy',
+    '/help-support',
+    '/affiliate-program',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

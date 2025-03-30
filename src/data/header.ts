@@ -17,7 +17,7 @@ export const header: Header[] = [
     submenu: [
       {
         text: "How It Works",
-        link: "/#how-it-works",
+        link: "/how-it-works",
       },
       {
         text: "Benefits",
@@ -31,11 +31,11 @@ export const header: Header[] = [
   },
   {
     text: "Create",
-    link: "/create",
+    link: "/create-ai-art",
   },
   {
     text: "Pricing",
-    link: "/pricing",
+    link: "/ai-art-pricing",
   },
   {
     text: "Login",

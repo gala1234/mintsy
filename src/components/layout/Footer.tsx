@@ -20,25 +20,25 @@ const Footer = () => {
               About
             </Link>
             <Link
-              href="/support"
+              href="/help-support"
               className="text-dark hover:text-dark-hover transition-colors"
             >
               Contact
             </Link>
             <Link
-              href="/privacy"
+              href="/privacy-policy"
               className="text-dark hover:text-dark-hover transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms"
+              href="/terms-of-service"
               className="text-dark hover:text-dark-hover transition-colors"
             >
               Terms of Service
             </Link>
             <Link
-              href="/faq"
+              href="/ai-art-faqs"
               className="text-dark hover:text-dark-hover transition-colors"
             >
               FAQ
