@@ -37,6 +37,12 @@ const Footer = () => {
             >
               Terms of Service
             </Link>
+            <Link
+              href="/faq"
+              className="text-dark hover:text-dark-hover transition-colors"
+            >
+              FAQ
+            </Link>
           </nav>
         </div>
 

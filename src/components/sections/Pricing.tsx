@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import PricingCard from "@/components/ui/PricingCard";
 import MicrotransactionCard from "@/components/ui/MicrotransactionCard";
 import BundleOfferCard from "@/components/ui/BundleOfferCard";
@@ -97,9 +98,12 @@ const Pricing: React.FC = () => {
         {/* FAQ and Policies */}
         <div className="text-center pt-6 border-t border-mint/20">
           <div className="flex flex-col md:flex-row justify-center gap-6 text-primary">
-            <a href="#" className="hover:text-primary-hover transition-colors">
+            <Link
+              href="/faq"
+              className="hover:text-primary-hover transition-colors"
+            >
               Frequently Asked Questions
-            </a>
+            </Link>
             <a href="#" className="hover:text-primary-hover transition-colors">
               Refund Policy
             </a>
