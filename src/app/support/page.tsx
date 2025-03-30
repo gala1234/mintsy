@@ -37,7 +37,7 @@ export default function Support() {
                 handleSearch={(query: string) => setSearchQuery(query)}
               />
               <Link href="/faq">
-                <Button variant="primary" size="default">
+                <Button className="min-w-[142px]" variant="primary" size="lg">
                   Go to FAQ
                 </Button>
               </Link>

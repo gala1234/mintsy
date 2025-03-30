@@ -47,6 +47,7 @@ const FAQ: React.FC = () => {
 
         {/* Search Bar */}
         <SearchBar
+          className="mb-16"
           placeholder="Search help topics..."
           value={searchQuery}
           handleSearch={(query: string) => setSearchQuery(query)}

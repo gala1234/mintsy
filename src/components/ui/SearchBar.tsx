@@ -1,10 +1,14 @@
+import { cn } from "@/lib/utils";
+
 interface SearchBarProps {
+  className?: string;
   placeholder: string;
   value: string;
   handleSearch: (value: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
+  className,
   placeholder,
   value,
   handleSearch,
@@ -14,8 +18,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
     // Handle search logic here
   };
   return (
-    <form className="w-full" onSubmit={handleSubmit}>
-      <div className="max-w-2xl mx-auto mb-16">
+    <form className={cn("w-full", className)} onSubmit={handleSubmit}>
+      <div className="max-w-2xl mx-auto">
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
             <svg
