@@ -29,7 +29,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-2 sm:px-4">
       {/* Backdrop with blur */}
       <div
         className="absolute inset-0 bg-dark/30 backdrop-blur-sm"
@@ -37,7 +37,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
       />
 
       {/* Modal card */}
-      <div className="relative bg-white rounded-2xl shadow-lg max-w-2xl w-full mx-auto overflow-hidden animate-fadeIn">
+      <div className="relative bg-white rounded-2xl shadow-lg max-w-2xl w-full mx-auto overflow-hidden animate-fadeIn max-h-[90vh] my-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-dark/50 hover:text-dark p-1 z-10"
@@ -59,7 +59,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
           </svg>
         </button>
 
-        <div className="flex flex-col items-center p-8">
+        <div className="flex flex-col items-center p-4 sm:p-6 md:p-8 overflow-y-auto max-h-[calc(90vh-2rem)] modal-content">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 font-serif-accent">
             Unlock Unlimited Creativity
           </h2>
@@ -163,7 +163,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
           </div>
 
           {/* Microtransaction options */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
             <LinkButton
               href="/checkout?type=nft"
               variant="secondary"

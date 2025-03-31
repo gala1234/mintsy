@@ -3,12 +3,19 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useModal } from "@/context/ModalContext";
 import { header } from "@/data/header";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { Button } from "@/components/ui/elements/Button";
 
 const Mobilediv = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedSubmenu, setExpandedSubmenu] = useState<string | null>(null);
+
+  const { openModal } = useModal();
+
+  const handleOpenLoginModal = () => {
+    openModal("auth", { initialView: "login" });
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -71,18 +78,22 @@ const Mobilediv = () => {
       {/* Mobile Navigation Menu */}
       <div
         className={`absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm shadow-subtle transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? "max-h-screen py-4" : "max-h-0"
+          isMenuOpen ? "max-h-[80vh] py-4" : "max-h-0"
         }`}
       >
         <div className="container mx-auto w-full">
-          <nav className="flex flex-col items-center space-y-4 px-6 text-center">
+          <nav className="flex flex-col items-center space-y-4 px-6 text-center modal-content overflow-y-auto max-h-[70vh]">
             {header.map((item, index) => (
               <div key={index} className="w-full">
                 {item.type === "button" ? (
                   <div onClick={() => setIsMenuOpen(false)}>
-                    <LinkButton href={item.link} variant="secondary" size="sm">
+                    <Button
+                      onClick={() => handleOpenLoginModal()}
+                      variant="secondary"
+                      size="sm"
+                    >
                       {item.text}
-                    </LinkButton>
+                    </Button>
                   </div>
                 ) : item.submenu ? (
                   <div className="w-full">

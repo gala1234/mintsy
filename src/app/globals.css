@@ -1,6 +1,7 @@
 /* Add this line to import the font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 @import "tailwindcss";
+@import "./scrollbar.css";
 
 @theme {
   --color-background: #fefaf6;

@@ -1,0 +1,45 @@
+/* Custom scrollbar styling for Mintsy.ai */
+
+/* For Webkit browsers (Chrome, Safari, newer versions of Opera) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(
+    253,
+    251,
+    247,
+    0.6
+  ); /* Light background matching the site's background */
+  border-radius: 10px;
+  margin: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 180, 180, 0.7); /* Medium gray with transparency */
+  border-radius: 10px;
+  border: 2px solid rgba(253, 251, 247, 0.6);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.8); /* Darker gray on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 180, 180, 0.7) rgba(253, 251, 247, 0.6);
+}
+
+/* Specific styling for modal content */
+.modal-content {
+  padding-right: 8px; /* Add padding to prevent content from touching scrollbar */
+}
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}

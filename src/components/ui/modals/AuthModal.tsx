@@ -86,7 +86,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
       />
       <div
         className={cn(
-          "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-lg p-6 md:p-8 w-[95%] max-w-md z-50 transition-all duration-300 ease-in-out max-h-[90vh] overflow-y-auto",
+          "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-lg p-6 md:p-8 w-[95%] max-w-md z-50 transition-all duration-300 ease-in-out max-h-[90vh] overflow-y-auto modal-content",
           styles.modalContainer,
           className
         )}
