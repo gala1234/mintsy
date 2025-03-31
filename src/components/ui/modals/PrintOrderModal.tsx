@@ -16,6 +16,9 @@ const PrintOrderModal: React.FC<PrintOrderModalProps> = ({
   estimatedDelivery = "5-7 days",
   className,
 }) => {
+  if (!isOpen || !orderTrackingUrl) {
+    return null;
+  }
   const modalProps: SuccessModalProps = {
     isOpen,
     onClose,

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { TextArea } from "@/components/ui/TextArea";
-import { Button } from "@/components/ui/Button";
+import { TextArea } from "@/components/ui/elements/TextArea";
+import { Button } from "@/components/ui/elements/Button";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import Backdrop from "@/components/ui/loading/Backdrop";
 
@@ -41,20 +41,19 @@ const CreateArt: React.FC<CreateArtProps> = ({
       />
 
       {/* Generate Button */}
-        <Button
-          onClick={onGenerate}
-          disabled={isLoading || !prompt.trim()}
-          variant="dark"
-          aria-label="Generate AI artwork from text prompt"
-          fullWidth
-          className="mb-4"
-        >
-          {isLoading ? "Generating AI Art..." : "Create Your AI Artwork"}
-        </Button>
+      <Button
+        onClick={onGenerate}
+        disabled={isLoading || !prompt.trim()}
+        variant="dark"
+        aria-label="Generate AI artwork from text prompt"
+        fullWidth
+        className="mb-4"
+      >
+        {isLoading ? "Generating AI Art..." : "Create Your AI Artwork"}
+      </Button>
 
-        {/* Loading Backdrop */}
-        <Backdrop isOpen={isLoading} isLoading={isLoading} />
-
+      {/* Loading Backdrop */}
+      <Backdrop isOpen={isLoading} isLoading={isLoading} />
 
       {/* Helper Text */}
       <p className="text-text-muted text-sm">

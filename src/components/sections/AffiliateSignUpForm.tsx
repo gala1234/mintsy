@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
-import { TextArea } from "@/components/ui/TextArea";
-import { Select } from "@/components/ui/Select";
+import { Button } from "@/components/ui/elements/Button";
+import { TextArea } from "@/components/ui/elements/TextArea";
+import { Select } from "@/components/ui/elements/Select";
 
 const AffiliateSignUpForm: React.FC = () => {
   const [formData, setFormData] = useState({

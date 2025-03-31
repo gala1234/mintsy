@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
-import PageContainer from '@/components/layout/PageContainer';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/elements/Button";
+import PageContainer from "@/components/layout/PageContainer";
 
-type ProductType = 'canvas' | 'poster' | 'download' | 'nft';
+type ProductType = "canvas" | "poster" | "download" | "nft";
 
 interface CheckoutProps {
   productType: ProductType;
@@ -23,47 +23,48 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
   artworkTitle,
   artworkImage,
   price,
-  currency = '€'
+  currency = "€",
 }) => {
   const [quantity, setQuantity] = useState(1);
-  const [promoCode, setPromoCode] = useState('');
+  const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
   const [discount, setDiscount] = useState(0);
   const [showPromoInput, setShowPromoInput] = useState(false);
-  
+
   // States for form fields
   const [shippingInfo, setShippingInfo] = useState({
-    fullName: '',
-    address: '',
-    city: '',
-    postalCode: '',
-    country: 'US',
-  });
-  
-  const [paymentInfo, setPaymentInfo] = useState({
-    cardName: '',
-    cardNumber: '',
-    expiry: '',
-    cvv: '',
+    fullName: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    country: "US",
   });
 
-  const isPhysicalProduct = productType === 'canvas' || productType === 'poster';
+  const [paymentInfo, setPaymentInfo] = useState({
+    cardName: "",
+    cardNumber: "",
+    expiry: "",
+    cvv: "",
+  });
+
+  const isPhysicalProduct =
+    productType === "canvas" || productType === "poster";
   const subtotal = price * quantity;
   const shipping = isPhysicalProduct ? 10 : 0;
   const total = subtotal + shipping - discount;
 
   const getProductLabel = () => {
     switch (productType) {
-      case 'canvas':
-        return 'Canvas Print 30×30cm';
-      case 'poster':
-        return 'Premium Poster 50×70cm';
-      case 'download':
-        return 'HD Download (4K Resolution)';
-      case 'nft':
-        return 'NFT Mint (Ethereum)';
+      case "canvas":
+        return "Canvas Print 30×30cm";
+      case "poster":
+        return "Premium Poster 50×70cm";
+      case "download":
+        return "HD Download (4K Resolution)";
+      case "nft":
+        return "NFT Mint (Ethereum)";
       default:
-        return 'AI Artwork';
+        return "AI Artwork";
     }
   };
 
@@ -74,76 +75,76 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
   };
 
   const applyPromoCode = () => {
-    if (promoCode.toLowerCase() === 'mintsy10') {
+    if (promoCode.toLowerCase() === "mintsy10") {
       const discountAmount = subtotal * 0.1;
       setDiscount(discountAmount);
       setPromoApplied(true);
     }
   };
 
-  const handleShippingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleShippingChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setShippingInfo(prev => ({
+    setShippingInfo((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handlePaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    
-    if (name === 'cardNumber') {
+
+    if (name === "cardNumber") {
       // Format card number with spaces every 4 digits
       const formattedValue = value
-        .replace(/\s/g, '')
-        .replace(/(\d{4})/g, '$1 ')
+        .replace(/\s/g, "")
+        .replace(/(\d{4})/g, "$1 ")
         .trim()
         .substring(0, 19);
-      
-      setPaymentInfo(prev => ({
+
+      setPaymentInfo((prev) => ({
         ...prev,
-        [name]: formattedValue
+        [name]: formattedValue,
       }));
       return;
     }
-    
-    if (name === 'expiry') {
+
+    if (name === "expiry") {
       // Format expiry date as MM/YY
       const formattedValue = value
-        .replace(/\D/g, '')
-        .replace(/(\d{2})(\d{0,2})/, '$1/$2')
+        .replace(/\D/g, "")
+        .replace(/(\d{2})(\d{0,2})/, "$1/$2")
         .substring(0, 5);
-        
-      setPaymentInfo(prev => ({
+
+      setPaymentInfo((prev) => ({
         ...prev,
-        [name]: formattedValue
+        [name]: formattedValue,
       }));
       return;
     }
-    
-    if (name === 'cvv') {
+
+    if (name === "cvv") {
       // Only allow 3-4 digit CVV
-      const formattedValue = value
-        .replace(/\D/g, '')
-        .substring(0, 4);
-        
-      setPaymentInfo(prev => ({
+      const formattedValue = value.replace(/\D/g, "").substring(0, 4);
+
+      setPaymentInfo((prev) => ({
         ...prev,
-        [name]: formattedValue
+        [name]: formattedValue,
       }));
       return;
     }
-    
-    setPaymentInfo(prev => ({
+
+    setPaymentInfo((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle payment processing here
-    console.log('Processing payment...');
+    console.log("Processing payment...");
   };
 
   return (
@@ -151,74 +152,75 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
       <div className="min-h-screen bg-[#FDFBF7] py-10 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Back to artwork link */}
-          <Link 
-            href={`/artwork/${artworkId}`} 
+          <Link
+            href={`/artwork/${artworkId}`}
             className="inline-flex items-center text-dark/70 hover:text-dark mb-6 transition-colors"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="mr-2"
             >
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
             Return to artwork
           </Link>
-          
+
           <h1 className="text-3xl md:text-4xl font-bold mb-10 font-serif-accent text-center">
             Review Your Order
           </h1>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Order summary - 2 columns on large screens */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl shadow-sm overflow-hidden mb-6">
                 <div className="p-6">
                   <h2 className="text-xl font-bold mb-4">Order Summary</h2>
-                  
+
                   <div className="flex items-start mb-6">
                     {/* Artwork thumbnail */}
                     <div className="relative w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
-                      <Image 
-                        src={artworkImage} 
+                      <Image
+                        src={artworkImage}
                         alt={artworkTitle}
                         fill
                         className="object-cover"
                       />
                     </div>
-                    
+
                     {/* Product details */}
                     <div className="ml-4 flex-grow">
-                      <h3 className="font-medium text-dark">
-                        {artworkTitle}
-                      </h3>
+                      <h3 className="font-medium text-dark">{artworkTitle}</h3>
                       <p className="text-dark/70 text-sm">
                         {getProductLabel()}
                       </p>
                       <div className="flex justify-between items-center mt-2">
                         <span className="font-medium">
-                          {currency}{price.toFixed(2)}
+                          {currency}
+                          {price.toFixed(2)}
                         </span>
-                        
+
                         {/* Quantity selector (only for physical products) */}
                         {isPhysicalProduct && (
                           <div className="flex items-center border border-gray-200 rounded-md">
-                            <button 
+                            <button
                               onClick={() => handleQuantityChange(quantity - 1)}
                               className="px-2 py-1 text-dark/70 hover:text-dark"
                               disabled={quantity <= 1}
                             >
                               -
                             </button>
-                            <span className="px-3 py-1 text-sm">{quantity}</span>
-                            <button 
+                            <span className="px-3 py-1 text-sm">
+                              {quantity}
+                            </span>
+                            <button
                               onClick={() => handleQuantityChange(quantity + 1)}
                               className="px-2 py-1 text-dark/70 hover:text-dark"
                             >
@@ -229,33 +231,45 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Price calculations */}
                   <div className="border-t border-gray-100 pt-4">
                     <div className="flex justify-between mb-2">
                       <span className="text-dark/70">Subtotal</span>
-                      <span>{currency}{subtotal.toFixed(2)}</span>
+                      <span>
+                        {currency}
+                        {subtotal.toFixed(2)}
+                      </span>
                     </div>
-                    
+
                     {isPhysicalProduct && (
                       <div className="flex justify-between mb-2">
                         <span className="text-dark/70">Shipping</span>
-                        <span>{currency}{shipping.toFixed(2)}</span>
+                        <span>
+                          {currency}
+                          {shipping.toFixed(2)}
+                        </span>
                       </div>
                     )}
-                    
+
                     {promoApplied && (
                       <div className="flex justify-between mb-2 text-green-600">
                         <span>Discount</span>
-                        <span>-{currency}{discount.toFixed(2)}</span>
+                        <span>
+                          -{currency}
+                          {discount.toFixed(2)}
+                        </span>
                       </div>
                     )}
-                    
+
                     <div className="flex justify-between font-bold text-lg mt-4">
                       <span>Total</span>
-                      <span>{currency}{total.toFixed(2)}</span>
+                      <span>
+                        {currency}
+                        {total.toFixed(2)}
+                      </span>
                     </div>
-                    
+
                     {/* Promo code */}
                     {!promoApplied ? (
                       <div className="mt-4">
@@ -306,7 +320,7 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                   </div>
                 </div>
               </div>
-              
+
               {/* Digital delivery info or estimated shipping info */}
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <div className="flex items-start">
@@ -324,7 +338,14 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                         strokeLinejoin="round"
                         className="text-green-700"
                       >
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                        <rect
+                          x="2"
+                          y="7"
+                          width="20"
+                          height="14"
+                          rx="2"
+                          ry="2"
+                        />
                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                       </svg>
                     ) : (
@@ -348,29 +369,36 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                   </div>
                   <div>
                     <h3 className="font-medium">
-                      {isPhysicalProduct ? 'Estimated Delivery' : 'Digital Delivery'}
+                      {isPhysicalProduct
+                        ? "Estimated Delivery"
+                        : "Digital Delivery"}
                     </h3>
                     <p className="text-dark/70 text-sm">
-                      {isPhysicalProduct 
-                        ? 'Your order will arrive within 5-7 business days'
-                        : 'You will receive an immediate download link after purchase'}
+                      {isPhysicalProduct
+                        ? "Your order will arrive within 5-7 business days"
+                        : "You will receive an immediate download link after purchase"}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Checkout form - 3 columns on large screens */}
             <div className="lg:col-span-3">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Shipping information (only for physical products) */}
                 {isPhysicalProduct && (
                   <div className="bg-white rounded-xl shadow-sm p-6">
-                    <h2 className="text-xl font-bold mb-4">Shipping Information</h2>
-                    
+                    <h2 className="text-xl font-bold mb-4">
+                      Shipping Information
+                    </h2>
+
                     <div className="grid grid-cols-1 gap-4">
                       <div>
-                        <label htmlFor="fullName" className="block text-sm font-medium mb-1">
+                        <label
+                          htmlFor="fullName"
+                          className="block text-sm font-medium mb-1"
+                        >
                           Full Name
                         </label>
                         <input
@@ -383,9 +411,12 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                           className="w-full px-3 py-2 border border-gray-200 rounded-md"
                         />
                       </div>
-                      
+
                       <div>
-                        <label htmlFor="address" className="block text-sm font-medium mb-1">
+                        <label
+                          htmlFor="address"
+                          className="block text-sm font-medium mb-1"
+                        >
                           Street Address
                         </label>
                         <input
@@ -398,10 +429,13 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                           className="w-full px-3 py-2 border border-gray-200 rounded-md"
                         />
                       </div>
-                      
+
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="city" className="block text-sm font-medium mb-1">
+                          <label
+                            htmlFor="city"
+                            className="block text-sm font-medium mb-1"
+                          >
                             City
                           </label>
                           <input
@@ -414,9 +448,12 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                             className="w-full px-3 py-2 border border-gray-200 rounded-md"
                           />
                         </div>
-                        
+
                         <div>
-                          <label htmlFor="postalCode" className="block text-sm font-medium mb-1">
+                          <label
+                            htmlFor="postalCode"
+                            className="block text-sm font-medium mb-1"
+                          >
                             Postal Code
                           </label>
                           <input
@@ -430,9 +467,12 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                           />
                         </div>
                       </div>
-                      
+
                       <div>
-                        <label htmlFor="country" className="block text-sm font-medium mb-1">
+                        <label
+                          htmlFor="country"
+                          className="block text-sm font-medium mb-1"
+                        >
                           Country
                         </label>
                         <select
@@ -455,11 +495,13 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                     </div>
                   </div>
                 )}
-                
+
                 {/* Payment Information */}
                 <div className="bg-white rounded-xl shadow-sm p-6">
-                  <h2 className="text-xl font-bold mb-4">Payment Information</h2>
-                  
+                  <h2 className="text-xl font-bold mb-4">
+                    Payment Information
+                  </h2>
+
                   {/* Alternative payment methods */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     <button
@@ -478,7 +520,7 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                       </svg>
                       Google Pay
                     </button>
-                    
+
                     <button
                       type="button"
                       className="flex-1 flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 text-dark font-medium py-3 px-4 rounded-md border border-gray-200"
@@ -496,19 +538,24 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                       Apple Pay
                     </button>
                   </div>
-                  
+
                   <div className="relative mb-6">
                     <div className="absolute inset-0 flex items-center">
                       <div className="w-full border-t border-gray-200"></div>
                     </div>
                     <div className="relative flex justify-center">
-                      <span className="bg-white px-3 text-sm text-gray-500">Or pay with card</span>
+                      <span className="bg-white px-3 text-sm text-gray-500">
+                        Or pay with card
+                      </span>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div>
-                      <label htmlFor="cardName" className="block text-sm font-medium mb-1">
+                      <label
+                        htmlFor="cardName"
+                        className="block text-sm font-medium mb-1"
+                      >
                         Name on Card
                       </label>
                       <input
@@ -521,9 +568,12 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                         className="w-full px-3 py-2 border border-gray-200 rounded-md"
                       />
                     </div>
-                    
+
                     <div>
-                      <label htmlFor="cardNumber" className="block text-sm font-medium mb-1">
+                      <label
+                        htmlFor="cardNumber"
+                        className="block text-sm font-medium mb-1"
+                      >
                         Card Number
                       </label>
                       <div className="relative">
@@ -538,18 +588,38 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                           className="w-full px-3 py-2 border border-gray-200 rounded-md pr-10"
                         />
                         <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-1">
-                          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="24" height="16" rx="2" fill="#FFB3C7" />
+                          <svg
+                            width="24"
+                            height="16"
+                            viewBox="0 0 24 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              width="24"
+                              height="16"
+                              rx="2"
+                              fill="#FFB3C7"
+                            />
                             <circle cx="9" cy="8" r="4" fill="#FF5F8F" />
-                            <circle cx="15" cy="8" r="4" fill="#FF8F6F" opacity="0.8" />
+                            <circle
+                              cx="15"
+                              cy="8"
+                              r="4"
+                              fill="#FF8F6F"
+                              opacity="0.8"
+                            />
                           </svg>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="expiry" className="block text-sm font-medium mb-1">
+                        <label
+                          htmlFor="expiry"
+                          className="block text-sm font-medium mb-1"
+                        >
                           Expiration Date
                         </label>
                         <input
@@ -563,9 +633,12 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                           className="w-full px-3 py-2 border border-gray-200 rounded-md"
                         />
                       </div>
-                      
+
                       <div>
-                        <label htmlFor="cvv" className="block text-sm font-medium mb-1">
+                        <label
+                          htmlFor="cvv"
+                          className="block text-sm font-medium mb-1"
+                        >
                           CVV
                         </label>
                         <input
@@ -582,16 +655,19 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Completion button and total */}
                 <div className="bg-white rounded-xl shadow-sm p-6">
                   <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                     <div className="text-center sm:text-left">
                       <span className="block text-dark/70">Total amount</span>
-                      <span className="text-2xl font-bold">{currency}{total.toFixed(2)}</span>
+                      <span className="text-2xl font-bold">
+                        {currency}
+                        {total.toFixed(2)}
+                      </span>
                     </div>
-                    
-                    <Button 
+
+                    <Button
                       type="submit"
                       size="default"
                       className="w-full sm:w-auto px-8 py-3"
@@ -599,9 +675,17 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
                       Complete Purchase
                     </Button>
                   </div>
-                  
+
                   <p className="text-xs text-center sm:text-right text-dark/50 mt-4">
-                    By completing this purchase, you agree to our <Link href="/terms-of-service" className="underline">Terms of Service</Link> and <Link href="/privacy-policy" className="underline">Privacy Policy</Link>.
+                    By completing this purchase, you agree to our{" "}
+                    <Link href="/terms-of-service" className="underline">
+                      Terms of Service
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/privacy-policy" className="underline">
+                      Privacy Policy
+                    </Link>
+                    .
                   </p>
                 </div>
               </form>
@@ -613,4 +697,4 @@ const CheckoutPage: React.FC<CheckoutProps> = ({
   );
 };
 
-export default CheckoutPage; 
+export default CheckoutPage;

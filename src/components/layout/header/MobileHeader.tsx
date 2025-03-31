@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { header } from "@/data/header";
-import { LinkButton } from "@/components/ui/LinkButton";
+import { LinkButton } from "@/components/ui/elements/LinkButton";
 
 const Mobilediv = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

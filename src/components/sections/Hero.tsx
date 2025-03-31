@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { LinkButton } from "@/components/ui/LinkButton";
+import { LinkButton } from "@/components/ui/elements/LinkButton";
 import ColorHead from "@/components/ui/ColorHead";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 
@@ -17,10 +17,12 @@ const Hero = () => {
               <ColorHead text="or receive it printed" className="block" />
             </h1>
             <p className="text-xl md:text-2xl mb-4 max-w-lg">
-              Transform your text prompts into stunning AI-generated digital artwork with our advanced AI art generator.
+              Transform your text prompts into stunning AI-generated digital
+              artwork with our advanced AI art generator.
             </p>
             <p className="text-xl md:text-2xl mb-8 max-w-lg">
-              Mint your creations as unique NFTs on the blockchain and order premium canvas prints delivered to your door.
+              Mint your creations as unique NFTs on the blockchain and order
+              premium canvas prints delivered to your door.
             </p>
             <div>
               <LinkButton href="/create">Create Your AI Art Now</LinkButton>

@@ -2,11 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
-import { TextArea } from "@/components/ui/TextArea";
-import SearchBar from "@/components/ui/SearchBar";
+import { Button } from "@/components/ui/elements/Button";
+import { TextArea } from "@/components/ui/elements/TextArea";
+import SearchBar from "@/components/ui/elements/SearchBar";
 
-export default function Support() {
+function Support() {
   const [searchQuery, setSearchQuery] = React.useState("");
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-background">
@@ -209,3 +209,5 @@ export default function Support() {
     </section>
   );
 }
+
+export default Support;

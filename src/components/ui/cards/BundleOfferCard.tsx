@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkButton } from "../LinkButton";
+import { LinkButton } from "../elements/LinkButton";
 
 interface BundleOfferCardProps {
   name: string;

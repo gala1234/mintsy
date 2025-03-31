@@ -4,8 +4,8 @@ import React, { useState, useMemo } from "react";
 import { faqData } from "@/data/faq";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
-import { LinkButton } from "@/components/ui/LinkButton";
-import SearchBar from "../ui/SearchBar";
+import { LinkButton } from "@/components/ui/elements/LinkButton";
+import SearchBar from "../ui/elements/SearchBar";
 
 const FAQ: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");

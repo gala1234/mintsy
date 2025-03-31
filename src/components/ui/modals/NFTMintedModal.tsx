@@ -11,7 +11,7 @@ interface NFTMintedModalProps {
 const NFTMintedModal: React.FC<NFTMintedModalProps> = ({
   isOpen,
   onClose,
-  nftLink = "https://opensea.io/", // Default link, should be replaced with actual NFT link
+  nftLink,
   className,
 }) => {
   const modalProps: SuccessModalProps = {

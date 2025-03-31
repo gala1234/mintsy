@@ -1,25 +1,27 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/Button';
-import LimitReachedModal from '@/components/ui/LimitReachedModal';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/elements/Button";
+import LimitReachedModal from "@/components/ui/modals/LimitReachedModal";
 
 const LimitModalExample = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalType, setModalType] = useState<'generation' | 'mint' | 'download'>('generation');
+  const [modalType, setModalType] = useState<
+    "generation" | "mint" | "download"
+  >("generation");
 
   const openGenerationModal = () => {
-    setModalType('generation');
+    setModalType("generation");
     setIsModalOpen(true);
   };
 
   const openMintModal = () => {
-    setModalType('mint');
+    setModalType("mint");
     setIsModalOpen(true);
   };
 
   const openDownloadModal = () => {
-    setModalType('download');
+    setModalType("download");
     setIsModalOpen(true);
   };
 
@@ -30,21 +32,21 @@ const LimitModalExample = () => {
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6">Limit Reached Modal Examples</h2>
-      
+
       <div className="flex flex-wrap gap-4 mb-8">
         <Button onClick={openGenerationModal}>
           Show Generation Limit Modal
         </Button>
-        
+
         <Button onClick={openMintModal} variant="secondary">
           Show Mint Limit Modal
         </Button>
-        
+
         <Button onClick={openDownloadModal} variant="dark">
           Show Download Limit Modal
         </Button>
       </div>
-      
+
       <LimitReachedModal
         isOpen={isModalOpen}
         onClose={closeModal}
@@ -57,4 +59,4 @@ const LimitModalExample = () => {
   );
 };
 
-export default LimitModalExample; 
+export default LimitModalExample;

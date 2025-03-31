@@ -1,24 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/elements/Button";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import ColorHead from "@/components/ui/ColorHead";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useModal } from "@/context/ModalContext";
 
 const HowItWorksContent = () => {
-  const { openModal } = useModal();
-
-  // Example function to open a success modal
-  const handleOpenSuccessModal = () => {
-    openModal("hdDownload", {
-      downloadUrl: "https://example.com/download",
-    });
-  };
-
   const steps = [
     {
       title: "Create with Text-to-Image AI",
@@ -83,7 +73,8 @@ const HowItWorksContent = () => {
               <ColorHead text="How to Create AI Art with Mintsy" />
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-              Transform your text prompts into stunning digital art with our AI art generator
+              Transform your text prompts into stunning digital art with our AI
+              art generator
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/create">
@@ -91,9 +82,6 @@ const HowItWorksContent = () => {
                   Create AI Art Now
                 </Button>
               </Link>
-              <Button variant="dark" size="lg" onClick={handleOpenSuccessModal}>
-                View AI Art Examples
-              </Button>
             </div>
           </div>
         </div>
@@ -108,7 +96,8 @@ const HowItWorksContent = () => {
               <ColorHead text="Text-to-Image AI Art Creation Process" />
             </h2>
             <p className="text-xl max-w-3xl mx-auto">
-              Our AI art generator makes digital art creation accessible to everyone, no artistic skills required
+              Our AI art generator makes digital art creation accessible to
+              everyone, no artistic skills required
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -256,4 +245,4 @@ const HowItWorksContent = () => {
   );
 };
 
-export default HowItWorksContent; 
+export default HowItWorksContent;

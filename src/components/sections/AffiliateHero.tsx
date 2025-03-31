@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { LinkButton } from "@/components/ui/LinkButton";
+import { LinkButton } from "@/components/ui/elements/LinkButton";
 
 const AffiliateHero: React.FC = () => {
   return (

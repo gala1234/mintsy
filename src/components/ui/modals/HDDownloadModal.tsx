@@ -1,35 +1,31 @@
 import React from "react";
 import SuccessModal, { SuccessModalProps } from "./SuccessModal";
 
-interface HDDownloadModalProps {
+export interface HDDownloadModalProps {
   isOpen: boolean;
   onClose?: () => void;
   downloadUrl: string;
-  className?: string;
 }
 
 const HDDownloadModal: React.FC<HDDownloadModalProps> = ({
   isOpen,
   onClose,
   downloadUrl,
-  className,
 }) => {
   const modalProps: SuccessModalProps = {
     isOpen,
     onClose,
-    title: "HD Download Ready!",
-    message: "Your image has finished downloading in high definition.",
+    title: "Your HD Download is Ready",
+    message: "Download your high-resolution image to use anywhere you'd like.",
     primaryAction: {
-      text: "Download Now",
+      text: "Download HD Image",
       href: downloadUrl,
     },
     secondaryAction: {
-      text: "Return to Gallery",
-      href: "/", // Assuming the gallery is at the root path
+      text: "Close",
+      onClick: onClose,
     },
-    showSocialSharing: true,
-    iconType: "checkmark",
-    className,
+    iconType: "sparkle",
   };
 
   return <SuccessModal {...modalProps} />;
