@@ -37,6 +37,7 @@
 /* Specific styling for modal content */
 .modal-content {
   padding-right: 8px; /* Add padding to prevent content from touching scrollbar */
+  padding-left: 8px;
 }
 
 /* Ensure smooth scrolling behavior */
