@@ -7,7 +7,7 @@ import { useModal } from "@/context/ModalContext";
 import { header } from "@/data/header";
 import { Button } from "@/components/ui/elements/Button";
 
-const Mobilediv = () => {
+const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedSubmenu, setExpandedSubmenu] = useState<string | null>(null);
 
@@ -58,17 +58,17 @@ const Mobilediv = () => {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-text transition-transform duration-300 ${
+            className={`block w-6 h-0.5 bg-dark transition-transform duration-300 ${
               isMenuOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-text transition-opacity duration-300 ${
+            className={`block w-6 h-0.5 bg-dark transition-opacity duration-300 ${
               isMenuOpen ? "opacity-0" : "opacity-100"
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-text transition-transform duration-300 ${
+            className={`block w-6 h-0.5 bg-dark transition-transform duration-300 ${
               isMenuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
@@ -159,4 +159,4 @@ const Mobilediv = () => {
   );
 };
 
-export default Mobilediv;
+export default MobileHeader;
