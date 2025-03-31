@@ -30,6 +30,10 @@ export const header: Header[] = [
     ],
   },
   {
+    text: "Gallery",
+    link: "/gallery",
+  },
+  {
     text: "Create",
     link: "/create-ai-art",
   },
