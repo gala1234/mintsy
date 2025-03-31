@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/elements/Button";
 
+//TODO: close button inside the modal
+
 interface ArtworkDetailModalProps {
   isOpen: boolean;
   onClose: () => void;

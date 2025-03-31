@@ -11,7 +11,8 @@ interface SchemaMarkupProps {
     | "pricing"
     | "about"
     | "faq"
-    | "gallery";
+    | "gallery"
+    | "artwork";
 }
 
 const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ pageName }) => {

@@ -8,6 +8,14 @@ import { LinkButton } from "@/components/ui/elements/LinkButton";
 import Link from "next/link";
 import ArtworkDetailModal from "@/components/ui/modals/ArtworkDetailModal";
 
+//TODO: ✅ Optional Enhancements (Post-MVP):
+// “Featured Today” section — Mintsy-picked art
+// “Family Spotlight” carousel
+// “Remix This Prompt” button
+// Bookmark favorite public art
+// Share entire families via link
+// Commenting or remixing flow
+
 // Types for our gallery data
 interface Artwork {
   id: string;
