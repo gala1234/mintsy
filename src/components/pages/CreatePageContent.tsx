@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PageContainer from "@/components/layout/PageContainer";
 import CreateArt from "@/components/sections/CreateArt";
 import EditArtwork from "@/components/sections/EditArtwork";
 
@@ -36,8 +37,8 @@ const CreatePageContent = () => {
   };
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-background">
-      <div className="container mx-auto px-6 md:px-10">
+    <PageContainer>
+      <div>
         {!showPreview ? (
           <CreateArt
             prompt={prompt}
@@ -61,14 +62,15 @@ const CreatePageContent = () => {
           />
         )}
       </div>
-      
+
       {/* SEO Enhancement - Hidden section with keyword-rich content */}
       <div className="sr-only">
         <h2>AI Art Generator - Create Digital Art from Text</h2>
         <p>
-          Use our advanced text-to-image AI to create stunning digital artwork. 
-          No artistic skills required. Generate AI art from simple text prompts, 
-          customize your creation, and mint as NFT or order premium canvas prints.
+          Use our advanced text-to-image AI to create stunning digital artwork.
+          No artistic skills required. Generate AI art from simple text prompts,
+          customize your creation, and mint as NFT or order premium canvas
+          prints.
         </p>
         <ul>
           <li>AI-generated digital art</li>
@@ -78,8 +80,8 @@ const CreatePageContent = () => {
           <li>Digital artwork creation</li>
         </ul>
       </div>
-    </section>
+    </PageContainer>
   );
 };
 
-export default CreatePageContent; 
+export default CreatePageContent;

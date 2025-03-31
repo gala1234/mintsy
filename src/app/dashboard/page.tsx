@@ -1,4 +1,5 @@
 import React from "react";
+import PageContainer from "@/components/layout/PageContainer";
 import ArtworkCard from "@/components/ui/cards/ArtworkCard";
 
 // Sample data for demonstration
@@ -37,14 +38,15 @@ const sampleArtworks = [
 
 export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-[#FDFBF7] px-4 sm:px-6 md:px-8 py-10 md:py-16">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-2">
-          Your Artworks
-        </h1>
-        <p className="text-gray-500 mb-10">Create, customize, and share your AI masterpieces</p>
-        
-        {/* Empty state (uncomment to use)
+    <PageContainer>
+      <h1 className="text-4xl md:text-5xl font-medium text-gray-900 mb-2">
+        Your Artworks
+      </h1>
+      <p className="text-gray-500 mb-10">
+        Create, customize, and share your AI masterpieces
+      </p>
+
+      {/* Empty state (uncomment to use)
         <div className="flex flex-col items-center justify-center py-20 text-center">
           <div className="w-32 h-32 mb-6 rounded-full bg-lavander-light flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-lavander-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,19 +62,18 @@ export default function DashboardPage() {
           </button>
         </div>
         */}
-        
-        {/* Artwork Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {sampleArtworks.map((artwork) => (
-            <ArtworkCard
-              key={artwork.id}
-              imageUrl={artwork.imageUrl}
-              title={artwork.title}
-              showWatermark={true}
-            />
-          ))}
-        </div>
+
+      {/* Artwork Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {sampleArtworks.map((artwork) => (
+          <ArtworkCard
+            key={artwork.id}
+            imageUrl={artwork.imageUrl}
+            title={artwork.title}
+            showWatermark={true}
+          />
+        ))}
       </div>
-    </main>
+    </PageContainer>
   );
-} 
+}
