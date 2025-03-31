@@ -3,11 +3,18 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useModal } from "@/context/ModalContext";
 import { header } from "@/data/header";
 import { Button } from "@/components/ui/elements/Button";
 
 const Desktopdiv = () => {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+
+  const { openModal } = useModal();
+
+  const handleOpenLoginModal = () => {
+    openModal("auth", { initialView: "login" });
+  };
 
   const handleMouseEnter = (link: string) => {
     setActiveSubmenu(link);
@@ -47,7 +54,7 @@ const Desktopdiv = () => {
               onMouseEnter={() => handleMouseEnter(item.link)}
             >
               {item.type === "button" ? (
-                <Button onClick={() => console.log("login modal")} size="sm">
+                <Button onClick={() => handleOpenLoginModal()} size="sm">
                   {item.text}
                 </Button>
               ) : (

@@ -6,6 +6,7 @@ import PrintOrderModal from "./PrintOrderModal";
 import HDDownloadModal from "./HDDownloadModal";
 import NFTMintedModal from "./NFTMintedModal";
 import SuccessModal from "./SuccessModal";
+import AuthModal from "./AuthModal";
 
 const ModalContainer: React.FC = () => {
   const { isOpen, activeModal, modalData, closeModal } = useModal();
@@ -47,13 +48,23 @@ const ModalContainer: React.FC = () => {
           onClose={closeModal}
           title={modalData.success.title}
           message={modalData.success.message}
-          primaryAction={modalData.success.primaryAction || {
-            text: "Continue",
-            href: "#",
-          }}
+          primaryAction={
+            modalData.success.primaryAction || {
+              text: "Continue",
+              href: "#",
+            }
+          }
           secondaryAction={modalData.success.secondaryAction}
           iconType={modalData.success.iconType}
           showSocialSharing={modalData.success.showSocialSharing}
+        />
+      );
+    case "auth":
+      return (
+        <AuthModal
+          isOpen={isOpen}
+          onClose={closeModal}
+          initialView={modalData.auth?.initialView}
         />
       );
     default:
@@ -61,4 +72,4 @@ const ModalContainer: React.FC = () => {
   }
 };
 
-export default ModalContainer; 
+export default ModalContainer;

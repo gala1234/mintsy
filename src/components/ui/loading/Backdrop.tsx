@@ -10,6 +10,7 @@ interface BackdropProps {
   className?: string;
   spinnerClassName?: string;
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const Backdrop: React.FC<BackdropProps> = ({
@@ -21,6 +22,7 @@ const Backdrop: React.FC<BackdropProps> = ({
   className = "",
   spinnerClassName = "",
   children,
+  onClick,
 }) => {
   if (!isOpen) return null;
 
@@ -37,6 +39,7 @@ const Backdrop: React.FC<BackdropProps> = ({
         "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center",
         className
       )}
+      onClick={onClick}
     >
       <div className="flex flex-col items-center justify-center p-8 max-w-md mx-auto text-center">
         {/* Custom spinner with mint color */}

@@ -47,7 +47,7 @@ const recentActivity = [
 
 export default function AccountPage() {
   // For demo purposes, we'll set the user as a free user
-  const isPro = false;
+  const isPro = true;
   const username = "Sarah";
   const remainingGenerations = 2;
   const remainingNFTMints = isPro ? 7 : 0;

@@ -3,11 +3,7 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 // Define all the possible modals in the application
-type ModalType = 
-  | "printOrder" 
-  | "hdDownload" 
-  | "nftMinted" 
-  | "success";
+type ModalType = "printOrder" | "hdDownload" | "nftMinted" | "success" | "auth";
 
 // Define the data structure for each modal
 interface PrintOrderData {
@@ -40,11 +36,16 @@ interface SuccessData {
   showSocialSharing?: boolean;
 }
 
+interface AuthData {
+  initialView?: "login" | "signup";
+}
+
 interface ModalData {
   printOrder?: PrintOrderData;
   hdDownload?: HDDownloadData;
   nftMinted?: NFTMintedData;
   success?: SuccessData;
+  auth?: AuthData;
 }
 
 // Map modal types to their data types for type safety
@@ -53,7 +54,8 @@ type ModalDataMap = {
   hdDownload: HDDownloadData;
   nftMinted: NFTMintedData;
   success: SuccessData;
-}
+  auth: AuthData;
+};
 
 interface ModalContextType {
   isOpen: boolean;
@@ -75,14 +77,16 @@ const ModalContext = createContext<ModalContextType>(initialModalContext);
 
 export const useModal = () => useContext(ModalContext);
 
-export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ModalProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<ModalType | null>(null);
   const [modalData, setModalData] = useState<ModalData>({});
 
   const openModal = <T extends ModalType>(modal: T, data: ModalDataMap[T]) => {
     setActiveModal(modal);
-    
+
     // Update modal data based on the type
     switch (modal) {
       case "printOrder":
@@ -97,10 +101,13 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       case "success":
         setModalData({ success: data as SuccessData });
         break;
+      case "auth":
+        setModalData({ auth: data as AuthData });
+        break;
       default:
         setModalData({});
     }
-    
+
     setIsOpen(true);
   };
 
@@ -128,4 +135,4 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   );
 };
 
-export default ModalContext; 
+export default ModalContext;
