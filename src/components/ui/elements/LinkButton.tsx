@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const linkButtonVariants = cva(
-  "inline-block font-medium rounded-lg transition-colors duration-300",
+  "inline-block font-medium rounded-lg transition-colors duration-300 text-center",
   {
     variants: {
       variant: {
