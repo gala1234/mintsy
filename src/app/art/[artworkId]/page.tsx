@@ -12,10 +12,10 @@ import { getArtwork } from "./mookdata";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ artworkId: string }>;
 }): Promise<Metadata> {
-  const { id } = await params;
-  const artwork = await getArtwork(id);
+  const { artworkId } = await params;
+  const artwork = await getArtwork(artworkId);
 
   if (!artwork) {
     return {
@@ -37,10 +37,10 @@ export async function generateMetadata({
 export default async function ArtworkPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ artworkId: string }>;
 }) {
-  const { id } = await params;
-  const artwork = await getArtwork(id);
+  const { artworkId } = await params;
+  const artwork = await getArtwork(artworkId);
 
   if (!artwork || !artwork.isPublic) {
     notFound();
