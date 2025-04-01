@@ -21,7 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
   return (
     <form className={cn("w-full", className)} onSubmit={handleSubmit}>
-      <div className="max-w-2xl mx-auto">
+      <div className="mx-auto">
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
             <svg

@@ -134,14 +134,14 @@ const GalleryPage: React.FC = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-dark mb-4 font-serif-accent">
           The Mintsy Gallery
         </h1>
-        <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+        <p className="text-lg text-text-secondary mx-auto">
           Explore what others have imagined — from poems and dreams to digital
           memories.
         </p>
       </div>
 
       {/* Filters Bar (Sticky on Scroll) */}
-      <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-sm py-4 px-6 rounded-xl shadow-subtle mb-8">
+      <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-sm py-4 rounded-xl shadow-subtle mb-8">
         <div className="flex flex-col gap-4 items-center justify-between">
           <SearchBar
             placeholder="Search by prompt, title, or author"
@@ -150,7 +150,7 @@ const GalleryPage: React.FC = () => {
             isSmall
           />
 
-          <div className="flex flex-wrap gap-2 items-center">
+          <div className="w-full flex flex-wrap gap-2 items-center">
             <select
               className="px-3 py-2 rounded-lg border border-dark/10 focus:outline-none focus:ring-2 focus:ring-primary/30"
               value={selectedFamily}
