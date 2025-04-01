@@ -132,12 +132,9 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
             </Button>
 
             <div className="mt-4 text-center">
-              <button
-                onClick={onClose}
-                className="text-sm text-text-muted hover:text-dark transition-colors"
-              >
+              <Button onClick={onClose} variant="tertiary">
                 Report Artwork
-              </button>
+              </Button>
             </div>
           </div>
         </div>

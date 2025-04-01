@@ -4,6 +4,7 @@ interface SearchBarProps {
   className?: string;
   placeholder: string;
   value: string;
+  isSmall?: boolean;
   handleSearch: (value: string) => void;
 }
 
@@ -11,6 +12,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   className,
   placeholder,
   value,
+  // isSmall,
   handleSearch,
 }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -39,7 +41,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           </div>
           <input
             type="text"
-            className="w-full p-4 pl-12 text-base bg-white border border-mint/20 rounded-lg focus:ring-primary focus:border-primary"
+            className="w-full p-4 pl-12 text-base rounded-lg bg-white border border-dark/10 focus:outline-none focus:ring-2 focus:ring-primary/30"
             placeholder={placeholder}
             value={value}
             onChange={(e) => handleSearch(e.target.value)}

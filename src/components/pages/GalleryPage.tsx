@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import PageContainer from "@/components/layout/PageContainer";
 import { Button } from "@/components/ui/elements/Button";
 import { LinkButton } from "@/components/ui/elements/LinkButton";
 // import { useModal } from "@/context/ModalContext";
 import Link from "next/link";
 import ArtworkDetailModal from "@/components/ui/modals/ArtworkDetailModal";
+import SearchBar from "@/components/ui/elements/SearchBar";
 
 //TODO: ✅ Optional Enhancements (Post-MVP):
 // “Featured Today” section — Mintsy-picked art
@@ -140,16 +142,13 @@ const GalleryPage: React.FC = () => {
 
       {/* Filters Bar (Sticky on Scroll) */}
       <div className="sticky top-20 z-30 bg-background/95 backdrop-blur-sm py-4 px-6 rounded-xl shadow-subtle mb-8">
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div className="w-full md:w-1/3">
-            <input
-              type="text"
-              placeholder="Search by prompt, title, or author"
-              className="w-full px-4 py-2 rounded-lg border border-dark/10 focus:outline-none focus:ring-2 focus:ring-primary/30"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+        <div className="flex flex-col gap-4 items-center justify-between">
+          <SearchBar
+            placeholder="Search by prompt, title, or author"
+            value={searchQuery}
+            handleSearch={setSearchQuery}
+            isSmall
+          />
 
           <div className="flex flex-wrap gap-2 items-center">
             <select
@@ -272,9 +271,11 @@ const GalleryPage: React.FC = () => {
               }`}
             >
               <div className={`relative ${viewMode === "grid" ? "" : "w-1/3"}`}>
-                <img
+                <Image
                   src={artwork.imageUrl}
                   alt={artwork.title}
+                  width={1}
+                  height={1}
                   className={`w-full ${
                     viewMode === "grid" ? "aspect-square" : "h-full"
                   } object-cover`}
@@ -305,7 +306,7 @@ const GalleryPage: React.FC = () => {
                   </span>
 
                   <div className="flex items-center gap-2">
-                    <button className="inline-flex items-center text-text-muted hover:text-[#F36F5A] transition-colors">
+                    <button className="inline-flex items-center text-text-muted hover:text-pink transition-colors">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
