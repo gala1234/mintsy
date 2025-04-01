@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/elements/Button";
 import { TextArea } from "@/components/ui/elements/TextArea";
+import { Input } from "@/components/ui/elements/Input";
 import SearchBar from "@/components/ui/elements/SearchBar";
 
 function Support() {
@@ -52,57 +53,13 @@ function Support() {
 
             <form className="space-y-6">
               {/* Name Field */}
-              <div className="mb-6 relative w-full">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-text mb-2"
-                >
-                  Name
-                </label>
-                <div className="relative">
-                  <input
-                    id="name"
-                    type="text"
-                    className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors"
-                    required
-                  />
-                </div>
-              </div>
+              <Input id="name" type="text" label="Name" required />
 
               {/* Email Field */}
-              <div className="mb-6 relative w-full">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-text mb-2"
-                >
-                  Email
-                </label>
-                <div className="relative">
-                  <input
-                    id="email"
-                    type="email"
-                    className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors"
-                    required
-                  />
-                </div>
-              </div>
+              <Input id="email" type="email" label="Email" required />
 
               {/* Order ID Field (Optional) */}
-              <div className="mb-6 relative w-full">
-                <label
-                  htmlFor="orderId"
-                  className="block text-sm font-medium text-text mb-2"
-                >
-                  Order ID (optional)
-                </label>
-                <div className="relative">
-                  <input
-                    id="orderId"
-                    type="text"
-                    className="w-full py-4 px-6 rounded-lg border-2 border-mint text-lg focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-              </div>
+              <Input id="orderId" type="text" label="Order ID (optional)" />
 
               {/* Category Dropdown */}
               <div className="mb-6 relative w-full">
@@ -158,7 +115,7 @@ function Support() {
 
               {/* Submit Button */}
               <div className="mt-8">
-                <Button variant="dark" fullWidth={true} type="submit">
+                <Button variant="signup" fullWidth={true} type="submit">
                   Send Message
                 </Button>
                 <p className="text-sm text-text-muted mt-4">

@@ -11,7 +11,10 @@ const buttonVariants = cva(
         secondary:
           "bg-mint-light/15 hover:bg-white border-2 border-dark hover:border-mint-dark text-dark hover:text-mint-dark",
         dark: "bg-dark hover:bg-primary text-white",
-        gradient: "bg-gradient-to-r from-primary via-[#e4d7f5] to-[#9471EC] hover:from-[#9471EC] hover:via-primary hover:to-[#e4d7f5] text-white shadow-md hover:shadow-[0_0_15px_rgba(122,111,240,0.5)] relative overflow-hidden animate-shimmer",
+        gradient:
+          "bg-gradient-to-r from-primary via-[#e4d7f5] to-[#9471EC] hover:from-[#9471EC] hover:via-primary hover:to-[#e4d7f5] text-white shadow-md hover:shadow-[0_0_15px_rgba(122,111,240,0.5)] relative overflow-hidden animate-shimmer",
+        signup:
+          "bg-gradient-to-r from-[#B7D7C2] via-[#9D7ECF] to-[#F36F5A] text-white hover:brightness-105 shadow-md hover:shadow-[0_0_15px_rgba(157,126,207,0.5)] relative overflow-hidden",
       },
       size: {
         default: "py-3 px-8",
