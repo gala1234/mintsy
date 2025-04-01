@@ -96,7 +96,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-green-700"
+                    className="text-mint-dark"
                   >
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
@@ -110,10 +110,10 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
         {/* Divider */}
         <div className="relative w-full mb-8">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200"></div>
+            <div className="w-full border-t border-border"></div>
           </div>
           <div className="relative flex justify-center">
-            <span className="bg-white px-4 text-sm text-gray-500">
+            <span className="bg-white px-4 text-sm text-text-muted">
               Or unlock this artwork without subscribing
             </span>
           </div>
