@@ -3,10 +3,8 @@
 import React, { useState } from "react";
 import { Button } from "../elements/Button";
 import { Input } from "../elements/Input";
-import { IconButton } from "../elements/IconButton";
 import { AuthButton } from "../elements/AuthButton";
-import Backdrop from "../loading/Backdrop";
-import { cn } from "@/lib/utils";
+import ModalLayout from "./ModalLayout";
 
 export interface AuthModalProps {
   isOpen: boolean;
@@ -19,7 +17,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
   isOpen,
   onClose,
   initialView = "signup",
-  className = "",
 }) => {
   const [activeView, setActiveView] = useState<"login" | "signup">(initialView);
   const [isLoading, setIsLoading] = useState(false);
@@ -79,272 +76,241 @@ const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <Backdrop
-      isOpen={isOpen}
-      onClick={onClose}
-      className="bg-[rgba(67,64,93,0.5)] animate-fadeIn backdrop-blur-sm"
-    >
-      <div
-        className={cn(
-          "bg-[#FDFBF7] rounded-xl shadow-lg p-6 md:p-8 max-w-md w-full mx-auto text-center relative transition-all duration-300 ease-in-out border border-[rgba(183,215,194,0.3)] max-h-[90vh] overflow-y-auto",
-          className
-        )}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Close button */}
-        <IconButton
-          iconType="close"
-          size="sm"
-          variant="ghost"
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10"
-          aria-label="Close modal"
-        />
-
-        <div className="flex flex-col items-center px-8 pt-10 pb-4">
-          {/* Header with illustration */}
-          <div className="text-center mb-6 relative">
-            {/* Soft illustration with sparkle effect */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"></div>
-            <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#B7D7C2] to-[#9D7ECF]/30 flex items-center justify-center animate-pulse-custom relative overflow-hidden">
-                <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-br from-[rgba(183,215,194,0)] via-[rgba(183,215,194,0.4)] to-[rgba(183,215,194,0)] transform rotate-45 animate-avatar-shimmer"></div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-[#43405D]"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
+    <ModalLayout isOpen={isOpen} onClose={onClose}>
+      <div className="flex flex-col items-center">
+        {/* Header with illustration */}
+        <div className="text-center mb-6 relative">
+          {/* Soft illustration with sparkle effect */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"></div>
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#B7D7C2] to-[#9D7ECF]/30 flex items-center justify-center animate-pulse-custom relative overflow-hidden">
+              <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-br from-[rgba(183,215,194,0)] via-[rgba(183,215,194,0.4)] to-[rgba(183,215,194,0)] transform rotate-45 animate-avatar-shimmer"></div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 text-text-secondary"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </div>
-            <h2 className="text-2xl font-medium text-[#43405D] mb-2">
-              {activeView === "login" ? "Log In to Mintsy" : "Join Mintsy"}
-            </h2>
-            <p className="text-gray-500">
-              Create, print, and save your art forever
-            </p>
           </div>
+          <h2 className="text-2xl font-medium text-text mb-2">
+            {activeView === "login" ? "Log In to Mintsy" : "Join Mintsy"}
+          </h2>
+          <p className="text-text-secondary">
+            Create, print, and save your art forever
+          </p>
+        </div>
 
-          {/* Tabs */}
-          <div className="flex border-b border-gray-200 mb-6 w-full">
-            <button
-              className={`flex-1 py-3 font-medium text-center transition-all duration-300 ${
-                activeView === "signup"
-                  ? "text-[#F36F5A] border-b-2 border-[#F36F5A]"
-                  : "text-gray-500 hover:text-[#43405D]"
-              }`}
-              onClick={() => setActiveView("signup")}
-            >
-              Sign Up
-            </button>
-            <button
-              className={`flex-1 py-3 font-medium text-center transition-all duration-300 ${
-                activeView === "login"
-                  ? "text-[#F36F5A] border-b-2 border-[#F36F5A]"
-                  : "text-gray-500 hover:text-[#43405D]"
-              }`}
-              onClick={() => setActiveView("login")}
+        {/* Tabs */}
+        <div className="flex border-b border-border mb-6 w-full">
+          <button
+            className={`flex-1 py-3 font-medium text-center transition-all duration-300 ${
+              activeView === "signup"
+                ? "text-[#F36F5A] border-b-2 border-[#F36F5A]"
+                : "text-text hover:text-text-hover"
+            }`}
+            onClick={() => setActiveView("signup")}
+          >
+            Sign Up
+          </button>
+          <button
+            className={`flex-1 py-3 font-medium text-center transition-all duration-300 ${
+              activeView === "login"
+                ? "text-[#F36F5A] border-b-2 border-[#F36F5A]"
+                : "text-text hover:text-text-hover"
+            }`}
+            onClick={() => setActiveView("login")}
+          >
+            Log In
+          </button>
+        </div>
+
+        {/* Login Form */}
+        {activeView === "login" && (
+          <form onSubmit={handleLoginSubmit} className="w-full space-y-4">
+            <Input
+              id="login-email"
+              name="email"
+              type="email"
+              required
+              value={loginForm.email}
+              onChange={handleLoginChange}
+              placeholder="your@email.com"
+              label="Email"
+            />
+
+            <Input
+              id="login-password"
+              name="password"
+              type="password"
+              required
+              value={loginForm.password}
+              onChange={handleLoginChange}
+              placeholder="••••••••"
+              label="Password"
+            />
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="rememberMe"
+                  type="checkbox"
+                  checked={loginForm.rememberMe}
+                  onChange={handleLoginChange}
+                  className="h-4 w-4 text-primary border-mint rounded focus:text-primary"
+                />
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-text"
+                >
+                  Remember me
+                </label>
+              </div>
+
+              <a
+                href="#"
+                className="text-sm font-medium text-primary hover:text-primary-hover"
+              >
+                Forgot password?
+              </a>
+            </div>
+
+            <Button
+              type="submit"
+              variant="primary"
+              fullWidth={true}
+              isLoading={isLoading}
             >
               Log In
-            </button>
-          </div>
+            </Button>
 
-          {/* Login Form */}
-          {activeView === "login" && (
-            <form onSubmit={handleLoginSubmit} className="w-full space-y-4">
-              <Input
-                id="login-email"
-                name="email"
-                type="email"
-                required
-                value={loginForm.email}
-                onChange={handleLoginChange}
-                className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
-                placeholder="your@email.com"
-                label="Email"
+            <div className="relative flex items-center justify-center mt-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border"></div>
+              </div>
+              <div className="relative px-4 bg-white text-sm text-text-secondary">
+                Or continue with
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 mt-6">
+              <AuthButton
+                provider="google"
+                className="transition-all duration-300 relative overflow-hidden hover:bg-[rgba(183,215,194,0.15)] hover:border-[rgba(157,126,207,0.3)] social-button-hover"
               />
-
-              <Input
-                id="login-password"
-                name="password"
-                type="password"
-                required
-                value={loginForm.password}
-                onChange={handleLoginChange}
-                className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
-                placeholder="••••••••"
-                label="Password"
+              <AuthButton
+                provider="github"
+                className="transition-all duration-300 relative overflow-hidden hover:bg-[rgba(183,215,194,0.15)] hover:border-[rgba(157,126,207,0.3)] social-button-hover"
               />
+            </div>
+          </form>
+        )}
 
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="rememberMe"
-                    type="checkbox"
-                    checked={loginForm.rememberMe}
-                    onChange={handleLoginChange}
-                    className="h-4 w-4 text-primary border-mint rounded focus:ring-primary"
-                  />
-                  <label
-                    htmlFor="remember-me"
-                    className="ml-2 block text-sm text-gray-500"
+        {/* Sign Up Form */}
+        {activeView === "signup" && (
+          <form onSubmit={handleSignupSubmit} className="space-y-4">
+            <Input
+              id="signup-name"
+              name="name"
+              type="text"
+              required
+              value={signupForm.name}
+              onChange={handleSignupChange}
+              className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
+              placeholder="Your name"
+              label="Full Name"
+            />
+
+            <Input
+              id="signup-email"
+              name="email"
+              type="email"
+              required
+              value={signupForm.email}
+              onChange={handleSignupChange}
+              className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
+              placeholder="your@email.com"
+              label="Email"
+            />
+
+            <Input
+              id="signup-password"
+              name="password"
+              type="password"
+              required
+              value={signupForm.password}
+              onChange={handleSignupChange}
+              className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
+              placeholder="••••••••"
+              label="Password"
+            />
+
+            <div className="flex items-start">
+              <div className="flex items-center h-5">
+                <input
+                  id="terms"
+                  name="agreeToTerms"
+                  type="checkbox"
+                  required
+                  checked={signupForm.agreeToTerms}
+                  onChange={handleSignupChange}
+                  className="h-4 w-4 text-primary border-mint rounded focus:ring-primary"
+                />
+              </div>
+              <div className="ml-3 text-sm">
+                <label htmlFor="terms" className="text-text-secondary">
+                  I agree to the{" "}
+                  <a
+                    href="/terms-of-service"
+                    className="text-primary hover:text-primary-hover"
                   >
-                    Remember me
-                  </label>
-                </div>
-
-                <a
-                  href="#"
-                  className="text-sm font-medium text-primary hover:text-primary-hover"
-                >
-                  Forgot password?
-                </a>
+                    Terms of Service
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="/privacy-policy"
+                    className="text-primary hover:text-primary-hover"
+                  >
+                    Privacy Policy
+                  </a>
+                </label>
               </div>
+            </div>
 
-              <Button
-                type="submit"
-                variant="primary"
-                fullWidth={true}
-                isLoading={isLoading}
-                className="mt-6 bg-[#F36F5A] hover:bg-[#F36F5A]/90 text-white"
-              >
-                Log In
-              </Button>
+            <Button
+              type="submit"
+              variant="gradient"
+              fullWidth={true}
+              isLoading={isLoading}
+              className="mt-6 bg-gradient-to-r from-[#B7D7C2] via-[#9D7ECF] to-[#F36F5A] text-white hover:brightness-105"
+            >
+              Create Account
+            </Button>
 
-              <div className="relative flex items-center justify-center mt-6">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-200"></div>
-                </div>
-                <div className="relative px-4 bg-white text-sm text-gray-500">
-                  Or continue with
-                </div>
+            <div className="relative flex items-center justify-center mt-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border"></div>
               </div>
-
-              <div className="grid grid-cols-2 gap-3 mt-6">
-                <AuthButton
-                  provider="google"
-                  className="transition-all duration-300 relative overflow-hidden hover:bg-[rgba(183,215,194,0.15)] hover:border-[rgba(157,126,207,0.3)] social-button-hover"
-                />
-                <AuthButton
-                  provider="github"
-                  className="transition-all duration-300 relative overflow-hidden hover:bg-[rgba(183,215,194,0.15)] hover:border-[rgba(157,126,207,0.3)] social-button-hover"
-                />
+              <div className="relative px-4 bg-white text-sm text-text-secondary">
+                Or continue with
               </div>
-            </form>
-          )}
+            </div>
 
-          {/* Sign Up Form */}
-          {activeView === "signup" && (
-            <form onSubmit={handleSignupSubmit} className="space-y-4">
-              <Input
-                id="signup-name"
-                name="name"
-                type="text"
-                required
-                value={signupForm.name}
-                onChange={handleSignupChange}
-                className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
-                placeholder="Your name"
-                label="Full Name"
-              />
-
-              <Input
-                id="signup-email"
-                name="email"
-                type="email"
-                required
-                value={signupForm.email}
-                onChange={handleSignupChange}
-                className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
-                placeholder="your@email.com"
-                label="Email"
-              />
-
-              <Input
-                id="signup-password"
-                name="password"
-                type="password"
-                required
-                value={signupForm.password}
-                onChange={handleSignupChange}
-                className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
-                placeholder="••••••••"
-                label="Password"
-              />
-
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input
-                    id="terms"
-                    name="agreeToTerms"
-                    type="checkbox"
-                    required
-                    checked={signupForm.agreeToTerms}
-                    onChange={handleSignupChange}
-                    className="h-4 w-4 text-primary border-mint rounded focus:ring-primary"
-                  />
-                </div>
-                <div className="ml-3 text-sm">
-                  <label htmlFor="terms" className="text-gray-500">
-                    I agree to the{" "}
-                    <a
-                      href="/terms-of-service"
-                      className="text-primary hover:text-primary-hover"
-                    >
-                      Terms of Service
-                    </a>{" "}
-                    and{" "}
-                    <a
-                      href="/privacy-policy"
-                      className="text-primary hover:text-primary-hover"
-                    >
-                      Privacy Policy
-                    </a>
-                  </label>
-                </div>
-              </div>
-
-              <Button
-                type="submit"
-                variant="gradient"
-                fullWidth={true}
-                isLoading={isLoading}
-                className="mt-6 bg-gradient-to-r from-[#B7D7C2] via-[#9D7ECF] to-[#F36F5A] text-white hover:brightness-105"
-              >
-                Create Account
-              </Button>
-
-              <div className="relative flex items-center justify-center mt-6">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-200"></div>
-                </div>
-                <div className="relative px-4 bg-white text-sm text-gray-500">
-                  Or continue with
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 mt-6">
-                <AuthButton
-                  provider="google"
-                  className="transition-all duration-300 relative overflow-hidden hover:bg-[rgba(183,215,194,0.15)] hover:border-[rgba(157,126,207,0.3)] social-button-hover"
-                />
-                <AuthButton
-                  provider="github"
-                  className="transition-all duration-300 relative overflow-hidden hover:bg-[rgba(183,215,194,0.15)] hover:border-[rgba(157,126,207,0.3)] social-button-hover"
-                />
-              </div>
-            </form>
-          )}
-        </div>
+            <div className="grid grid-cols-2 gap-3 mt-6">
+              <AuthButton provider="google" />
+              <AuthButton provider="github" />
+            </div>
+          </form>
+        )}
       </div>
-    </Backdrop>
+    </ModalLayout>
   );
 };
 
