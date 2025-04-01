@@ -215,7 +215,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 
         {/* Sign Up Form */}
         {activeView === "signup" && (
-          <form onSubmit={handleSignupSubmit} className="space-y-4">
+          <form onSubmit={handleSignupSubmit} className="w-full space-y-4">
             <Input
               id="signup-name"
               name="name"
@@ -223,7 +223,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
               required
               value={signupForm.name}
               onChange={handleSignupChange}
-              className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
               placeholder="Your name"
               label="Full Name"
             />
@@ -235,7 +234,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
               required
               value={signupForm.email}
               onChange={handleSignupChange}
-              className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
               placeholder="your@email.com"
               label="Email"
             />
@@ -247,7 +245,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
               required
               value={signupForm.password}
               onChange={handleSignupChange}
-              className="transition-all duration-300 border-2 border-[#b7d7c2] bg-[rgba(255,255,255,0.8)] focus:border-[#f36f5a] focus:shadow-[0_0_0_3px_rgba(243,111,90,0.1)] focus:bg-white"
               placeholder="••••••••"
               label="Password"
             />
