@@ -122,7 +122,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
   };
 
   return (
-    <ModalLayout isOpen={isOpen} onClose={onClose}>
+    <ModalLayout
+      isOpen={isOpen}
+      onClose={onClose}
+      maxWidth="max-w-2xl"
+      backdropClassName="px-2 sm:px-4"
+    >
       <div className="flex flex-col items-center">
         {renderIcon()}
 

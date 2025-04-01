@@ -83,7 +83,12 @@ const LimitReachedModal: React.FC<LimitReachedModalProps> = ({
   );
 
   return (
-    <ModalLayout isOpen={isOpen} onClose={onClose}>
+    <ModalLayout
+      isOpen={isOpen}
+      onClose={onClose}
+      maxWidth="max-w-2xl"
+      backdropClassName="px-2 sm:px-4"
+    >
       <div
         className={cn(
           "w-full mx-auto animate-fadeIn relative max-h-[90vh] overflow-hidden"

@@ -33,7 +33,12 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
   if (!isOpen || !artwork) return null;
 
   return (
-    <ModalLayout isOpen={isOpen} onClose={onClose}>
+    <ModalLayout
+      isOpen={isOpen}
+      onClose={onClose}
+      maxWidth="max-w-2xl"
+      backdropClassName="px-2 sm:px-4"
+    >
       <div className="max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
         {/* Image Section */}
         <div className="md:w-3/5 relative bg-black">
