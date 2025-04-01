@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { Button } from "../ui/elements/Button";
 import SuccessModal from "../ui/modals/SuccessModal";
-import HDDownloadModal from "../ui/modals/HDDownloadModal";
-import NFTMintedModal from "../ui/modals/NFTMintedModal";
-import PrintOrderModal from "../ui/modals/PrintOrderModal";
+import HDDownloadModal from "../ui/modals/examples/HDDownloadModal";
+import NFTMintedModal from "../ui/modals/examples/NFTMintedModal";
+import PrintOrderModal from "../ui/modals/examples/PrintOrderModal";
 
 const SuccessModalsExample = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);

@@ -5,8 +5,8 @@ import { useModal } from "@/context/ModalContext";
 import PrintOrderModal from "./PrintOrderModal";
 import HDDownloadModal from "./HDDownloadModal";
 import NFTMintedModal from "./NFTMintedModal";
-import SuccessModal from "./SuccessModal";
-import AuthModal from "./AuthModal";
+import SuccessModal from "../SuccessModal";
+import AuthModal from "../AuthModal";
 
 const ModalContainer: React.FC = () => {
   const { isOpen, activeModal, modalData, closeModal } = useModal();

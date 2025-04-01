@@ -1,5 +1,5 @@
 import React from "react";
-import SuccessModal, { SuccessModalProps } from "./SuccessModal";
+import SuccessModal, { SuccessModalProps } from "../SuccessModal";
 
 interface PrintOrderModalProps {
   isOpen: boolean;

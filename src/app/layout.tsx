@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 import { ModalProvider } from "@/context/ModalContext";
-import ModalContainer from "@/components/ui/modals/ModalContainer";
+import ModalContainer from "@/components/ui/modals/examples/ModalContainer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   title: "Mintsy.ai | AI Art Generator, NFT Minting & Canvas Prints",
   description:
     "Create stunning AI-generated artwork from text prompts, mint as unique NFTs, or order high-quality canvas prints. Try our free AI art generator today!",
-  keywords: "AI art generator, NFT minting, canvas prints, text-to-image AI, digital art platform",
+  keywords:
+    "AI art generator, NFT minting, canvas prints, text-to-image AI, digital art platform",
 };
 
 export default function RootLayout({
