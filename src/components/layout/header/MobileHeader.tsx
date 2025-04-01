@@ -82,7 +82,7 @@ const MobileHeader = () => {
         }`}
       >
         <div className="container mx-auto w-full">
-          <nav className="flex flex-col items-center space-y-4 px-6 text-center modal-content overflow-y-auto max-h-[70vh]">
+          <nav className="flex flex-col items-center space-y-4 px-6 text-center overflow-y-auto max-h-[70vh]">
             {header.map((item, index) => (
               <div key={index} className="w-full">
                 {item.type === "button" ? (

@@ -34,12 +34,6 @@
   scrollbar-color: rgba(180, 180, 180, 0.7) rgba(253, 251, 247, 0.6);
 }
 
-/* Specific styling for modal content */
-.modal-content {
-  padding-right: 8px; /* Add padding to prevent content from touching scrollbar */
-  padding-left: 8px;
-}
-
 /* Ensure smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
