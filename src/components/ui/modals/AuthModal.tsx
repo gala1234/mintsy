@@ -5,6 +5,7 @@ import { Button } from "../elements/Button";
 import { Input } from "../elements/Input";
 import { AuthButton } from "../elements/AuthButton";
 import ModalLayout from "./ModalLayout";
+import Tabs from "../elements/Tabs";
 
 export interface AuthModalProps {
   isOpen: boolean;
@@ -108,28 +109,16 @@ const AuthModal: React.FC<AuthModalProps> = ({
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-border mb-6 w-full">
-          <button
-            className={`flex-1 py-3 font-medium text-center transition-all duration-300 ${
-              activeView === "signup"
-                ? "text-[#F36F5A] border-b-2 border-[#F36F5A]"
-                : "text-text hover:text-text-hover"
-            }`}
-            onClick={() => setActiveView("signup")}
-          >
-            Sign Up
-          </button>
-          <button
-            className={`flex-1 py-3 font-medium text-center transition-all duration-300 ${
-              activeView === "login"
-                ? "text-[#F36F5A] border-b-2 border-[#F36F5A]"
-                : "text-text hover:text-text-hover"
-            }`}
-            onClick={() => setActiveView("login")}
-          >
-            Log In
-          </button>
-        </div>
+        <Tabs
+          items={[
+            { id: "signup", label: "Sign Up" },
+            { id: "login", label: "Log In" },
+          ]}
+          value={activeView}
+          onChange={(value) => setActiveView(value as "login" | "signup")}
+          className="mb-6"
+          inactiveTabClassName="text-text hover:text-text-hover"
+        />
 
         {/* Login Form */}
         {activeView === "login" && (

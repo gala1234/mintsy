@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/elements/Button";
+import ModalLayout from "./ModalLayout";
 
 //TODO: close button inside the modal
 
@@ -32,11 +33,8 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
   if (!isOpen || !artwork) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div
-        className="bg-white rounded-xl shadow-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <ModalLayout isOpen={isOpen} onClose={onClose}>
+      <div className="max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
         {/* Image Section */}
         <div className="md:w-3/5 relative bg-black">
           <div className="relative w-full aspect-square">
@@ -55,27 +53,6 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
 
         {/* Content Section */}
         <div className="md:w-2/5 p-6 flex flex-col h-full overflow-y-auto">
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-dark/50 hover:text-dark transition-colors"
-            aria-label="Close modal"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-
           <div className="mb-2 flex items-center gap-2">
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#9D7ECF]/20 text-[#9D7ECF]">
               {artwork.family}
@@ -160,7 +137,7 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </ModalLayout>
   );
 };
 
