@@ -10,6 +10,7 @@ const buttonVariants = cva(
         primary: "bg-primary hover:bg-primary-hover text-white",
         secondary:
           "bg-mint-light/15 hover:bg-white border-2 border-dark hover:border-mint-dark text-dark hover:text-mint-dark",
+        tertiary: "text-text-muted hover:text-mint-dark transition-colors",
         dark: "bg-dark hover:bg-primary text-white",
         outline:
           "bg-transparent hover:bg-primary text-primary hover:text-white border-2 border-primary hover:border-primary",

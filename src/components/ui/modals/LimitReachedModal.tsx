@@ -3,7 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { LinkButton } from "@/components/ui/elements/LinkButton";
-import Backdrop from "../loading/Backdrop";
+import { Button } from "../elements/Button";
+import ModalLayout from "./ModalLayout";
 import { cn } from "@/lib/utils";
 
 interface LimitReachedModalProps {
@@ -82,36 +83,14 @@ const LimitReachedModal: React.FC<LimitReachedModalProps> = ({
   );
 
   return (
-    <Backdrop isOpen={isOpen} className="bg-background/90" onClick={onClose}>
+    <ModalLayout isOpen={isOpen} onClose={onClose}>
       <div
         className={cn(
-          "bg-[#FDFBF7] rounded-xl shadow-lg max-w-md w-full mx-auto animate-fadeIn modal-content modalContainer relative max-h-[90vh] overflow-hidden"
+          "w-full mx-auto animate-fadeIn relative max-h-[90vh] overflow-hidden"
         )}
-        onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 rounded-full p-1.5 text-text hover:bg-mint-light/30 hover:text-dark transition-colors z-10"
-          aria-label="Close modal"
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-
         <div className="overflow-y-auto max-h-[90vh] scrollbar-thin">
-          <div className="flex flex-col items-center px-8 pt-10 pb-4">
+          <div className="flex flex-col items-center  pt-10 pb-4">
             {/* Icon */}
             <div className="mb-6 w-20 h-20 flex items-center justify-center bg-mint-light/30 rounded-full avatarContainer">
               <Image
@@ -160,20 +139,17 @@ const LimitReachedModal: React.FC<LimitReachedModalProps> = ({
             </div>
 
             {/* Tertiary option */}
-            <button
-              onClick={onClose}
-              className="text-text-muted hover:text-dark transition-colors"
-            >
+            <Button variant="tertiary" onClick={onClose}>
               Try again tomorrow
-            </button>
+            </Button>
           </div>
 
           {/* Social sharing */}
           <div className="pt-4 pb-10 border-t border-mint/20 w-full">
-            <p className="text-sm text-text-muted mb-4 px-8">
+            <p className="text-sm text-text-muted mb-4 text-center">
               Share your creation on
             </p>
-            <div className="flex justify-center space-x-6 px-8">
+            <div className="flex justify-center space-x-6 ">
               <a
                 href="#"
                 className="text-dark hover:text-primary transition-colors"
@@ -220,7 +196,7 @@ const LimitReachedModal: React.FC<LimitReachedModalProps> = ({
           </div>
         </div>
       </div>
-    </Backdrop>
+    </ModalLayout>
   );
 };
 
