@@ -12,7 +12,8 @@ interface SchemaMarkupProps {
     | "about"
     | "faq"
     | "gallery"
-    | "artwork";
+    | "artwork"
+    | "dashboard";
 }
 
 const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ pageName }) => {
@@ -72,6 +73,35 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ pageName }) => {
             "NFT minting capability",
             "Canvas printing options",
             "Multiple artistic styles",
+          ],
+        },
+      };
+      break;
+
+    case "dashboard":
+      pageSpecificSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Dashboard | Manage Your AI-Generated Artworks | Mintsy.ai",
+        description:
+          "Save, organize, and manage your AI-generated artworks. Group into families, filter by visibility, and take actions like minting, printing, or downloading.",
+        url: "https://mintsy.ai/dashboard",
+        mainEntity: {
+          "@type": "ItemList",
+          name: "User Artwork Collection",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "My Families",
+              description: "Organize artworks into collections",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "All Artworks",
+              description: "View all your created artworks",
+            },
           ],
         },
       };

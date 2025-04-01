@@ -6,35 +6,16 @@ import PageContainer from "@/components/layout/PageContainer";
 import { Button } from "@/components/ui/elements/Button";
 import { LinkButton } from "@/components/ui/elements/LinkButton";
 import SchemaMarkup from "@/components/ui/SchemaMarkup";
-
-// This would be replaced with a real data fetching function
-export async function getArtwork(id: string) {
-  // Mock data for demonstration
-  const mockArtwork = {
-    id,
-    title: "Dreamy Mountain Landscape",
-    prompt:
-      "A serene mountain landscape with a misty lake at dawn, painted in watercolor style",
-    imageUrl: "/images/sample-artworks/dreamy-mountain.svg",
-    author: "ArtLover123",
-    family: "Landscapes",
-    likes: 42,
-    createdAt: "2023-09-15",
-    isPublic: true,
-  };
-
-  // In a real app, you would fetch from an API
-  // If not found, return null
-  return mockArtwork;
-}
+import { getArtwork } from "./mookdata";
 
 // Generate metadata for the page
 export async function generateMetadata({
   params,
 }: {
-  params: { artworkId: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const artwork = await getArtwork(params.artworkId);
+  const { id } = await params;
+  const artwork = await getArtwork(id);
 
   if (!artwork) {
     return {
@@ -56,11 +37,11 @@ export async function generateMetadata({
 export default async function ArtworkPage({
   params,
 }: {
-  params: { artworkId: string };
+  params: Promise<{ id: string }>;
 }) {
-  const artwork = await getArtwork(params.artworkId);
+  const { id } = await params;
+  const artwork = await getArtwork(id);
 
-  // If artwork doesn&apos;t exist or isn&apos;t public, show 404
   if (!artwork || !artwork.isPublic) {
     notFound();
   }

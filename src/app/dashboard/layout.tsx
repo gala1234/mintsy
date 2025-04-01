@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your Artworks | Mintsy",
-  description: "View, manage, and mint your AI-generated artworks on Mintsy",
+  title: "Dashboard | Manage Your AI-Generated Artworks | Mintsy",
+  description:
+    "Save, organize, and manage your AI-generated artworks. Group into families, filter by visibility, and take actions like minting, printing, or downloading.",
+  keywords:
+    "AI art dashboard, artwork management, NFT minting, canvas printing, digital art organization, artwork families",
 };
 
 export default function DashboardLayout({
@@ -10,9 +13,5 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <section>
-      {children}
-    </section>
-  );
-} 
+  return <section>{children}</section>;
+}
