@@ -24,8 +24,8 @@ const Tabs: React.FC<TabsProps> = ({
   onChange,
   className = "",
   tabClassName = "",
-  activeTabClassName = "text-primary border-b-2 border-primary",
-  inactiveTabClassName = "text-text-muted border-b-2 border-border hover:text-text-hover",
+  activeTabClassName = "text-primary border-primary",
+  inactiveTabClassName = "hover:text-text-hover",
 }) => {
   return (
     <div className={cn("flex w-full", className)}>
@@ -33,7 +33,7 @@ const Tabs: React.FC<TabsProps> = ({
         <button
           key={item.id}
           className={cn(
-            "flex-1 py-3 font-medium text-center transition-all duration-300",
+            "flex-1 py-3 font-medium text-center text-text-secondary border-b-2 border-text-secondary  transition-all duration-300",
             tabClassName,
             value === item.id ? activeTabClassName : inactiveTabClassName
           )}

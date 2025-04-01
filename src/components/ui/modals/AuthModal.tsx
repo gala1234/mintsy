@@ -77,7 +77,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <ModalLayout isOpen={isOpen} onClose={onClose}>
+    <ModalLayout isOpen={isOpen} onClose={onClose} contentClassName="h-[90vh]">
       <div className="flex flex-col items-center">
         {/* Header with illustration */}
         <div className="text-center mb-6 relative">
@@ -117,7 +117,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
           value={activeView}
           onChange={(value) => setActiveView(value as "login" | "signup")}
           className="mb-6"
-          inactiveTabClassName="text-text hover:text-text-hover"
         />
 
         {/* Login Form */}
