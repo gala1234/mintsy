@@ -70,7 +70,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
 
           {/* Subscription options */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-8">
-            <div className="bg-cream border border-gray-100 p-6 rounded-xl">
+            <div className="bg-cream border border-border p-6 rounded-xl">
               <div className="flex flex-col items-center">
                 <h3 className="text-xl font-bold mb-1">Monthly</h3>
                 <div className="flex items-end mb-4">
@@ -84,7 +84,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               </div>
             </div>
 
-            <div className="bg-cream border border-gray-100 p-6 rounded-xl relative overflow-hidden">
+            <div className="bg-cream border border-border p-6 rounded-xl relative overflow-hidden">
               <div className="absolute -top-1 -right-1 bg-mint-dark text-xs text-white font-medium py-1 px-3 rounded-bl-lg shadow-sm">
                 BEST VALUE
               </div>
@@ -121,7 +121,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-green-700"
+                      className="text-mint-dark"
                     >
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
@@ -138,7 +138,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               <div className="w-full border-t border-gray-200"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white px-4 text-sm text-gray-500">
+              <span className="bg-white px-4 text-sm text-text-muted">
                 Or unlock this artwork without subscribing
               </span>
             </div>
