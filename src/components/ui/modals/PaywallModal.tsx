@@ -64,38 +64,38 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
             Unlock Unlimited Creativity
           </h2>
 
-          <p className="text-dark/70 text-center mb-8 max-w-md">
+          <p className="text-text-secondary text-center mb-8 max-w-md">
             Upgrade to Pro for unlimited AI generations and premium features
           </p>
 
           {/* Subscription options */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-8">
-            <div className="bg-[#FDFBF7] border border-gray-100 p-6 rounded-xl">
+            <div className="bg-cream border border-gray-100 p-6 rounded-xl">
               <div className="flex flex-col items-center">
                 <h3 className="text-xl font-bold mb-1">Monthly</h3>
                 <div className="flex items-end mb-4">
                   <span className="text-3xl font-bold">€9.99</span>
-                  <span className="text-dark/60 ml-1">/month</span>
+                  <span className="text-text-secondary ml-1">/month</span>
                 </div>
                 <Button className="w-full mb-4">Subscribe Monthly</Button>
-                <p className="text-xs text-center text-dark/60">
+                <p className="text-xs text-center text-text-secondary">
                   Cancel anytime
                 </p>
               </div>
             </div>
 
-            <div className="bg-[#FDFBF7] border border-gray-100 p-6 rounded-xl relative overflow-hidden">
-              <div className="absolute -top-1 -right-1 bg-mint text-xs font-medium py-1 px-3 rounded-bl-lg shadow-sm">
+            <div className="bg-cream border border-gray-100 p-6 rounded-xl relative overflow-hidden">
+              <div className="absolute -top-1 -right-1 bg-mint-dark text-xs text-white font-medium py-1 px-3 rounded-bl-lg shadow-sm">
                 BEST VALUE
               </div>
               <div className="flex flex-col items-center">
                 <h3 className="text-xl font-bold mb-1">Annual</h3>
                 <div className="flex items-end mb-4">
                   <span className="text-3xl font-bold">€79</span>
-                  <span className="text-dark/60 ml-1">/year</span>
+                  <span className="text-text-secondary ml-1">/year</span>
                 </div>
                 <Button className="w-full mb-2">Subscribe Yearly</Button>
-                <p className="text-xs text-center text-green-600 font-medium">
+                <p className="text-xs text-center text-mint-dark font-medium">
                   Save 34% (€40.88)
                 </p>
               </div>
@@ -103,7 +103,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
           </div>
 
           {/* Pro features */}
-          <div className="w-full bg-[#FDFBF7] p-6 rounded-xl mb-8">
+          <div className="w-full bg-cream p-6 rounded-xl mb-8">
             <h3 className="font-medium mb-4 text-center">
               Pro Features Include:
             </h3>
@@ -156,7 +156,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2">{artworkTitle}</h3>
-              <p className="text-dark/70 mb-4">
+              <p className="text-text-secondary mb-4">
                 Choose how you want to enjoy this artwork
               </p>
             </div>
