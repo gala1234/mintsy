@@ -15,10 +15,9 @@ const buttonVariants = cva(
           "bg-transparent hover:bg-primary text-primary hover:text-white border-2 border-primary hover:border-primary",
         transparent:
           "bg-transparent hover:bg-primary text-primary hover:text-white",
-        peach:
-          "bg-gradient-to-r from-[#FF8C7A] via-[#FF7A66] to-[#FF6652] text-white hover:brightness-105 shadow-md hover:shadow-[0_0_15px_rgba(255,102,82,0.5)] relative overflow-hidden",
         mint: "bg-gradient-to-r from-[#B7D7C2] via-[#9D7ECF] to-[#F36F5A] text-white hover:brightness-105 shadow-md hover:shadow-[0_0_15px_rgba(157,126,207,0.5)] relative overflow-hidden",
         grey: "bg-gradient-to-r from-[#B7D7C2] via-[#9D7ECF] to-[#F36F5A] text-white hover:brightness-105 shadow-md hover:shadow-[0_0_15px_rgba(157,126,207,0.5)] relative overflow-hidden",
+        pink: "bg-gradient-to-r from-[#FF8C7A] via-[#FF7A66] to-[#FF6652] text-white hover:brightness-105 shadow-md hover:shadow-[0_0_15px_rgba(255,102,82,0.5)] relative overflow-hidden",
         gradient:
           "bg-gradient-to-r from-primary via-[#e4d7f5] to-[#9471EC] hover:from-[#9471EC] hover:via-primary hover:to-[#e4d7f5] text-white shadow-md hover:shadow-[0_0_15px_rgba(122,111,240,0.5)] relative overflow-hidden animate-shimmer",
         signup:

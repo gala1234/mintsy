@@ -139,27 +139,15 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
 
         {/* Microtransaction options */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
-          <LinkButton
-            href="/checkout?type=nft"
-            variant="secondary"
-            className="bg-[#8A7FFF] hover:bg-[#7A6FF0] text-white border-none"
-          >
+          <LinkButton href="/checkout?type=nft" variant="mint">
             Mint as NFT – €5
           </LinkButton>
 
-          <LinkButton
-            href="/checkout?type=download"
-            variant="secondary"
-            className="bg-[#FF8C7A] hover:bg-[#FF7A66] text-white border-none"
-          >
+          <LinkButton href="/checkout?type=download" variant="gray">
             HD Download – €10
           </LinkButton>
 
-          <LinkButton
-            href="/checkout?type=canvas"
-            variant="secondary"
-            className="bg-gray-200 hover:bg-gray-300 text-dark border-none"
-          >
+          <LinkButton href="/checkout?type=canvas" variant="pink">
             Canvas Print – from €30
           </LinkButton>
         </div>

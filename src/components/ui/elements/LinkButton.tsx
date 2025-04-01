@@ -11,6 +11,10 @@ const linkButtonVariants = cva(
         primary: "bg-primary hover:bg-primary-hover text-white",
         secondary:
           "bg-mint-light/15 hover:bg-white border-2 border-dark hover:border-mint-dark text-dark hover:text-mint-dark",
+        mint: "bg-mint-light hover:bg-white border-2 border-dark hover:border-mint-dark text-dark hover:text-mint-dark",
+        pink: "bg-pink-light hover:bg-white border-2 border-dark hover:border-pink-dark text-dark hover:text-pink-dark",
+        gray: "bg-gray-light hover:bg-white border-2 border-dark hover:border-gray-dark text-dark hover:text-gray-dark",
+        red: "bg-red-light hover:bg-white border-2 border-dark hover:border-red-dark text-dark hover:text-red-dark",
       },
       size: {
         default: "py-3 px-8",
