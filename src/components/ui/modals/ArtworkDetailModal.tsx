@@ -3,9 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/elements/Button";
+import { Badge } from "@/components/ui/elements/Badge";
+import { ActionButton } from "@/components/ui/elements/ActionButton";
+import { AuthorAvatar } from "@/components/ui/elements/AuthorAvatar";
 import ModalLayout from "./ModalLayout";
-
-//TODO: close button inside the modal
+// Use SVGs as components
+import LoveIcon from "../../../../public/icons/love.svg";
+import ShareIcon from "../../../../public/icons/share.svg";
 
 interface ArtworkDetailModalProps {
   isOpen: boolean;
@@ -59,9 +63,7 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
         {/* Content Section */}
         <div className="md:w-2/5 p-6 flex flex-col h-full overflow-y-auto">
           <div className="mb-2 flex items-center gap-2">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#9D7ECF]/20 text-[#9D7ECF]">
-              {artwork.family}
-            </span>
+            <Badge variant="default">{artwork.family}</Badge>
           </div>
 
           <h2 className="text-2xl font-bold text-dark mb-2">{artwork.title}</h2>
@@ -78,52 +80,26 @@ const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
               Created by
             </h3>
             <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-mint/30 flex items-center justify-center text-mint-dark font-medium">
-                {artwork.author.charAt(0).toUpperCase()}
-              </div>
+              <AuthorAvatar name={artwork.author} variant="mint" size="md" />
               <span className="ml-2 font-medium">{artwork.author}</span>
             </div>
           </div>
 
           <div className="flex items-center gap-3 mb-6">
-            <button
+            <ActionButton
               onClick={onLike}
-              className="flex items-center gap-1.5 py-1.5 px-3 bg-pink-light text-pink-dark rounded-full text-sm font-medium hover:bg-pink-dark hover:text-white transition-colors duration-200"
+              variant="pink"
+              icon={<LoveIcon className="w-4 h-4" />}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-              <span>Love ({artwork.likes})</span>
-            </button>
+              Love ({artwork.likes})
+            </ActionButton>
 
-            <button className="flex items-center gap-1.5 py-1.5 px-3 bg-lavander-light text-lavander-dark rounded-full text-sm font-medium hover:bg-lavander-dark hover:text-white transition-colors duration-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-                <polyline points="16 6 12 2 8 6"></polyline>
-                <line x1="12" y1="2" x2="12" y2="15"></line>
-              </svg>
-              <span>Share</span>
-            </button>
+            <ActionButton
+              variant="lavander"
+              icon={<ShareIcon className="w-4 h-4" />}
+            >
+              Share
+            </ActionButton>
           </div>
 
           <div className="mt-auto pt-4 border-t border-dark/10">
