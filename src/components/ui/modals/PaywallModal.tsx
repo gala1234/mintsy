@@ -2,7 +2,7 @@
 
 import React from "react";
 import ModalLayout from "./ModalLayout";
-import SubscriptionCard from "@/components/ui/elements/cards/SubscriptionCard";
+import SubscriptionCard from "@/components/ui/cards/SubscriptionCard";
 import FeatureItem from "@/components/ui/elements/FeatureItem";
 import DividerWithText from "@/components/ui/elements/DividerWithText";
 import ArtworkPreview from "@/components/ui/elements/ArtworkPreview";

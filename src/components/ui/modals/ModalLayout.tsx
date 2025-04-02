@@ -2,7 +2,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { IconButton } from "../elements/IconButton";
+import { IconButton } from "../elements/buttons/IconButton";
 
 export interface ModalLayoutProps {
   isOpen: boolean;

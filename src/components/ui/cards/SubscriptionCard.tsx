@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button } from "../buttons/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 
 interface SubscriptionCardProps {
   planType: "monthly" | "annual";
