@@ -28,11 +28,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
     {
       title: "Monthly",
       price: "€9.99",
-      features: [
-        "Unlimited AI generations",
-        "10 NFT mints/month",
-        "HD downloads without watermark",
-      ],
+      features: ["Cancel anytime"],
       buttonText: "Subscribe Monthly",
       buttonVariant: "mint",
       isBestValue: false,
@@ -40,11 +36,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
     {
       title: "Annual",
       price: "€79",
-      features: [
-        "Unlimited AI generations",
-        "10 NFT mints/month",
-        "HD downloads without watermark",
-      ],
+      features: ["Save 34% (€40.88)"],
       buttonText: "Subscribe Yearly",
       buttonVariant: "mint",
       isBestValue: true,
