@@ -30,7 +30,7 @@ const PrintOrderModal: React.FC<PrintOrderModalProps> = ({
     },
     secondaryAction: {
       text: "Return to Gallery",
-      href: "/", // Assuming the gallery is at the root path
+      href: "/gallery",
     },
     showSocialSharing: true,
     iconType: "canvas",

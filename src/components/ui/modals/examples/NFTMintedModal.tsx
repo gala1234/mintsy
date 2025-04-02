@@ -25,7 +25,7 @@ const NFTMintedModal: React.FC<NFTMintedModalProps> = ({
     },
     secondaryAction: {
       text: "Return to Gallery",
-      href: "/", // Assuming the gallery is at the root path
+      href: "/gallery",
     },
     showSocialSharing: true,
     iconType: "success",

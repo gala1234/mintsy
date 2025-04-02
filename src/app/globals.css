@@ -30,6 +30,10 @@
   --color-pink: #ffb8b1;
   --color-pink-light: #fef2f2;
 
+  --color-yellow-dark: #fbbf24;
+  --color-yellow: #fde68a;
+  --color-yellow-light: #fef9c3;
+
   --color-gradient: "bg-gradient-to-r from-[#4EF6A3] via-[#52E4F5] to-[#B973F1] text-white hover:brightness-110",
 
   --color-text: var(--color-dark);
