@@ -33,7 +33,7 @@ const PrintOrderModal: React.FC<PrintOrderModalProps> = ({
       href: "/", // Assuming the gallery is at the root path
     },
     showSocialSharing: true,
-    iconType: "confetti",
+    iconType: "canvas",
     className,
   };
 

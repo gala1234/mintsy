@@ -28,7 +28,7 @@ const NFTMintedModal: React.FC<NFTMintedModalProps> = ({
       href: "/", // Assuming the gallery is at the root path
     },
     showSocialSharing: true,
-    iconType: "sparkle",
+    iconType: "success",
     className,
   };
 

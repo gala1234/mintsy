@@ -32,7 +32,7 @@ interface SuccessData {
     href: string;
     onClick?: () => void;
   };
-  iconType?: "confetti" | "checkmark" | "sparkle";
+  iconType?: "success" | "canvas" | "download";
   showSocialSharing?: boolean;
 }
 

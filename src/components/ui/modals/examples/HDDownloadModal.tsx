@@ -25,7 +25,7 @@ const HDDownloadModal: React.FC<HDDownloadModalProps> = ({
       text: "Close",
       onClick: onClose,
     },
-    iconType: "sparkle",
+    iconType: "download",
   };
 
   return <SuccessModal {...modalProps} />;

@@ -8,8 +8,8 @@ import { ActionButton } from "@/components/ui/elements/ActionButton";
 import { AuthorAvatar } from "@/components/ui/elements/AuthorAvatar";
 import ModalLayout from "./ModalLayout";
 // Use SVGs as components
-import LoveIcon from "../../../../public/icons/love.svg";
-import ShareIcon from "../../../../public/icons/share.svg";
+import LoveIcon from "../../../../public/icons/actions/love.svg";
+import ShareIcon from "../../../../public/icons/actions/share.svg";
 
 interface ArtworkDetailModalProps {
   isOpen: boolean;
