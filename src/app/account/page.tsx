@@ -1,8 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import PageContainer from "@/components/layout/PageContainer";
 import { Button } from "@/components/ui/elements/buttons/Button";
 import ArtworkCard from "@/components/ui/cards/ArtworkCard";
-import styles from "./account.module.css";
+import PulsingAvatar from "@/components/ui/elements/PulsingAvatar";
+import { Badge } from "@/components/ui/elements/Badge";
 
 // Sample data for demonstration
 const sampleArtworks = [
@@ -45,6 +47,34 @@ const recentActivity = [
   },
 ];
 
+// Sample orders data
+const recentOrders = [
+  {
+    id: "MTSY-10425",
+    artworkTitle: "Dreamy Mountain Sunset",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg",
+    orderDate: "Mar 26",
+    status: "In Production",
+    format: "Canvas 50x70cm",
+  },
+  {
+    id: "MTSY-10388",
+    artworkTitle: "Neon City Nights",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg",
+    orderDate: "Mar 18",
+    status: "Shipped",
+    format: "Canvas 30x40cm",
+  },
+  {
+    id: "MTSY-10299",
+    artworkTitle: "Cosmic Whale",
+    imageUrl: "/images/sample-artworks/dreamy-mountain.svg",
+    orderDate: "Feb 24",
+    status: "Delivered",
+    format: "Canvas 20x30cm",
+  },
+];
+
 export default function AccountPage() {
   // For demo purposes, we'll set the user as a free user
   const isPro = true;
@@ -60,24 +90,19 @@ export default function AccountPage() {
         {/* 1. Welcome Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div className="flex items-center mb-4 md:mb-0">
-            <div
-              className={`w-12 h-12 rounded-full bg-lavander-light flex items-center justify-center text-lavander-dark font-medium text-lg mr-4 ${styles.avatarContainer} ${styles.pulseAnimation}`}
-            >
-              {username.charAt(0)}
-            </div>
+            <PulsingAvatar 
+              name={username} 
+              variant="lavander" 
+              size="lg"
+              className="mr-4"
+            />
             <div>
               <h1 className="text-2xl md:text-3xl font-medium text-[#43405D]">
                 Hi {username}, welcome back ✨
               </h1>
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-sm ${
-                  isPro
-                    ? "bg-mint-light text-mint-dark"
-                    : "bg-lavander-light text-lavander-dark"
-                }`}
-              >
+              <Badge variant={isPro ? "mint" : "lavander"}>
                 {isPro ? "Pro Member" : "Free User"}
-              </span>
+              </Badge>
             </div>
           </div>
 
@@ -85,7 +110,7 @@ export default function AccountPage() {
             <Button
               variant="primary"
               size="sm"
-              className={styles.upgradeButton}
+              className="account-upgrade-button"
             >
               Upgrade to Pro
             </Button>
@@ -93,9 +118,7 @@ export default function AccountPage() {
         </div>
 
         {/* 2. Plan Overview Box */}
-        <div
-          className={`bg-white rounded-xl shadow-sm p-6 mb-8 ${styles.accountSection}`}
-        >
+        <div className="bg-white rounded-xl shadow-sm p-6 mb-8 account-section">
           {isPro ? (
             <div>
               <div className="flex items-center mb-4">
@@ -181,7 +204,7 @@ export default function AccountPage() {
                 <Button
                   variant="gradient"
                   size="sm"
-                  className={styles.upgradeButton}
+                  className="account-upgrade-button"
                 >
                   Upgrade to Pro – €9.99/month
                 </Button>
@@ -213,10 +236,86 @@ export default function AccountPage() {
           </div>
         </div>
 
-        {/* 4. Recent Orders & Downloads */}
-        <div
-          className={`bg-white rounded-xl shadow-sm p-6 mb-8 ${styles.accountSection}`}
-        >
+        {/* 4. Orders Section */}
+        <div className="bg-white rounded-xl shadow-sm p-6 mb-8 account-section">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-medium text-[#43405D]">
+              🧾 Orders
+            </h2>
+            <Link 
+              href="/orders" 
+              className="inline-flex items-center px-4 py-2 rounded-full text-white bg-[#9D7ECF] hover:bg-[#8347d1] text-sm font-medium transition-colors"
+            >
+              View All Orders
+            </Link>
+          </div>
+
+          {recentOrders.length > 0 ? (
+            <div className="space-y-4">
+              {recentOrders.map((order) => (
+                <div
+                  key={order.id}
+                  className="order-item flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b border-gray-100 last:border-0 hover:bg-lavander-light/10 rounded-lg transition-all duration-250 relative"
+                >
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-lg overflow-hidden mr-4 flex-shrink-0 border border-gray-100">
+                      <img
+                        src={order.imageUrl}
+                        alt={order.artworkTitle}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-medium text-[#43405D]">
+                        Order #{order.id}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-2 mt-1">
+                        <p className="text-sm text-gray-500">Ordered {order.orderDate}</p>
+                        <span className="text-sm text-gray-400">•</span>
+                        <p className="text-sm text-gray-500">{order.format}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center mt-3 sm:mt-0">
+                    <Badge 
+                      variant={
+                        order.status === "Delivered" || order.status === "Shipped"
+                          ? "mint"
+                          : order.status === "In Production"
+                          ? "lavander"
+                          : "pink"
+                      }
+                      className="mr-4"
+                    >
+                      {order.status}
+                    </Badge>
+                    <Link
+                      href={`/orders/${order.id}`}
+                      className="inline-flex items-center text-sm font-medium text-[#9D7ECF] hover:text-[#8347d1] transition-colors"
+                    >
+                      View Details →
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <div className="w-16 h-16 mx-auto mb-4 bg-lavander-light rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-lavander-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+              </div>
+              <p className="text-gray-500">No orders to display yet.</p>
+              <Link href="/create-ai-art" className="mt-4 inline-block text-sm text-[#9D7ECF] hover:text-[#8347d1]">
+                Create your first artwork →
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* 5. Recent Activity */}
+        <div className="bg-white rounded-xl shadow-sm p-6 mb-8 account-section">
           <h2 className="text-xl font-medium text-[#43405D] mb-4">
             Recent Activity
           </h2>
@@ -226,13 +325,11 @@ export default function AccountPage() {
               {recentActivity.map((activity) => (
                 <div
                   key={activity.id}
-                  className={`flex items-center justify-between py-2 border-b border-gray-100 last:border-0 ${styles.activityItem}`}
+                  className="activity-item flex items-center justify-between py-2 border-b border-gray-100 last:border-0 hover:bg-lavander-light/10 rounded-lg transition-all duration-250 relative"
                 >
                   <div className="flex items-center">
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${
-                        styles.activityIcon
-                      } ${
+                      className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 transition-transform duration-300 ${
                         activity.type.includes("NFT")
                           ? "bg-mint-light text-mint-dark"
                           : activity.type.includes("Canvas")
@@ -286,15 +383,11 @@ export default function AccountPage() {
                       <p className="text-sm text-gray-500">{activity.date}</p>
                     </div>
                   </div>
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs ${
-                      activity.status === "Completed"
-                        ? "bg-mint-light/30 text-mint-dark"
-                        : "bg-lavander-light/30 text-lavander-dark"
-                    }`}
+                  <Badge
+                    variant={activity.status === "Completed" ? "mint" : "lavander"}
                   >
                     {activity.status}
-                  </span>
+                  </Badge>
                 </div>
               ))}
             </div>
@@ -303,10 +396,8 @@ export default function AccountPage() {
           )}
         </div>
 
-        {/* 5. Account Details */}
-        <div
-          className={`bg-white rounded-xl shadow-sm p-6 mb-8 ${styles.accountSection}`}
-        >
+        {/* 6. Account Details */}
+        <div className="bg-white rounded-xl shadow-sm p-6 mb-8 account-section">
           <h2 className="text-xl font-medium text-[#43405D] mb-4">
             Account Details
           </h2>
@@ -333,7 +424,7 @@ export default function AccountPage() {
           </div>
         </div>
 
-        {/* 6. Footer */}
+        {/* 7. Footer */}
         <div className="text-center text-gray-500 text-sm">
           <div className="flex justify-center space-x-4 mb-2">
             <a href="/ai-art-faqs" className="text-pink-dark hover:underline">

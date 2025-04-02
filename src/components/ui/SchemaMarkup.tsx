@@ -13,7 +13,8 @@ interface SchemaMarkupProps {
     | "faq"
     | "gallery"
     | "artwork"
-    | "dashboard";
+    | "dashboard"
+    | "orders";
 }
 
 const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ pageName }) => {
@@ -103,6 +104,36 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ pageName }) => {
               description: "View all your created artworks",
             },
           ],
+        },
+      };
+      break;
+
+    case "orders":
+      pageSpecificSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Order Details | Canvas Print | Mintsy.ai",
+        description:
+          "Track and manage your canvas print orders, view shipping information, and download invoices for your AI-generated artworks.",
+        url: "https://mintsy.ai/orders",
+        mainEntity: {
+          "@type": "Order",
+          orderStatus: "https://schema.org/OrderProcessing",
+          seller: {
+            "@type": "Organization",
+            name: "Mintsy.ai"
+          },
+          orderNumber: "MTSY-10425",
+          orderDate: "2025-03-18",
+          acceptedOffer: {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Product",
+              name: "Canvas Print of AI-Generated Artwork",
+              description: "High-quality canvas print of a custom AI-generated artwork."
+            }
+          },
+          paymentMethodId: "CreditCard"
         },
       };
       break;
