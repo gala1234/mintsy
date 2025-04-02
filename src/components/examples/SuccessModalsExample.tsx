@@ -60,7 +60,7 @@ const SuccessModalsExample = () => {
           text: "Go Back",
           onClick: () => setShowSuccessModal(false),
         }}
-        iconType="checkmark"
+        iconType="success"
       />
 
       {/* HD Download Modal */}
