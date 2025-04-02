@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import PageContainer from "@/components/layout/PageContainer";
 import SuccessModalsExample from "../examples/SuccessModalsExample";
+import GA4Example from "../examples/GA4Example";
 
 const ExamplesPage = () => {
   return (
@@ -108,6 +109,7 @@ const ExamplesPage = () => {
                 canvas, poster, and framed prints.
               </p>
             </div>
+            <GA4Example />
           </div>
         </section>
       </div>

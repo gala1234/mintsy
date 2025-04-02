@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ExamplesPage from "@/components/pages/ExamplesPage";
-import GA4Example from "@/components/examples/GA4Example";
 
 export const metadata: Metadata = {
   title: "UI Examples | Mintsy.ai",
@@ -8,9 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Examples() {
-  return;
-  <>
-    <ExamplesPage />
-    <GA4Example />
-  </>;
+  return <ExamplesPage />;
 }
