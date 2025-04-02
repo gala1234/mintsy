@@ -1,25 +1,28 @@
 'use client';
 
-import Script from 'next/script';
+import { useEffect } from 'react';
+import Clarity from '@microsoft/clarity';
 
 interface MicrosoftClarityProps {
   projectId: string;
 }
 
+
 const MicrosoftClarity = ({ projectId = 'qy10p44nky' }: MicrosoftClarityProps) => {
-  return (
-    <>
-      <Script id="microsoft-clarity" strategy="afterInteractive">
-        {`
-          (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${projectId}");
-        `}
-      </Script>
-    </>
-  );
+  useEffect(() => {
+    // Only initialize in production or if running on the actual domain
+    if (typeof window !== 'undefined') {
+      try {
+        Clarity.init(projectId);
+        console.log('Microsoft Clarity initialized with project ID:', projectId);
+      } catch (error) {
+        console.error('Failed to initialize Microsoft Clarity:', error);
+      }
+    }
+  }, [projectId]);
+
+  // Return null since we don't need to render anything
+  return null;
 };
 
 export default MicrosoftClarity; 
