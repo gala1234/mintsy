@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import PageContainer from "@/components/layout/PageContainer";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
 
 export const metadata: Metadata = {
   title: "AI-Generated Artwork Gallery | Mintsy",

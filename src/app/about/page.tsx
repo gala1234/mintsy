@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import ColorHead from "@/components/ui/ColorHead";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
 import SchemaMarkup from "@/components/ui/SchemaMarkup";
 
 export const metadata: Metadata = {

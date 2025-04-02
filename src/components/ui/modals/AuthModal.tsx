@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "../elements/Button";
+import { Button } from "../elements/buttons/Button";
 import { Input } from "../elements/Input";
-import { AuthButton } from "../elements/AuthButton";
+import { AuthButton } from "../elements/buttons/AuthButton";
 import ModalLayout from "./ModalLayout";
 import Tabs from "../elements/Tabs";
 

@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import PageContainer from "@/components/layout/PageContainer";
-import { Button } from "@/components/ui/elements/Button";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { Button } from "@/components/ui/elements/buttons/Button";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
 // import { useModal } from "@/context/ModalContext";
 import Link from "next/link";
 import ArtworkDetailModal from "@/components/ui/modals/ArtworkDetailModal";

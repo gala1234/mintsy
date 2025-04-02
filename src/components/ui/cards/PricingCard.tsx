@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkButton } from "../elements/LinkButton";
+import { LinkButton } from "../elements/buttons/LinkButton";
 
 interface PricingCardProps {
   label: string;

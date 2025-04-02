@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import { Badge } from "@/components/ui/elements/Badge";
-import { ActionButton } from "@/components/ui/elements/ActionButton";
+import { ActionButton } from "@/components/ui/elements/buttons/ActionButton";
 import { AuthorAvatar } from "@/components/ui/elements/AuthorAvatar";
 import ModalLayout from "./ModalLayout";
 // Use SVGs as components

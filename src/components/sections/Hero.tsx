@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
 import ColorHead from "@/components/ui/ColorHead";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 

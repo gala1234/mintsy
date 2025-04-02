@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useModal } from "@/context/ModalContext";
 import { header } from "@/data/header";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 
 const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

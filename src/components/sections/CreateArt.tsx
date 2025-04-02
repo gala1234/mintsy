@@ -2,7 +2,7 @@
 
 import React from "react";
 import { TextArea } from "@/components/ui/elements/TextArea";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import BackgroundGradient from "@/components/ui/BackgroundGradient";
 import Backdrop from "@/components/ui/loading/Backdrop";
 

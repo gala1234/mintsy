@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button } from "../ui/elements/Button";
+import { Button } from "../ui/elements/buttons/Button";
 import { useModal } from "@/context/ModalContext";
 
 const AuthModalExample: React.FC = () => {

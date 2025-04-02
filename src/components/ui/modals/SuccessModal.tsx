@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../elements/Button";
-import { LinkButton } from "../elements/LinkButton";
+import { Button } from "../elements/buttons/Button";
+import { LinkButton } from "../elements/buttons/LinkButton";
 import ModalLayout from "./ModalLayout";
 import SocialSharing from "../elements/SocialSharing";
 import CanvasIcon from "../../../../public/icons/success/canvas-print-done.svg";

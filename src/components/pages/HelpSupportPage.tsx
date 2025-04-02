@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import { TextArea } from "@/components/ui/elements/TextArea";
 import { Input } from "@/components/ui/elements/Input";
 import SearchBar from "@/components/ui/elements/SearchBar";

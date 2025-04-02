@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
-import { Button } from "../elements/Button";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
+import { Button } from "../elements/buttons/Button";
 import ModalLayout from "./ModalLayout";
 import SocialSharing from "../elements/SocialSharing";
 import { cn } from "@/lib/utils";

@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import PageContainer from "@/components/layout/PageContainer";
-import { Button } from "@/components/ui/elements/Button";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { Button } from "@/components/ui/elements/buttons/Button";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
 import ArtworkCard from "@/components/ui/cards/ArtworkCard";
 import SearchBar from "@/components/ui/elements/SearchBar";
 import Link from "next/link";

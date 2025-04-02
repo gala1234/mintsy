@@ -6,7 +6,7 @@ import ImageWithWatermark from "@/components/ui/ImageWithWatermark";
 import { TextArea } from "@/components/ui/elements/TextArea";
 import { Select } from "@/components/ui/elements/Select";
 import { Toggle } from "@/components/ui/toggles/Toggle";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import Backdrop from "@/components/ui/loading/Backdrop";
 
 interface EditArtworkProps {

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "../ui/elements/Button";
+import { Button } from "../ui/elements/buttons/Button";
 import SuccessModal from "../ui/modals/SuccessModal";
 import HDDownloadModal from "../ui/modals/examples/HDDownloadModal";
 import NFTMintedModal from "../ui/modals/examples/NFTMintedModal";

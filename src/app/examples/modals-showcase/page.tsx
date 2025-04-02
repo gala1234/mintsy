@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PaywallModal from "@/components/ui/modals/PaywallModal";
 import LimitReachedModal from "@/components/ui/modals/LimitReachedModal";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import Image from "next/image";
 
 export default function ModalsShowcase() {

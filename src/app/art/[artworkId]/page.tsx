@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageContainer from "@/components/layout/PageContainer";
-import { Button } from "@/components/ui/elements/Button";
-import { LinkButton } from "@/components/ui/elements/LinkButton";
+import { Button } from "@/components/ui/elements/buttons/Button";
+import { LinkButton } from "@/components/ui/elements/buttons/LinkButton";
 import SchemaMarkup from "@/components/ui/SchemaMarkup";
 import { getArtwork } from "./mookdata";
 

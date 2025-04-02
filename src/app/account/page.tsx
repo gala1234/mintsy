@@ -1,6 +1,6 @@
 import React from "react";
 import PageContainer from "@/components/layout/PageContainer";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import ArtworkCard from "@/components/ui/cards/ArtworkCard";
 import styles from "./account.module.css";
 

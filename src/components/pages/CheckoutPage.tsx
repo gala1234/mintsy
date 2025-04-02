@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import PageContainer from "@/components/layout/PageContainer";
 
 type ProductType = "canvas" | "poster" | "download" | "nft";

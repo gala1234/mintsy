@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/elements/Button";
+import { Button } from "@/components/ui/elements/buttons/Button";
 import LimitReachedModal from "@/components/ui/modals/LimitReachedModal";
 
 const LimitModalExample = () => {
