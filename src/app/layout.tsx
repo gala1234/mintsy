@@ -5,6 +5,7 @@ import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 import { ModalProvider } from "@/context/ModalContext";
 import ModalContainer from "@/components/ui/modals/examples/ModalContainer";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       className={`${inter.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="font-sans">
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-3XL1RMQW2E" />
         <ModalProvider>
           <Header />
           <main>{children}</main>
