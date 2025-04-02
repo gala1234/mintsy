@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import PageContainer from "@/components/layout/PageContainer";
 import { Button } from "@/components/ui/elements/buttons/Button";
 import ArtworkCard from "@/components/ui/cards/ArtworkCard";
 import PulsingAvatar from "@/components/ui/elements/PulsingAvatar";
 import { Badge } from "@/components/ui/elements/Badge";
+import SubscriptionModal from "@/components/ui/modals/SubscriptionModal";
 
 // Sample data for demonstration
 const sampleArtworks = [
@@ -76,6 +79,8 @@ const recentOrders = [
 ];
 
 export default function AccountPage() {
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false);
+  
   // For demo purposes, we'll set the user as a free user
   const isPro = true;
   const username = "Sarah";
@@ -155,7 +160,11 @@ export default function AccountPage() {
                   <p className="text-[#43405D]">Next renewal: {renewalDate}</p>
                 </div>
 
-                <Button variant="secondary" size="sm">
+                <Button 
+                  variant="secondary" 
+                  size="sm"
+                  onClick={() => setIsSubscriptionModalOpen(true)}
+                >
                   Manage Subscription
                 </Button>
               </div>
@@ -439,6 +448,23 @@ export default function AccountPage() {
           </div>
           <p>Last updated: March 2025</p>
         </div>
+
+        {/* Subscription Modal */}
+        <SubscriptionModal
+          isOpen={isSubscriptionModalOpen}
+          onClose={() => setIsSubscriptionModalOpen(false)}
+          plan={{
+            name: "Pro Plan",
+            status: "active",
+            price: "€9.99",
+            cycle: "monthly",
+            renewal: renewalDate,
+            nftMints: {
+              total: 10,
+              remaining: remainingNFTMints,
+            },
+          }}
+        />
       </div>
     </PageContainer>
   );

@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 // Define all the possible modals in the application
-type ModalType = "printOrder" | "hdDownload" | "nftMinted" | "success" | "auth";
+type ModalType = "printOrder" | "hdDownload" | "nftMinted" | "success" | "auth" | "subscription";
 
 // Define the data structure for each modal
 interface PrintOrderData {
@@ -40,12 +40,27 @@ interface AuthData {
   initialView?: "login" | "signup";
 }
 
+interface SubscriptionData {
+  plan?: {
+    name: string;
+    status: "active" | "expired" | "pending";
+    price: string;
+    cycle: "monthly" | "yearly";
+    renewal: string;
+    nftMints: {
+      total: number;
+      remaining: number;
+    };
+  };
+}
+
 interface ModalData {
   printOrder?: PrintOrderData;
   hdDownload?: HDDownloadData;
   nftMinted?: NFTMintedData;
   success?: SuccessData;
   auth?: AuthData;
+  subscription?: SubscriptionData;
 }
 
 // Map modal types to their data types for type safety
@@ -55,6 +70,7 @@ type ModalDataMap = {
   nftMinted: NFTMintedData;
   success: SuccessData;
   auth: AuthData;
+  subscription: SubscriptionData;
 };
 
 interface ModalContextType {
@@ -103,6 +119,9 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({
         break;
       case "auth":
         setModalData({ auth: data as AuthData });
+        break;
+      case "subscription":
+        setModalData({ subscription: data as SubscriptionData });
         break;
       default:
         setModalData({});

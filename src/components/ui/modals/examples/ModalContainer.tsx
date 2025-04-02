@@ -5,6 +5,7 @@ import { useModal } from "@/context/ModalContext";
 import PrintOrderModal from "./PrintOrderModal";
 import HDDownloadModal from "./HDDownloadModal";
 import NFTMintedModal from "./NFTMintedModal";
+import SubscriptionModal from "../SubscriptionModal";
 import SuccessModal from "../SuccessModal";
 import AuthModal from "../AuthModal";
 
@@ -38,6 +39,14 @@ const ModalContainer: React.FC = () => {
           isOpen={isOpen}
           onClose={closeModal}
           nftLink={modalData.nftMinted?.nftLink}
+        />
+      );
+    case "subscription":
+      return (
+        <SubscriptionModal
+          isOpen={isOpen}
+          onClose={closeModal}
+          plan={modalData.subscription?.plan}
         />
       );
     case "success":
