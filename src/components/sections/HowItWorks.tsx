@@ -14,30 +14,31 @@ const HowItWorks = () => {
             How Our AI Art Generator Works
           </h2>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto font-serif-accent">
-            Create AI-generated artwork and mint it as an NFT in just a few simple steps:
+            Create AI-generated artwork and mint it as an NFT in just a few
+            simple steps:
           </p>
         </div>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <StepCard 
+          <StepCard
             stepNumber={1}
             title="Generate Your AI Art"
-            imageSrc="/screen.png"
+            imageSrc="/step1.jpg"
             imageAlt="AI art generation interface showing text-to-image creation process"
           />
-          
-          <StepCard 
+
+          <StepCard
             stepNumber={2}
             title="Mint as NFT on Blockchain"
-            imageSrc="/nft.png"
+            imageSrc="/step2.jpg"
             imageAlt="NFT minting process for AI-generated artwork on blockchain"
           />
-          
-          <StepCard 
+
+          <StepCard
             stepNumber={3}
             title="Receive Premium Canvas Print"
-            imageSrc="/received_canvas.png"
+            imageSrc="/step3.jpg"
             imageAlt="High-quality canvas print of AI-generated artwork ready to hang"
           />
         </div>

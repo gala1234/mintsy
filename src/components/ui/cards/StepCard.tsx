@@ -15,21 +15,27 @@ const StepCard: React.FC<StepCardProps> = ({
   imageAlt,
 }) => {
   return (
-    <div className="bg-background p-8 rounded-lg text-center flex flex-col items-center">
-      <div className="w-24 h-24 relative">
+    <div className="relative rounded-lg overflow-hidden h-64 flex items-center justify-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src={imageSrc}
           alt={imageAlt || title}
-          width={96}
-          height={96}
-          className="object-contain"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
-      <div className="text-3xl font-bold mt-6 flex items-center">
-        <span className="bg-text w-8 h-8 rounded-full flex items-center justify-center mr-3 text-white text-lg">
-          {stepNumber}
-        </span>
-        {title}
+      {/* Overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      {/* Content */}
+      <div className="relative z-20 text-center text-white p-8">
+        <div className="text-3xl font-bold flex items-center justify-center mb-4">
+          <span className="bg-primary w-10 h-10 rounded-full flex items-center justify-center mr-3 text-white text-lg">
+            {stepNumber}
+          </span>
+          {title}
+        </div>
       </div>
     </div>
   );
