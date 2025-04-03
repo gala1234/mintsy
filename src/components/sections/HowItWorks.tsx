@@ -24,21 +24,21 @@ const HowItWorks = () => {
           <StepCard
             stepNumber={1}
             title="Generate Your AI Art"
-            imageSrc="/step1.jpg"
+            imageSrc="/steps/step1.jpg"
             imageAlt="AI art generation interface showing text-to-image creation process"
           />
 
           <StepCard
             stepNumber={2}
             title="Mint as NFT on Blockchain"
-            imageSrc="/step2.jpg"
+            imageSrc="//steps/step2.jpg"
             imageAlt="NFT minting process for AI-generated artwork on blockchain"
           />
 
           <StepCard
             stepNumber={3}
             title="Receive Premium Canvas Print"
-            imageSrc="/step3.jpg"
+            imageSrc="//steps/step3.jpg"
             imageAlt="High-quality canvas print of AI-generated artwork ready to hang"
           />
         </div>
