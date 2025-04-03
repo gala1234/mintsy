@@ -16,7 +16,7 @@ const Experience: React.FC = () => {
         </p>
         <div className="flex justify-center">
           <Image
-            src="/step3.jpg"
+            src="/experience.jpg"
             width={640}
             height={480}
             alt="Cuadro generado por IA en salón"
