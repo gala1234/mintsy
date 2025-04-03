@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Experience from "@/components/ui/sections/Experience";
-import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
 import Testimonials from "@/components/sections/Testimonials";
 import SchemaMarkup from "@/components/ui/SchemaMarkup";
@@ -19,7 +18,6 @@ export default function Home() {
     <>
       <SchemaMarkup pageName="home" />
       <Hero />
-      <HowItWorks />
       <Experience />
       <Benefits />
       <Testimonials />

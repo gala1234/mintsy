@@ -4,6 +4,7 @@ import { useState } from "react";
 import PageContainer from "@/components/layout/PageContainer";
 import CreateArt from "@/components/sections/CreateArt";
 import EditArtwork from "@/components/sections/EditArtwork";
+import HowItWorks from "@/components/sections/HowItWorks";
 
 const CreatePageContent = () => {
   const [prompt, setPrompt] = useState("");
@@ -61,6 +62,7 @@ const CreatePageContent = () => {
             onKeepOriginalSeedChange={setKeepOriginalSeed}
           />
         )}
+        <HowItWorks />
       </div>
 
       {/* SEO Enhancement - Hidden section with keyword-rich content */}
