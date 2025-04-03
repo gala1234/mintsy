@@ -34,11 +34,11 @@ const Hero = () => {
     if (isIntersecting && videoRef.current && !isVideoLoaded) {
       // Only load video sources when in viewport
       const webmSource = document.createElement("source");
-      webmSource.src = "/mintsy-hero2.webm";
+      webmSource.src = "/mintsy-hero4.webm";
       webmSource.type = "video/webm";
 
       const mp4Source = document.createElement("source");
-      mp4Source.src = "/mintsy-hero2.mp4";
+      mp4Source.src = "/mintsy-hero4.mp4";
       mp4Source.type = "video/mp4";
 
       videoRef.current.appendChild(webmSource);
@@ -79,13 +79,13 @@ const Hero = () => {
             playsInline
             autoPlay
             className="w-full h-full object-cover"
-            poster="/mintsy-hero2.jpg"
+            poster="/mintsy-hero4.jpg"
             preload="metadata"
           >
             {/* Sources will be added dynamically when in viewport */}
             {/* Fallback para navegadores que no soportan video */}
             <Image
-              src="/mintsy-hero2.jpg"
+              src="/mintsy-hero4.jpg"
               alt="Mujer feliz en un salón boho admirando arte generado con Mintsy"
               fill
               className="object-cover"
