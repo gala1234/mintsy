@@ -4,39 +4,29 @@ import Image from "next/image";
 interface StepCardProps {
   stepNumber: number;
   title: string;
+  description?: string;
   imageSrc: string;
-  imageAlt?: string;
+  imageAlt: string;
 }
 
 const StepCard: React.FC<StepCardProps> = ({
   stepNumber,
   title,
+  description,
   imageSrc,
   imageAlt,
 }) => {
   return (
-    <div className="relative rounded-lg overflow-hidden h-64 flex items-center justify-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={imageSrc}
-          alt={imageAlt || title}
-          fill
-          className="object-cover"
-          loading="lazy"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        {/* Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-        {/* Content */}
-        <div className="relative z-20 text-center text-white p-8">
-          <div className="text-3xl font-bold flex items-center justify-center mb-4">
-            <span className="bg-primary w-10 h-10 rounded-full flex items-center justify-center mr-3 text-white text-lg">
-              {stepNumber}
-            </span>
-            {title}
-          </div>
+    <div className="flex-1 bg-white rounded-2xl shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
+      <div className="relative h-48 md:h-56 lg:h-64">
+        <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
+        <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">
+          {stepNumber}
         </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">{title}</h3>
+        {description && <p className="text-text-secondary">{description}</p>}
       </div>
     </div>
   );
