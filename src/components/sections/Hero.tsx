@@ -44,9 +44,24 @@ const Hero = () => {
       videoRef.current.appendChild(webmSource);
       videoRef.current.appendChild(mp4Source);
       videoRef.current.load();
-      videoRef.current
-        .play()
-        .catch((error) => console.error("Video play error:", error));
+
+      // Set additional attributes for mobile compatibility
+      if (videoRef.current) {
+        videoRef.current.setAttribute("playsinline", "");
+        videoRef.current.setAttribute("webkit-playsinline", "");
+        videoRef.current.muted = true;
+        videoRef.current.autoplay = true;
+      }
+
+      videoRef.current.play().catch((error) => {
+        console.error("Video play error:", error);
+        // If video fails to play, ensure the poster image is displayed
+        if (videoRef.current) {
+          videoRef.current.controls = false;
+          // Don't hide the video element completely, let the poster show
+          videoRef.current.style.opacity = "1";
+        }
+      });
       setIsVideoLoaded(true);
     }
   }, [isIntersecting, isVideoLoaded]);
@@ -62,9 +77,10 @@ const Hero = () => {
             muted
             loop
             playsInline
+            autoPlay
             className="w-full h-full object-cover"
             poster="/mintsy-hero.jpg"
-            preload="none"
+            preload="metadata"
           >
             {/* Sources will be added dynamically when in viewport */}
             {/* Fallback para navegadores que no soportan video */}
@@ -75,6 +91,7 @@ const Hero = () => {
               className="object-cover"
               loading="eager"
               sizes="100vw"
+              priority
             />
           </video>
         </div>
