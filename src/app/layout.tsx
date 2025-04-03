@@ -8,10 +8,13 @@ import ModalContainer from "@/components/ui/modals/examples/ModalContainer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
 
+// Optimize font loading with preload strategy
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
+  preload: true,
+  fallback: ["system-ui", "Arial"], // Provide fallback fonts
 });
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -19,6 +22,8 @@ const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif-accent",
+  preload: false, // Don't preload secondary font
+  fallback: ["Georgia", "serif"], // Provide fallback fonts
 });
 
 export const metadata: Metadata = {

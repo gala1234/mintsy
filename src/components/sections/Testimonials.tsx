@@ -33,10 +33,10 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.5,
-                delay: Number(testimonial.id) * 0.1,
+                duration: 0.3, // Reduced duration for better performance
+                delay: Number(testimonial.id) * 0.05, // Reduced delay for better performance
               }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }} // Reduced threshold for earlier loading
               className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full"
             >
               <div className="mb-4">
@@ -65,6 +65,8 @@ const Testimonials = () => {
                       width={48}
                       height={48}
                       className="rounded-full"
+                      loading="lazy"
+                      sizes="48px"
                     />
                   </div>
                 )}

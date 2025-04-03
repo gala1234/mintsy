@@ -21,6 +21,8 @@ const Experience: React.FC = () => {
             height={480}
             alt="Cuadro generado por IA en salón"
             className="rounded-2xl shadow-xl w-full max-w-md object-cover"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
           />
         </div>
       </div>

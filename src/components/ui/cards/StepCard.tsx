@@ -23,18 +23,19 @@ const StepCard: React.FC<StepCardProps> = ({
           alt={imageAlt || title}
           fill
           className="object-cover"
-          priority
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </div>
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
-      {/* Content */}
-      <div className="relative z-20 text-center text-white p-8">
-        <div className="text-3xl font-bold flex items-center justify-center mb-4">
-          <span className="bg-primary w-10 h-10 rounded-full flex items-center justify-center mr-3 text-white text-lg">
-            {stepNumber}
-          </span>
-          {title}
+        {/* Overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        {/* Content */}
+        <div className="relative z-20 text-center text-white p-8">
+          <div className="text-3xl font-bold flex items-center justify-center mb-4">
+            <span className="bg-primary w-10 h-10 rounded-full flex items-center justify-center mr-3 text-white text-lg">
+              {stepNumber}
+            </span>
+            {title}
+          </div>
         </div>
       </div>
     </div>
