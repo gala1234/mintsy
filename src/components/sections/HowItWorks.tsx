@@ -31,14 +31,14 @@ const HowItWorks = () => {
           <StepCard
             stepNumber={2}
             title="Mint as NFT on Blockchain"
-            imageSrc="//steps/step2.jpg"
+            imageSrc="/steps/step2.jpg"
             imageAlt="NFT minting process for AI-generated artwork on blockchain"
           />
 
           <StepCard
             stepNumber={3}
             title="Receive Premium Canvas Print"
-            imageSrc="//steps/step3.jpg"
+            imageSrc="/steps/step3.jpg"
             imageAlt="High-quality canvas print of AI-generated artwork ready to hang"
           />
         </div>
