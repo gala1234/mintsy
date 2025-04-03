@@ -15,13 +15,13 @@ const Hero = () => (
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster="/hero_image.png"
+          poster="/mintsy-hero.jpg"
         >
           <source src="/mintsy-hero.webm" type="video/webm" />
           <source src="/mintsy-hero.mp4" type="video/mp4" />
           {/* Fallback para navegadores que no soportan video */}
           <Image
-            src="/hero_image.png"
+            src="/mintsy-hero.jpg"
             alt="Mujer feliz en un salón boho admirando arte generado con Mintsy"
             fill
             className="object-cover"
