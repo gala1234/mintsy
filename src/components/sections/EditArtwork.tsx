@@ -51,7 +51,7 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-10 px-6 bg-[#FDFBF7] rounded-xl">
+    <section className="w-full max-w-6xl mx-auto py-10 px-6 bg-[#FDFBF7] rounded-xl">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-serif-accent">
         Edit Your Artwork
       </h2>
@@ -157,7 +157,7 @@ const EditArtwork: React.FC<EditArtworkProps> = ({
       </div>
       {/* Loading Spinner */}
       <Backdrop isOpen={isLoading} isLoading={isLoading} />
-    </div>
+    </section>
   );
 };
 

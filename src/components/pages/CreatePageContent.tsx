@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import PageContainer from "@/components/layout/PageContainer";
 import CreateArt from "@/components/sections/CreateArt";
 import EditArtwork from "@/components/sections/EditArtwork";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -38,7 +37,7 @@ const CreatePageContent = () => {
   };
 
   return (
-    <PageContainer>
+    <div className="relative py-24 overflow-hidden bg-[#FDFBF7]">
       <div>
         {!showPreview ? (
           <CreateArt
@@ -82,7 +81,7 @@ const CreatePageContent = () => {
           <li>Digital artwork creation</li>
         </ul>
       </div>
-    </PageContainer>
+    </div>
   );
 };
 

@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 interface PageContainerProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const PageContainer: React.FC<PageContainerProps> = ({ 
+const PageContainer: React.FC<PageContainerProps> = ({
   children,
-  className = ""
+  className = "",
 }) => {
   return (
     <section className="relative py-24 overflow-hidden bg-[#FDFBF7]">
@@ -18,4 +18,4 @@ const PageContainer: React.FC<PageContainerProps> = ({
   );
 };
 
-export default PageContainer; 
+export default PageContainer;
