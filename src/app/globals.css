@@ -155,23 +155,6 @@ body {
   left: 100%;
 }
 
-/* Order page animations and styles */
-@keyframes progressPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(243, 111, 90, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(243, 111, 90, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(243, 111, 90, 0);
-  }
-}
-
-.order-step-pulse {
-  animation: progressPulse 2s infinite;
-}
-
 .order-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
 }
